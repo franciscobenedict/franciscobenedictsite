@@ -58,3 +58,4 @@ npm install del --save-dev
 # SASS
 npm install --save-dev gulp
 npm install --save-dev gulp-sass
+npm install gulp-minify-css --save-dev
