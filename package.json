@@ -1,0 +1,50 @@
+{
+  "name": "franciscobenedict",
+  "version": "1.0.0",
+  "description": "Showcasing the profile, experience and works involving Francisco Benedict, a Front End Developer",
+  "main": "index.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/franciscobenedict/franciscobenedictsite.git"
+  },
+  "keywords": [
+    "Francisco",
+    "Benedict",
+    "cisco",
+    "benedict",
+    "front",
+    "end",
+    "developer",
+    "angular",
+    "unit",
+    "test",
+    "phantomjs",
+    "karma",
+    "jasmine",
+    "web",
+    "developer"
+  ],
+  "author": "Francisco Benedict",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/franciscobenedict/franciscobenedictsite/issues"
+  },
+  "homepage": "https://github.com/franciscobenedict/franciscobenedictsite#readme",
+  "dependencies": {
+    "angular": "^1.5.8"
+  },
+  "devDependencies": {
+    "angular-mocks": "^1.5.8",
+    "del": "^2.2.2",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^2.0.0",
+    "jasmine-core": "^2.5.2",
+    "karma-jasmine": "^1.0.2",
+    "karma-phantomjs-launcher": "^1.0.2"
+  }
+}

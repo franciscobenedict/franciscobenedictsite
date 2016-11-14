@@ -1,0 +1,21 @@
+@import "_base";
+
+@media screen and (max-width: $break-point-1 - 1) {
+    @import "__views/_view-1";
+}
+
+@media screen and (min-width: $break-point-1) {
+    @import "__views/_view-2";
+}
+
+@media screen and (min-width: $break-point-2) {
+    @import "__views/_view-3";
+}
+
+@media screen and (min-width: $break-point-3) {
+    @import "__views/_view-4";
+}
+
+@media screen and (min-width: $break-point-4) {
+    @import "__views/_view-5";
+}

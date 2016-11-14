@@ -1,0 +1,61 @@
+html {
+    body {
+        #getNewDinerName {
+            #inputForNewDinerName {
+                #dinerNamePrompt {
+                    label {
+                        #dinerName {
+                            width: 500px;
+                        }
+                        #addDinerName {}
+                    }
+                }
+            }
+        }
+        #wrap {
+            .image-overlay {}
+            a.scrollup {
+                a.scrollup i {}
+            }
+            a.scrollup:hover {}
+            .container {
+                #pageTitle {}
+                #getPrimeDinerName.name-input {
+                    form#dinerNamePrompt {
+                        .dialogue-text {}
+                        label#dinerNamePromptLabel {
+                            input#dinerName {}
+                            a#addPrimeDinerName.btn {}
+                            a#addPrimeDinerName.btn:hover {}
+                            a#addPrimeDinerName.btn.disabled {}
+                        }
+                    }
+                }
+            }
+        }
+        #footer {
+            .container {
+                .row {
+                    .the-copyright-stuff {
+                        #copyrightNotice {}
+                        #presentedBy {}
+                    }
+                    #iconLinks {
+                        ul {
+                            li {
+                                a {
+                                    margin-left: 40px;
+                                    i {}
+                                }
+                                a:hover {}
+                            }
+                            li:first-child {
+                                a {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,34 @@
+// Colors
+$white: white;
+$black: black;
+$black80: rgba(0, 0, 0, 0.8);
+$red: #c11b17;
+$super-light-grey: #dddddd;
+$light-grey: #999999;
+$grey: #666666;
+$dark-grey: #333333;
+$green: lime;
+$dim-green: #2d750d;
+$green-btn: rgba(0, 255, 0, 0.5);
+$red: #c11b17;
+$red-btn: rgba(193, 27, 23, 0.5);
+
+// Transitions
+$ease: all 0.25s ease 0s;
+$long-ease: all 0.5s ease 0s;
+
+// Fonts
+$main-font: "Lucida Grande", Helvetica, Arial, sans-serif;
+
+// Media query breakpoints
+$viewport-minwidth: 100%;
+$break-s: 550px;
+$break-m: 800px;
+$break-l: 970px;
+$break-xl: 1280px;
+$viewport-maxwidth: 1280px;
+
+$break-point-1: $break-s;
+$break-point-2: $break-m;
+$break-point-3: $break-l;
+$break-point-4: $break-xl;
