@@ -49,13 +49,19 @@ Run tests using:
 `karma start`
 
 # Gulp
-npm install gulp -g
-npm install gulp --save-dev
-npm install gulp-concat --save-dev
-npm install gulp-uglify --save-dev
-npm install del --save-dev
+`npm install gulp -g`
+
+`npm install gulp --save-dev`
+
+`npm install gulp-concat --save-dev`
+
+`npm install gulp-uglify --save-dev`
+
+`npm install del --save-dev`
 
 # SASS
-npm install --save-dev gulp
-npm install --save-dev gulp-sass
-npm install gulp-minify-css --save-dev
+`npm install --save-dev gulp`
+
+`npm install --save-dev gulp-sass`
+
+`npm install gulp-minify-css --save-dev`
