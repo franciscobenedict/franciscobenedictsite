@@ -101,3 +101,10 @@ Run tests using:
 `npm install --save-dev gulp-sass`
 
 `npm install gulp-minify-css --save-dev`
+
+
+# NPM Check
+
+npm install -g npm-check
+
+Use: `npm-check`
