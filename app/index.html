@@ -1,0 +1,42 @@
+<!doctype html>
+<html ng-app="" lang="en">
+   
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      
+      <title>Francisco Benedict: Web Developer</title>
+
+      <!-- Normalize style -->
+      <link rel="stylesheet" href="css/vendor/normalize/normalize.css">
+
+      <!-- Latest compiled and minified Bootstrap CSS -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+      
+      <!-- Optional theme -->
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+      
+      <!-- Cusom styling -->
+      <link rel="stylesheet" href="css/style.css">
+   </head>
+   
+   <body class="ng-cloak">
+
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+               <label>Name:</label>
+               <input type="text" ng-model="yourName" placeholder="Enter a name here">
+               <hr/>
+               <h1 ng-show="yourName.length > 0">Hello {{yourName}}!</h1>
+            </div>
+         </div>
+      </div>
+
+      <!-- JS Files -->
+      <script src="js/vendor/angular/angular.min.js"></script>
+
+      <!-- App JS File -->
+      <script src="js/app.js"></script>
+   </body>
+</html>

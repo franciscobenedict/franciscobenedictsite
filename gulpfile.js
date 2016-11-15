@@ -2,12 +2,13 @@ var gulp = require('gulp');
 var sass = require('gulp-sass');
 
 gulp.task('styles', function() {
-    gulp.src('app/sass/**/*.scss')
+    gulp.src('./sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
+        .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest('./app/css/'))
 });
 
 //Watch task
 gulp.task('default',function() {
-    gulp.watch('app/sass/**/*.scss',['styles']);
+    gulp.watch('./sass/**/*.scss',['styles']);
 });

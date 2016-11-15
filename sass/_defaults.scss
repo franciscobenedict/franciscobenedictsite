@@ -1,0 +1,28 @@
+/* Button / Link styles */
+a {
+    color: $black;
+    cursor: pointer;
+    opacity: 1;
+    text-decoration: none;
+    transition: opacity $ease;
+}
+
+a:hover, a:focus {
+    color: $black;
+    opacity: 0.5;
+    transition: opacity $ease;
+}
+
+/* Header Styles */
+h1, h2, h3, h4, h5, h6 {
+    text-transform: uppercase;
+}
+
+/* Input styles */
+input:focus, textarea:focus, select:focus {
+    border: 1px solid #fafafa;
+    -webkit-box-shadow: 0 0 6px #007eff;
+    -moz-box-shadow: 0 0 5px #007eff;
+    box-shadow: 0 0 5px #007eff;
+    outline: none;
+}
