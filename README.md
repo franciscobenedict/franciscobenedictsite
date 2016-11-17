@@ -108,3 +108,26 @@ Run tests using:
 npm install -g npm-check
 
 Use: `npm-check`
+
+
+# Firebase
+
+First get a Firebase account from (console.firebase.google.com)[https://console.firebase.google.com/]
+
+
+# Font Awesome
+
+Add font awesome to header via CDN - think you have to register or you can just download it from `fontawesome.io`
+
+
+# http-server
+
+A command-line http server. More info from [here](https://github.com/indexzero/http-server)
+
+install using `npm install http-server -g`
+
+Use it in terminal like `http-server $ location\to\app`.
+
+Get full path to path using `pwd` in Terminal on OSx.
+
+You should see the locahost IP provided in Terminal. Hit that IP and you can see your site. Boom!!! and you're good to go!

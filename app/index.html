@@ -1,11 +1,10 @@
 <!doctype html>
-<html ng-app="" lang="en">
+<html data-ng-app="FBApp" lang="en">
    
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-      
-      <title>Francisco Benedict: Web Developer</title>
+      <title>Francisco Benedict: the developer</title>
 
       <!-- Normalize style -->
       <link rel="stylesheet" href="css/vendor/normalize/normalize.css">
@@ -15,23 +14,125 @@
       
       <!-- Optional theme -->
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+      <!-- Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+      <script src="https://use.fontawesome.com/d582d03880.js"></script>
+
+      <link rel="stylesheet" href="css/grayscale.css">
       
       <!-- Cusom styling -->
       <link rel="stylesheet" href="css/style.css">
+
+      <!-- AngularJS -->
+      <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+      <!-- Firebase -->
+      <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+
+      <!-- AngularFire -->
+      <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+
+      <!-- Angular Sanitize -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
    </head>
    
-   <body class="ng-cloak">
+   <body id="pageTop" class="ng-cloak" data-spy="scroll" data-target=".secondary-nav" ng-controller="AppCtrl">
 
-      <div class="container-fluid">
-         <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-               <label>Name:</label>
-               <input type="text" ng-model="yourName" placeholder="Enter a name here">
-               <hr/>
-               <h1 ng-show="yourName.length > 0">Hello {{yourName}}!</h1>
+      <div ng-include="'./directives/nav.html'"></div>
+
+      <!-- Secondary Nav -->
+      <nav class="secondary-nav" role="navigation">
+         <div class="container">
+            <ul class="list-inline text-right nav">
+               <li class="page-scroll">
+                  <a class="nav-link nav-desktop" href="#pageTop">Welcome</a>
+               </li>
+               <li class="page-scroll">
+                  <a class="nav-link nav-desktop" href="#aboutSection">About me</a>
+               </li>
+               <li class="page-scroll">
+                  <a class="nav-link nav-desktop" href="#whatIdoSection">What I do</a>
+               </li>
+               <li class="page-scroll">
+                  <a class="nav-link nav-desktop" href="#whatPeopleThinkSection">What people think</a>
+               </li>
+            </ul>
+         </div>
+      </nav>
+
+      <!-- Welcome -->
+      <section id="welcome" class="center-content-container">
+         <div class="container content-centered text-center">
+            <div class="cisco-silhouette-container">
+               <div class="cisco-silhouette-image"></div>
+            </div>
+            
+            <h1>
+               <div class="fb-logo-big">
+                  <img src="images/fb-logo-grey.svg" alt="Francisco Benedict" />
+               </div>
+            </h1>
+
+            <p ng-bind-html="fbArray[0][0].welcomeSection.paragraphText1"></p>
+            <p  ng-bind-html="fbArray[0][0].welcomeSection.paragraphText2"></p>
+            
+            <h2>Welcome</h2>
+
+            <div class="scroll-arrow-container page-scroll">
+               <a class="nav-link nav-desktop scroll-arrow" href="#aboutSection">
+                  <i class="fa fa-angle-down"></i>
+               </a>
             </div>
          </div>
-      </div>
+      </section>
+
+      <!-- About Cisco -->
+      <section id="aboutSection" class="center-content-container">
+         <div class="container content-centered text-center background-40-percent">
+            <h2>About me</h2>
+
+            <p ng-bind-html="fbArray[0][0].aboutCisco.paragraphText1"></p>
+
+            <div class="scroll-arrow-container page-scroll">
+               <a class="nav-link nav-desktop scroll-arrow white-scroll" href="#whatIdoSection">
+                  <i class="fa fa-angle-down"></i>
+               </a>
+            </div>
+         </div>
+      </section>
+      
+      <!-- What I Do -->
+      <section id="whatIdoSection" class="light-grey">
+         <div class="container">
+            <h2>What I do</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <div class="scroll-arrow-container page-scroll">
+               <a class="nav-link nav-desktop scroll-arrow white-scroll" href="#whatPeopleThinkSection">
+                  <i class="fa fa-angle-down"></i>
+               </a>
+            </div>
+         </div>
+      </section>
+
+      <!-- Wat People Think -->
+      <section id="whatPeopleThinkSection" class="dark-grey">
+         <div class="container">
+            <h2>What people think</h2>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+            <div class="scroll-arrow-container page-scroll">
+               <a class="nav-link nav-desktop scroll-arrow up" href="#pageTop">
+                  <i class="fa fa-angle-double-up"></i>
+               </a>
+            </div>
+         </div>
+      </section>  
+
+      <div ng-include="'./directives/footer.html'"></div>
 
       <!-- Firebase -->
       <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
@@ -48,7 +149,13 @@
       </script>
 
       <!-- JS Files -->
-      <script src="js/vendor/angular/angular.min.js"></script>
+      <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+      <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+      <!-- Latest compiled and minified JavaScript -->
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+      <!-- Custom Theme JavaScript -->
+      <script src="js/grayscale.js"></script>
 
       <!-- App JS File -->
       <script src="js/app.js"></script>
