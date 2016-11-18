@@ -1,5 +1,24 @@
 @import "_defaults";
+.navbar {
+    padding: 20px 0;
+    border-bottom: 0;
+    letter-spacing: 1px;
+     background: 0 0; 
+    background: rgba(0,0,0,0.5);
+    background: #808080;
+    -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
+    transition: background .5s ease-in-out,padding .5s ease-in-out;
+}
 
+.top-nav-collapse {
+    padding: 0;
+    background-color: #333;
+}
+
+.navbar-custom.top-nav-collapse {
+    border-bottom: 1px solid rgba(255,255,255,.3);
+}
 nav {
     .secondary-nav-mobile {
         display: none;
@@ -40,7 +59,7 @@ nav {
                     }
                 }
             }
-            &.active {
+            &.active, &:hover {
                 a {
                     &.nav-desktop {
                         border-bottom: 4px solid $white;
