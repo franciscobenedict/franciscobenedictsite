@@ -123,12 +123,12 @@ a:focus {
 }*/
 
 @media(min-width:767px) {
-    .navbar {
+    /*.navbar {
         padding: 20px 0;
         border-bottom: 0;
         letter-spacing: 1px;
-        /* background: 0 0; */
-		/*background: rgba(0,0,0,0.5);*/
+         background: 0 0; 
+		background: rgba(0,0,0,0.5);
         background: #808080;
         -webkit-transition: background .5s ease-in-out,padding .5s ease-in-out;
         -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
@@ -141,8 +141,8 @@ a:focus {
     }
 
     .navbar-custom.top-nav-collapse {
-        /*border-bottom: 1px solid rgba(255,255,255,.3);*/
-    }
+        border-bottom: 1px solid rgba(255,255,255,.3);
+    }*/
 }
 
 .intro {
@@ -501,7 +501,7 @@ footer {
 }
 
 .copyright-notice {
-	padding: 10px 0 0 0;
+	padding: 0;
 }
 .strapline.welcome-section {
 	color: #50c516;
@@ -513,18 +513,46 @@ footer {
 	padding: 23px 0 0 0;
 }
 .the-developer {
+    display: table;
 	float: right;
-	padding: 46px 0 0 100px;
+	padding: 88px 0 0 0;
+}
+.the-developer .the-developer-text {
+    display: table-cell;
+    padding-right: 10px;
+    vertical-align: middle;
 }
 
 footer a {
 	color: #999999;
 }
-.developer-fb-logo {
+.developer-fb-logo .fb-logo-footer {
 	opacity: 0.6;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
 }
-.developer-fb-logo:hover {
+.developer-fb-logo .fb-logo-footer:hover {
 	opacity: 1;
+    -webkit-transition: all .3s ease-in-out;
+    -moz-transition: all .3s ease-in-out;
+    transition: all .3s ease-in-out;
+}
+
+.fb-logo-footer {
+    height: 50px;
+    width: 50px;
+}
+
+.fb-logo-footer .fb-logo-img-holder {
+    background-image: url(/images/cisco-silhouette-inverted.png);
+    background-size: 80%;
+    background-position-y: 5px;
+    background-position-x: 0;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    height: 100%;
+    width: 100%;
 }
 
 
@@ -543,9 +571,16 @@ footer a {
 		width: 100%;	
 	}
 	.the-developer {
+        display: block;
 		float: left;
 		padding: 0;
 		text-align: center;
 		width: 100%;
 	}
+    .the-developer .the-developer-text {
+        display: block;
+    }
+    .developer-fb-logo .fb-logo-footer {
+        margin: 0 auto;
+    }
 }

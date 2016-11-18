@@ -73,9 +73,13 @@
                   <img src="images/fb-logo-grey.svg" alt="Francisco Benedict" />
                </div>
             </h1>
+            
+            <!-- <p>{{fbArray}}</p> -->
+            <div>date: {{ today | date : "yyyy" }}</div>
 
-            <p ng-bind-html="fbArray[0][0].welcomeSection.paragraphText1"></p>
-            <p  ng-bind-html="fbArray[0][0].welcomeSection.paragraphText2"></p>
+            
+            <p ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></p>
+            <p ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></p>
             
             <h2>Welcome</h2>
 
@@ -92,7 +96,11 @@
          <div class="container content-centered text-center background-40-percent">
             <h2>About me</h2>
 
-            <p ng-bind-html="fbArray[0][0].aboutCisco.paragraphText1"></p>
+            <div class="row-fluid">
+               <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+                  <p ng-bind-html="fbArray[1].aboutCisco.paragraphText1"></p>
+               </div>
+            </div>
 
             <div class="scroll-arrow-container page-scroll">
                <a class="nav-link nav-desktop scroll-arrow white-scroll" href="#whatIdoSection">
@@ -108,7 +116,6 @@
             <h2>What I do</h2>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
             <div class="scroll-arrow-container page-scroll">
                <a class="nav-link nav-desktop scroll-arrow white-scroll" href="#whatPeopleThinkSection">
                   <i class="fa fa-angle-down"></i>
@@ -121,7 +128,6 @@
       <section id="whatPeopleThinkSection" class="dark-grey">
          <div class="container">
             <h2>What people think</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
             <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
             <div class="scroll-arrow-container page-scroll">
