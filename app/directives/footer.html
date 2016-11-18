@@ -1,0 +1,28 @@
+<!-- Footer -->
+<footer class="content-section">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-8 col-lg-offset-2">
+            <div class="kitoko-copy">
+               <div class="footer-logo">
+                  <img class="logo green-logo" src="images/fb-logo-grey.svg" alt="" />
+               </div>
+               <div class="strapline">
+                  <p ng-bind-html="fbArray[0][0].welcomeSection.paragraphText1"></p>
+                  <p  ng-bind-html="fbArray[0][0].welcomeSection.paragraphText2"></p>
+               </div>
+               <div class="copyright-notice">&copy; {{ today | date : "yyyy" }} {{fbArray[0][0].copyrightText}}</div>
+               <div class="clearfix"></div>
+            </div>
+            <div class="the-developer">
+               <span>
+                  <a class="the-developer-text" href="mailto:recruit@franciscobenedict.com" title="you can email Francisco Benedict, the developer, at this address: recruit@franciscobenedict.com">The developer</a>
+               </span>
+               <a class="developer-fb-logo" href="http://www.franciscobenedict.com" target="_blank" title="Kitoko by Lady B's website was designed and developed by Francisco Benedict">
+                  <img src="img/fb-logo-bright@2x.png" alt="Design and Developed by Francisco Benedict" width="50px" height="50px"/>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>

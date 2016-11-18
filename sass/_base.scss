@@ -1,13 +1,124 @@
-html {
+@import "_defaults";
+
+nav {
+    .secondary-nav-mobile {
+        display: none;
+    }
+}
+.secondary-nav {
+    border-top: 1px solid #cccccc;
+    display: block;
+    position: fixed;
+    width: 100%;
+    background: #808080;
+    left: 0;
+    top: 90px;
+    color: black;
+    -webkit-transition: all .5s ease-in-out,top .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out,top .5s ease-in-out;
+    transition: all .5s ease-in-out,top .5s ease-in-out;
+    z-index: 10;
+    &.shift-up {
+        top: 50px;
+        -webkit-transition: all .5s ease-in-out,top .5s ease-in-out;
+        -moz-transition: all .5s ease-in-out,top .5s ease-in-out;
+        transition: all .5s ease-in-out,top .5s ease-in-out;
+    }
+    ul {
+        li {
+            display: inline-block;
+            padding-left: 15px;
+            padding-right: 15px;
+            a {
+                &.nav-desktop {
+                    border-bottom: 4px solid #808080;
+                    border-top: 4px solid #808080;
+                    padding: 6px 0;
+                    &:hover, &:active, &:focus, &:visited {
+                        background: none;
+                        color: $white;
+                    }
+                }
+            }
+            &.active {
+                a {
+                    &.nav-desktop {
+                        border-bottom: 4px solid $white;
+                        border-top: 4px solid $white;
+                    }
+                }
+            }
+        }
+    }
+}
+section {
+    /* Set a specific height */
     height: 100%;
-    body {
-        /* Base default styles */
-        border: 0;
-        color: $black;
-        font: 18px $main-font;
-        margin: 0;
-        padding: 0;
+    min-height: 100%;
+    position: relative;
+    padding-top: 160px;
+    -webkit-transition: all .5s ease-in-out,top .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out,top .5s ease-in-out;
+    transition: all .5s ease-in-out,top .5s ease-in-out;
+    width: 100%;
+    &#welcome {
+        padding-top: 0;
+        text-align: center;
+        p, h2 {
+            margin: 0;
+        }
+        h2 {
+            margin-top: 35px;
+        }
+    }
+    &#aboutSection {
+        /* The image used */
+        background-image: url("/images/img_parallax.jpg");
+        color: $white;
+
+        /* Create the parallax scrolling effect */
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        padding-top: 0;
+    }
+    &.light-grey {
+        background-color: $light-grey;
+        color: $white;
+    }
+    &.dark-grey {
+        background-color: $super-light-grey;
+        color: $dark-grey;
+    }
+}
+
+.cisco-silhouette-container {
+    margin: 0 auto 35px;
+    height: 200px;
+    width: 200px;
+    -webkit-transition: all .5s ease-in-out,top .5s ease-in-out;
+    -moz-transition: all .5s ease-in-out,top .5s ease-in-out;
+    transition: all .5s ease-in-out,top .5s ease-in-out;
+    .cisco-silhouette-image {
+        background-image: url("/images/cisco-silhouette.svg"); //50% 50% cover
+        background-size: 90%;
+        background-position-y: 5px;
+        background-position-x: 10px;
+        background-repeat: no-repeat;
+
+        // border: 1px solid $black;
+        border-radius: 50%;
         height: 100%;
-        @import "_defaults";
+        width: 100%
+    }
+}
+
+.fb-logo-big {
+    margin: 0 auto;
+    width: 120px;
+    img {
+        height: auto;
+        width: 100%;
     }
 }
