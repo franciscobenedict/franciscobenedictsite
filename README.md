@@ -131,3 +131,9 @@ Use it in terminal like `http-server $ location\to\app`.
 Get full path to path using `pwd` in Terminal on OSx.
 
 You should see the locahost IP provided in Terminal. Hit that IP and you can see your site. Boom!!! and you're good to go!
+
+
+# URL REWRITE
+
+Install gulp connect using: `npm install gulp-connect --save-dev`
+

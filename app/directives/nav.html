@@ -15,41 +15,34 @@
          <ul class="nav navbar-nav">
             <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
             <li class="">
-               <a id="home" class="" href="#">Home</a>
+               <a id="home" class="" href="/" scroll-to="#pageTop" ng-click="checkLocation()">Home</a>
             </li>
             <li class="">
-               <a id="profile" class="" href="#">Profile</a>
+               <a id="profile" class="" href="/profile" scroll-to="#pageTop" ng-click="checkLocation()">Profile</a>
             </li>
             <li class="">
-               <a id="portfolio" class="" href="#">Portfolio</a>
+               <a id="portfolio" class="" href="/portfolio" scroll-to="#pageTop" ng-click="checkLocation()">Portfolio</a>
             </li>
             <li class="">
-               <a id="contactCisco" class="" href="#">Contact me</a>
+               <a id="contactCisco" class="" href="/contactme" scroll-to="#pageTop" ng-click="checkLocation()">Contact me</a>
             </li>
-
-            <!-- <li class="" ng-repeat="link in fbArray[0].links"> -->
-               <!-- <a id="{{link.linkId}}" class="nav-link" href="#{{link.hrefName}}">{{link.linkName}}</a> -->
-               <!-- <a id="{{link.linkId}}" class="nav-link" href="#">{{link.linkName}}</a> -->
-            <!-- </li> -->
          </ul>
-
-
          <div class="clearfix"></div>
 
          <!-- Secondary Nav -->
-         <nav class="secondary-nav-mobile">
-            <ul class="list-inline nav">
+         <nav class="secondary-nav-mobile" role="navigation" ng-show="urlLocation === '/'">
+            <ul id="mobileNav" class="list-inline nav">
                <li class="page-scroll">
-                  <a class="nav-link" href="#pageTop">Welcome</a>
+                  <a class="nav-link" scroll-to="#pageTop">Welcome</a>
                </li>
                <li class="page-scroll">
-                  <a class="nav-link" href="#aboutSection">About me</a>
+                  <a class="nav-link" scroll-to="#aboutSection">About me</a>
                </li>
                <li class="page-scroll">
-                  <a class="nav-link" href="#whatIdoSection">What I do</a>
+                  <a class="nav-link" scroll-to="#whatIdoSection">What I do</a>
                </li>
                <li class="page-scroll">
-                  <a class="nav-link" href="#whatPeopleThinkSection">What people think</a>
+                  <a class="nav-link" scroll-to="#whatPeopleThinkSection">What people think</a>
                </li>
             </ul>
          </div>
