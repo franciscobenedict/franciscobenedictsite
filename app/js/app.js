@@ -17,10 +17,11 @@ fbApp.config(function($routeProvider, $locationProvider) {
         })
         .when("/contactme", {
             templateUrl: "../app/views/contactme.html"
+        })
+        .otherwise({
+            redirectTo: "page-not-found",
+            templateUrl: "../app/views/404.html"
         });
-    $routeProvider.otherwise({
-        templateUrl: "../app/views/404.html"
-    });
 });
 
 

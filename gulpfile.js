@@ -1,16 +1,61 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 
-var historyApiFallback = require('connect-history-api-fallback');
+// var historyApiFallback = require('connect-history-api-fallback');
+// gulp.task('serve', function() {
+// 	browserSync.init({
+// 		server: {
+// 			baseDir: 'app',
+// 			middleware: [ historyApiFallback() ]
+// 		}
+// 	});
+// });
+
+// MIDDLEWARE
+var connect = require('gulp-connect');
+// gulp.task('connect', function() {
+// 	connect.server({
+// 		root: __dirname,
+// 		livereload: true,
+
+// 		middleware: function(connect, opt) {
+// 			return [ historyApiFallback ];
+// 		}
+// 	});
+// });
+
+
 
 gulp.task('serve', function() {
-	browserSync.init({
-		server: {
-			baseDir: './app',
-			middleware: [ historyApiFallback() ]
-		}
-	});
+    connect.server({
+      root: 'app',
+      fallback: './app/index.html',
+      livereload: true//,
+      // port: 3000,
+      // host: '192.168.1.101',
+    });
+    // gulp.src('./app/*.html')
+    // 	.pipe(connect.reload())
 });
+
+
+// var history = require('connect-history-api-fallback');
+// var historyApiFallback = require('connect-history-api-fallback');
+
+// gulp.task('serve', function() {
+// 	browserSync.init({
+// 		// proxy: {
+// 		// 	target: 'localhost:' + port,
+// 		// 	middleware: [ historyApiFallback() ]
+// 		// }
+
+// 		server: {
+// 			baseDir: "./app",
+// 			middleware: [ historyApiFallback() ]
+// 		}
+// 	});
+// });
+
 
 // SASS
 gulp.task('styles', function() {
