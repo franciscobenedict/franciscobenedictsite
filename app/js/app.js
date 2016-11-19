@@ -24,8 +24,8 @@ fbApp.config(function($routeProvider, $locationProvider) {
 });
 
 
-fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location',
-    function($scope, $firebaseArray, $location) {
+fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location', '$element', 
+    function($scope, $firebaseArray, $location, $element) {
         $scope.urlLocation = $location.path();
         // console.log('$scope.urlLocation: ', $scope.urlLocation);
 
@@ -33,10 +33,10 @@ fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location',
         $scope.checkLocation = function() {
             // $scope.urlLocation = '';
             $scope.urlLocation = $location.path();
-            console.log('$scope.urlLocation: ', $scope.urlLocation);
-        //     // console.log('checkLocation function called');
-        //     $scope.showSecondaryNav = $location.path() === '/';
-        //     console.log('$location.path(): ', $location.path());
+            // console.log('$scope.urlLocation: ', $scope.urlLocation);
+            // console.log('checkLocation function called');
+            // $scope.showSecondaryNav = $location.path() === '/';
+            // console.log('$location.path(): ', $location.path());
         }
 
         // GET CURRENT YEAR
@@ -46,16 +46,6 @@ fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location',
         var AppRef = new Firebase('https://franciscobenedict-1aa7b.firebaseio.com/');
         $scope.fbArray = $firebaseArray(AppRef);
         console.log('$scope.fbArray', $scope.fbArray);
-
-        // // SCROLL TO SECTION ON HOME PAGE
-        // $scope.scrollToSection = function() {
-        //     console.log('#mobileNav PAGE SCROLL CLICKED');
-        //     // var anchor = $(this);
-        //     // $('html, body').stop().animate({
-        //     //     scrollTop: $(anchor.attr('href')).offset().top
-        //     // }, 1500, 'easeInOutExpo');
-        //     // event.preventDefault();
-        // }
     }
 ]);
 
@@ -64,12 +54,17 @@ fbApp.directive('scrollTo', function () {
         restrict: 'A',
         link: function (scope, element, attrs) {
             element.on('click', function () {
-
                 var target = $(attrs.scrollTo);
                 if (target.length > 0) {
                     $('html, body').animate({
                         scrollTop: target.offset().top
                     });
+                }
+            });
+
+            element.on('click', function(e) {
+                if (angular.element('#mobileMenu').hasClass('in')) {
+                    angular.element('#hamburgerButon').trigger('click');   
                 }
             });
         }
