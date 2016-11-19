@@ -40,7 +40,7 @@ fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location', '$element'
         }
 
         // GET CURRENT YEAR
-        $scope.date = new Date();
+        $scope.today = new Date();
         
         // CREATE A FIREBASE REFERENCE
         var AppRef = new Firebase('https://franciscobenedict-1aa7b.firebaseio.com/');
@@ -53,6 +53,8 @@ fbApp.directive('scrollTo', function () {
     return {
         restrict: 'A',
         link: function (scope, element, attrs) {
+
+            // SCROLL-TO SECTION
             element.on('click', function () {
                 var target = $(attrs.scrollTo);
                 if (target.length > 0) {
@@ -62,8 +64,9 @@ fbApp.directive('scrollTo', function () {
                 }
             });
 
+            // CLOSE MENU WHEN SELECTING ITEM IN MOBILE VIEW
             element.on('click', function(e) {
-                if (angular.element('#mobileMenu').hasClass('in')) {
+                if (angular.element('#mainMenu').hasClass('in')) {
                     angular.element('#hamburgerButon').trigger('click');   
                 }
             });
