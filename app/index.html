@@ -27,18 +27,18 @@
    
    <body id="pageTop" class="ng-cloak" data-spy="scroll" data-target=".secondary-nav" ng-controller="AppCtrl">
 
-      <div ng-include="'./directives/nav.html'"></div>
-      <div ng-include="'./directives/secondary-nav.html'" ng-show="urlLocation === '/'"></div>
+      <div ng-include="'./app/directives/nav.html'"></div>
+      <div ng-include="'./app/directives/secondary-nav.html'" ng-show="urlLocation === '/'"></div>
 
       <span ng-view></span>
 
-      <div ng-include="'./directives/footer.html'"></div>
+      <div ng-include="'./app/directives/footer.html'"></div>
 
       <!-- BASE URL -->
       <script>
          document.write("<base href=\"" + document.location + "\" />");
       </script>
-      
+
       <!-- jQuery -->
       <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
