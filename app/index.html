@@ -1,10 +1,12 @@
 <!doctype html>
 <html data-ng-app="FBApp" lang="en">
-   
    <head>
       <meta charset="utf-8">
-      <base href="/" />
+      
+      <base href="/">
+
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      
       <title>Francisco Benedict: the developer</title>
 
       <!-- Normalize style -->
@@ -25,9 +27,10 @@
       <link rel="stylesheet" href="css/style.css">
    </head>
    
-   <body id="pageTop" class="ng-cloak" data-spy="scroll" data-target=".secondary-nav" ng-controller="AppCtrl">
+   <body id="pageTop" ng-cloak data-spy="scroll" data-target=".secondary-nav" ng-controller="AppCtrl">
 
       <div ng-include="'./app/directives/nav.html'"></div>
+      
       <div ng-include="'./app/directives/secondary-nav.html'" ng-show="urlLocation === '/'"></div>
 
       <span ng-view></span>
@@ -35,9 +38,7 @@
       <div ng-include="'./app/directives/footer.html'"></div>
 
       <!-- BASE URL -->
-      <script>
-         document.write("<base href=\"" + document.location + "\" />");
-      </script>
+      <script>document.write("<base href=\"" + document.location + "\" />");</script>
 
       <!-- jQuery -->
       <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
@@ -50,6 +51,7 @@
 
       <!-- Firebase -->
       <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+      
       <!-- AngularFire -->
       <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
       <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
@@ -68,8 +70,9 @@
       <!-- Angular Sanitize -->
       <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
 
-      <!-- jQuery -->
+      <!-- jQuery Easing -->
       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
       <!-- Latest compiled and minified JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 

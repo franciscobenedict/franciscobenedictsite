@@ -19,7 +19,7 @@ fbApp.config(function($routeProvider, $locationProvider) {
             templateUrl: "../app/views/contactme.html"
         })
         .otherwise({
-            redirectTo: "page-not-found",
+            redirectTo: "/page-not-found",
             templateUrl: "../app/views/404.html"
         });
 });
@@ -27,8 +27,13 @@ fbApp.config(function($routeProvider, $locationProvider) {
 
 fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location', '$element', 
     function($scope, $firebaseArray, $location, $element) {
+
+        $scope.location = $location;
         $scope.urlLocation = $location.path();
-        // console.log('$scope.urlLocation: ', $scope.urlLocation);
+        $scope.absoluteUrl = $location.absUrl();
+        console.log('$scope.location: ', $scope.location);
+        console.log('$scope.urlLocation: ', $scope.urlLocation);
+        console.log('$scope.absoluteUrl: ', $scope.absoluteUrl);
 
         // $scope.showSecondaryNav = $location.path() === '/';
         $scope.checkLocation = function() {
@@ -71,9 +76,128 @@ fbApp.directive('scrollTo', function () {
                     angular.element('#hamburgerButon').trigger('click');   
                 }
             });
+
+            // SCROLL-SPY
+            $('body').scrollspy({target: ".secondary-nav"});
+            $('body').scrollspy({target: ".secondary-nav-mobile"});
         }
     }
 });
+
+fbApp.directive('secondaryNavSpy', function () {
+    return {
+        restrict: 'A',
+        link: function (scope, element, attrs) {
+            $('body').scrollspy({target: ".secondary-nav"});
+            $('body').scrollspy({target: ".secondary-nav-mobile"});
+        }
+    }
+});
+
+// fbApp.directive('scrollSpy', function($timeout){
+//     return {
+//         restrict: 'A',
+//         link: function(scope, elem, attr) {
+//             var offset = parseInt(attr.scrollOffset, 10)
+//             if(!offset) offset = 10;
+//             console.log("offset:  " + offset);
+//             elem.scrollspy({ "offset" : offset});
+//             scope.$watch(attr.scrollSpy, function(value) {
+//                 $timeout(function() { 
+//                   elem.scrollspy('refresh', { "offset" : offset})
+//                 }, 1);
+//             }, true);
+//         }
+//     }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// // =============================
+// fbApp.directive('scrollSpy', function($timeout){
+//     return {
+//         restrict: 'A',
+//         link: function(scope, elem, attr) {
+//             var offset = parseInt(attr.scrollOffset, 10)
+//             if(!offset) offset = 10;
+//             console.log("offset:  " + offset);
+//             elem.scrollspy({ "offset" : offset});
+//             scope.$watch(attr.scrollSpy, function(value) {
+//                 $timeout(function() { 
+//                   elem.scrollspy('refresh', { "offset" : offset})
+//                 }, 1);
+//             }, true);
+//         }
+//     }
+// });
+
+// fbApp.directive('preventDefault', function() {
+//     return function(scope, element, attrs) {
+//         jQuery(element).click(function(event) {
+//             event.preventDefault();
+//         });
+//     }
+// });
+
+// fbApp.directive("scrollTo", ["$window", function($window){
+//     return {
+//         restrict : "AC",
+//         compile : function(){
+
+//             function scrollInto(elementId) {
+//                 if(!elementId) $window.scrollTo(0, 0);
+//                 //check if an element can be found with id attribute
+//                 var el = document.getElementById(elementId);
+//                 if(el) el.scrollIntoView();
+//             }
+
+//             return function(scope, element, attr) {
+//                 element.bind("click", function(event){
+//                     scrollInto(attr.scrollTo);
+//                 });
+//             };
+//         }
+//     };
+// }]);
+// // =============================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// fbApp.directive('preventDefault', function() {
+//     return function(scope, element, attrs) {
+//         jQuery(element).click(function(event) {
+//             event.preventDefault();
+//         });
+//     }
+// });
 
 // angular.module('App', [])
 // 	.filter('reverse',[function(){
