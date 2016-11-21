@@ -1,8 +1,5 @@
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
-
-
-    
     $('body').scrollspy({ target: '.secondary-nav' });
     
     if ($(".navbar").length) {
@@ -37,30 +34,4 @@ $(window).scroll(function() {
             $('.secondary-nav').removeClass('shift-up');
         }
     }
-});
-
-//jQuery for page scrolling feature - requires jQuery Easing plugin
-
-$(function() {
-    $('.page-scroll a').bind('click', function(event) {
-        var $anchor = $(this);
-        $('html, body').stop().animate({
-            scrollTop: $($anchor.attr('href')).offset().top
-        }, 1500, 'easeInOutExpo');
-        event.preventDefault();
-    });
-
-    // Close the menu when in mobile mode if user clicks a link in the nav
-    $('a.nav-link').delegate(function () {
-        // If user clicks a link within the nav bar, close the navbar it is open
-        if ($('.navbar-collapse').hasClass('in')) {
-            $('.navbar-toggle').trigger('click');
-        }
-    })
-
-
-    $('.navbar-toggle').on('click', function(){
-        console.log('navbat-toggle clicked');
-    });
-
 });

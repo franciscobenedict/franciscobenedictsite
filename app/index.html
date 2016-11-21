@@ -1,9 +1,12 @@
 <!doctype html>
 <html data-ng-app="FBApp" lang="en">
-   
    <head>
       <meta charset="utf-8">
+      
+      <base href="/">
+
       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+      
       <title>Francisco Benedict: the developer</title>
 
       <!-- Normalize style -->
@@ -19,128 +22,38 @@
       <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
       <script src="https://use.fontawesome.com/d582d03880.js"></script>
 
-      <link rel="stylesheet" href="css/grayscale.css">
-      
       <!-- Cusom styling -->
+      <link rel="stylesheet" href="css/grayscale.css">
       <link rel="stylesheet" href="css/style.css">
+   </head>
+   
+   <body id="pageTop" ng-cloak data-spy="scroll" data-target=".secondary-nav" ng-controller="AppCtrl">
+
+      <div ng-include="'./app/directives/nav.html'"></div>
+      
+      <div ng-include="'./app/directives/secondary-nav.html'" ng-show="urlLocation === '/'"></div>
+
+      <span ng-view></span>
+
+      <div ng-include="'./app/directives/footer.html'"></div>
+
+      <!-- BASE URL -->
+      <script>document.write("<base href=\"" + document.location + "\" />");</script>
+
+      <!-- jQuery -->
+      <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
       <!-- AngularJS -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
+      <!-- AngularJS Route -->
+      <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+
       <!-- Firebase -->
       <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
-
+      
       <!-- AngularFire -->
       <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-
-      <!-- Angular Sanitize -->
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
-   </head>
-   
-   <body id="pageTop" class="ng-cloak" data-spy="scroll" data-target=".secondary-nav" ng-controller="AppCtrl">
-
-      <div ng-include="'./directives/nav.html'"></div>
-
-      <!-- Secondary Nav -->
-      <nav class="secondary-nav" role="navigation">
-         <div class="container">
-            <ul class="list-inline text-right nav">
-               <li class="page-scroll">
-                  <a class="nav-link nav-desktop" href="#pageTop">Welcome</a>
-               </li>
-               <li class="page-scroll">
-                  <a class="nav-link nav-desktop" href="#aboutSection">About me</a>
-               </li>
-               <li class="page-scroll">
-                  <a class="nav-link nav-desktop" href="#whatIdoSection">What I do</a>
-               </li>
-               <li class="page-scroll">
-                  <a class="nav-link nav-desktop" href="#whatPeopleThinkSection">What people think</a>
-               </li>
-            </ul>
-         </div>
-      </nav>
-
-      <!-- Welcome -->
-      <section id="welcome" class="center-content-container">
-         <div class="container content-centered text-center">
-            <div class="cisco-silhouette-container">
-               <div class="cisco-silhouette-image"></div>
-            </div>
-            
-            <h1>
-               <div class="fb-logo-big">
-                  <img src="images/fb-logo-grey.svg" alt="Francisco Benedict" />
-               </div>
-            </h1>
-            
-            <!-- <p>{{fbArray}}</p> -->
-            <div>date: {{ today | date : "yyyy" }}</div>
-
-            
-            <p ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></p>
-            <p ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></p>
-            
-            <h2>Welcome</h2>
-
-            <div class="scroll-arrow-container page-scroll">
-               <a class="nav-link nav-desktop scroll-arrow" href="#aboutSection">
-                  <i class="fa fa-angle-down"></i>
-               </a>
-            </div>
-         </div>
-      </section>
-
-      <!-- About Cisco -->
-      <section id="aboutSection" class="center-content-container">
-         <div class="container content-centered text-center background-40-percent">
-            <h2>About me</h2>
-
-            <div class="row-fluid">
-               <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-                  <p ng-bind-html="fbArray[1].aboutCisco.paragraphText1"></p>
-               </div>
-            </div>
-
-            <div class="scroll-arrow-container page-scroll">
-               <a class="nav-link nav-desktop scroll-arrow white-scroll" href="#whatIdoSection">
-                  <i class="fa fa-angle-down"></i>
-               </a>
-            </div>
-         </div>
-      </section>
-      
-      <!-- What I Do -->
-      <section id="whatIdoSection" class="light-grey">
-         <div class="container">
-            <h2>What I do</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <div class="scroll-arrow-container page-scroll">
-               <a class="nav-link nav-desktop scroll-arrow white-scroll" href="#whatPeopleThinkSection">
-                  <i class="fa fa-angle-down"></i>
-               </a>
-            </div>
-         </div>
-      </section>
-
-      <!-- Wat People Think -->
-      <section id="whatPeopleThinkSection" class="dark-grey">
-         <div class="container">
-            <h2>What people think</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <div class="scroll-arrow-container page-scroll">
-               <a class="nav-link nav-desktop scroll-arrow up" href="#pageTop">
-                  <i class="fa fa-angle-double-up"></i>
-               </a>
-            </div>
-         </div>
-      </section>  
-
-      <div ng-include="'./directives/footer.html'"></div>
-
-      <!-- Firebase -->
       <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
       <script>
         // Initialize Firebase
@@ -154,9 +67,12 @@
         firebase.initializeApp(config);
       </script>
 
-      <!-- JS Files -->
-      <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+      <!-- Angular Sanitize -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
+
+      <!-- jQuery Easing -->
       <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
       <!-- Latest compiled and minified JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 

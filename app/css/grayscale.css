@@ -94,6 +94,8 @@ a:focus {
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus,
 .navbar-custom .nav li.active {
+    color: #ffffff;
+    cursor: pointer;
     outline: 0;
     background-color: rgba(255,255,255,.2);
 }

@@ -1,0 +1,30 @@
+<!-- Footer -->
+<footer class="content-section">
+   <div class="container">
+      <div class="row">
+         <div class="col-lg-12">
+            <div class="kitoko-copy">
+               <div class="footer-logo">
+                  <img class="logo green-logo" src="images/fb-logo-grey.svg" alt="" />
+               </div>
+               <div class="strapline">
+                  <div ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></div>
+                  <div ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></div>
+               </div>
+               <div class="copyright-notice">&copy; <span ng-bind-html="today | date : 'yyyy'"></span>&nbsp;<span ng-bind-html="fbArray[0].copyrightText"></span></div>
+               <div class="clearfix"></div>
+            </div>
+            <div class="the-developer">
+               <a class="the-developer-text" href="mailto:recruit@franciscobenedict.com" title="you can email Francisco Benedict, the developer, at this address: recruit@franciscobenedict.com">The developer</a>
+               <a class="developer-fb-logo" href="http://www.franciscobenedict.com" target="_blank" title="The Francisco Benedict website was designed and developed by Francisco Benedict">
+                  <div class="fb-logo-footer">
+                     <div class="fb-logo-img-holder">
+                        <span class="a11y">Design and Developed by Francisco Benedict</span>
+                     </div>
+                  </div>
+               </a>
+            </div>
+         </div>
+      </div>
+   </div>
+</footer>

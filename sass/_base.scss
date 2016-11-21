@@ -1,4 +1,5 @@
 @import "_defaults";
+
 .navbar {
     padding: 20px 0;
     border-bottom: 0;
@@ -19,11 +20,13 @@
 .navbar-custom.top-nav-collapse {
     border-bottom: 1px solid rgba(255,255,255,.3);
 }
+
 nav {
     .secondary-nav-mobile {
         display: none;
     }
 }
+
 .secondary-nav {
     border-top: 1px solid #cccccc;
     display: block;
@@ -49,6 +52,7 @@ nav {
             padding-left: 15px;
             padding-right: 15px;
             a {
+                cursor: pointer;
                 &.nav-desktop {
                     border-bottom: 4px solid #808080;
                     border-top: 4px solid #808080;
@@ -70,6 +74,7 @@ nav {
         }
     }
 }
+
 section {
     /* Set a specific height */
     height: 100%;
@@ -102,11 +107,11 @@ section {
         background-size: cover;
         padding-top: 0;
     }
-    &.light-grey {
+    &.grey-bg {
         background-color: $light-grey;
         color: $white;
     }
-    &.dark-grey {
+    &.light-grey-bg {
         background-color: $super-light-grey;
         color: $dark-grey;
     }

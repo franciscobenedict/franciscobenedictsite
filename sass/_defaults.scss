@@ -22,11 +22,15 @@ h3,
 h4,
 h5,
 h6 {
-    margin: 0 0 35px;
+    margin: 0 0 20px;
     text-transform: uppercase;
     font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;
     font-weight: 300;
     letter-spacing: 1px;
+}
+
+h3 {
+  margin-top: 15px;
 }
 
 /* Button / Link styles */
@@ -177,6 +181,7 @@ input:focus, textarea:focus, select:focus {
     box-shadow: 0 0 5px #007eff;
     outline: none;
 }
+
 // The 'a11y' class is a CSS technique for preventing text
 // from visually rendering on-screen but still being available for screen readers.
 .a11y {
@@ -247,4 +252,10 @@ input:focus, textarea:focus, select:focus {
   -moz-hyphens: auto;
   -webkit-hyphens: auto;
   hyphens: auto;
+}
+
+// Helpers
+
+.padding0 {
+  padding: 0;
 }
