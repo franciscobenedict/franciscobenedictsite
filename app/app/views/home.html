@@ -1,27 +1,25 @@
 <span scroll-spy>
 	<!-- Welcome -->
 	<section id="welcome" class="center-content-container">
-		<div class="container content-centered text-center">
-			<div class="cisco-silhouette-container">
-				<div class="cisco-silhouette-image"></div>
-			</div>
+		<div class="content-centered text-center">
+			<div class="container">
+				<h1>
+					<div class="fb-logo-big">
+						<img src="images/fb-logo-grey.svg" alt="Francisco Benedict" />
+					</div>
+				</h1>
 
-			<h1>
-				<div class="fb-logo-big">
-					<img src="images/fb-logo-grey.svg" alt="Francisco Benedict" />
+				<!-- <p>{{fbArray}}</p> -->
+				<p ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></p>
+				<p ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></p>
+
+				<h2>Welcome</h2>
+
+				<div class="scroll-arrow-container page-scroll">
+					<a class="nav-link nav-desktop grey-scroll scroll-arrow" scroll-to="#whatIdoSection">
+						<i class="fa fa-angle-down"></i>
+					</a>
 				</div>
-			</h1>
-
-			<!-- <p>{{fbArray}}</p> -->
-			<p ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></p>
-			<p ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></p>
-
-			<h2>Welcome</h2>
-
-			<div class="scroll-arrow-container page-scroll">
-				<a class="nav-link nav-desktop scroll-arrow" scroll-to="#whatIdoSection">
-					<i class="fa fa-angle-down"></i>
-				</a>
 			</div>
 		</div>
 	</section>
@@ -67,19 +65,21 @@
 
 	<!-- About Cisco -->
 	<section id="aboutSection" class="center-content-container home-page-other-sections">
-		<div class="container content-centered text-center background-40-percent">
-			<h2>About me</h2>
+		<div class="content-centered text-center background-40-percent">
+			<div class="container">
+				<h2>About me</h2>
 
-			<div class="row-fluid">
-				<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-					<p ng-bind-html="fbArray[1].aboutCisco.paragraphText1"></p>
+				<div class="row-fluid">
+					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+						<p ng-bind-html="fbArray[1].aboutCisco.paragraphText1"></p>
+					</div>
 				</div>
-			</div>
 
-			<div class="scroll-arrow-container page-scroll">
-				<a class="nav-link nav-desktop scroll-arrow white-scroll up" scroll-to="#pageTop">
-					<i class="fa fa-angle-double-up"></i>
-				</a>
+				<div class="scroll-arrow-container page-scroll">
+					<a class="nav-link nav-desktop scroll-arrow white-scroll up" scroll-to="#pageTop">
+						<i class="fa fa-angle-double-up"></i>
+					</a>
+				</div>
 			</div>
 		</div>
 	</section>

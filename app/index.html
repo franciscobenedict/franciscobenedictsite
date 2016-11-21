@@ -31,7 +31,8 @@
 
       <div ng-include="'./app/directives/nav.html'"></div>
       
-      <div ng-include="'./app/directives/secondary-nav.html'" ng-show="urlLocation === '/'"></div>
+      <div ng-include="'./app/directives/secondary-nav.html'" ng-show="showSecondaryNav('/')"
+></div>
 
       <span ng-view></span>
 

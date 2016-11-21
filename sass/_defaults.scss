@@ -140,6 +140,17 @@ a.scroll-arrow {
         }
     }
 
+    &.grey-scroll {
+        border: 1px solid $grey;
+        color: $grey;
+        i {
+
+        }
+        &:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+    }
+
     &.up {
         i {
             top: 0;

@@ -138,5 +138,13 @@ You should see the locahost IP provided in Terminal. Hit that IP and you can see
 
 # URL REWRITE
 
-Install gulp connect using: `npm install gulp-connect --save-dev`
+Add .htaccess file with the following tackle refresh of non existent URLs:
 
+`RewriteEngine On `
+`Options FollowSymLinks`
+
+`RewriteBase /`
+
+`RewriteCond %{REQUEST_FILENAME} !-f`
+`RewriteCond %{REQUEST_FILENAME} !-d`
+`RewriteRule ^(.*)$ /#/$1 [L]`

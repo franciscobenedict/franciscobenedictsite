@@ -25,25 +25,16 @@ fbApp.config(function($routeProvider, $locationProvider) {
 });
 
 
-fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location', '$element', 
-    function($scope, $firebaseArray, $location, $element) {
+fbApp.controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$location', '$element', 
+    function($rootScope, $scope, $firebaseArray, $location, $element) {
+
+        $scope.showSecondaryNav = function(viewLocation) {
+            return viewLocation === $location.path();
+        };
 
         $scope.location = $location;
-        $scope.urlLocation = $location.path();
+        $scope.currentPath = $location.path();
         $scope.absoluteUrl = $location.absUrl();
-        console.log('$scope.location: ', $scope.location);
-        console.log('$scope.urlLocation: ', $scope.urlLocation);
-        console.log('$scope.absoluteUrl: ', $scope.absoluteUrl);
-
-        // $scope.showSecondaryNav = $location.path() === '/';
-        $scope.checkLocation = function() {
-            // $scope.urlLocation = '';
-            $scope.urlLocation = $location.path();
-            // console.log('$scope.urlLocation: ', $scope.urlLocation);
-            // console.log('checkLocation function called');
-            // $scope.showSecondaryNav = $location.path() === '/';
-            // console.log('$location.path(): ', $location.path());
-        }
 
         // GET CURRENT YEAR
         $scope.today = new Date();
@@ -54,6 +45,7 @@ fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location', '$element'
         console.log('$scope.fbArray', $scope.fbArray);
     }
 ]);
+
 
 fbApp.directive('scrollTo', function () {
     return {

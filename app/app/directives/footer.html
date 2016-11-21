@@ -2,20 +2,44 @@
 <footer class="content-section">
    <div class="container">
       <div class="row">
-         <div class="col-lg-12">
-            <div class="kitoko-copy">
-               <div class="footer-logo">
-                  <img class="logo green-logo" src="images/fb-logo-grey.svg" alt="" />
-               </div>
+         <div class="col-lg-12 footer-content-container">
+            <div class="footer-copy">
+               <a class="developer-fb-logo" href="http://www.franciscobenedict.com" target="_self" title="The Francisco Benedict website was designed and developed by Francisco Benedict">
+                  <div class="footer-logo">
+                     <img class="logo" src="images/fb-logo-grey-footer.svg" alt="" />
+                     <span class="a11y">Designed and Developed by Francisco Benedict</span>
+                  </div>
+               </a>
+
+               <div class="copyright-notice">&copy; <span ng-bind-html="today | date : 'yyyy'"></span>&nbsp;<span ng-bind-html="fbArray[0].copyrightText"></span></div>
+
                <div class="strapline">
                   <div ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></div>
                   <div ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></div>
                </div>
-               <div class="copyright-notice">&copy; <span ng-bind-html="today | date : 'yyyy'"></span>&nbsp;<span ng-bind-html="fbArray[0].copyrightText"></span></div>
-               <div class="clearfix"></div>
+               <!-- <div class="clearfix"></div> -->
             </div>
+
+            <div class="footer-links the-developer">
+               <ul class="">
+                  <li class="">
+                     <a id="home" class="" ng-href="/" scroll-to="#pageTop" ng-click="checkLocation()">Home</a>
+                  </li>
+                  <li class="">
+                     <a id="profile" class="" ng-href="/profile" scroll-to="#pageTop" ng-click="checkLocation()">Profile</a>
+                  </li>
+                  <li class="">
+                     <a id="portfolio" class="" ng-href="/portfolio" scroll-to="#pageTop" ng-click="checkLocation()">Portfolio</a>
+                  </li>
+                  <li class="">
+                     <a id="contactCisco" class="" ng-href="/contactme" scroll-to="#pageTop" ng-click="checkLocation()">Contact me</a>
+                  </li>
+               </ul>
+            </div>
+<!-- 
             <div class="the-developer">
                <a class="the-developer-text" href="mailto:recruit@franciscobenedict.com" title="you can email Francisco Benedict, the developer, at this address: recruit@franciscobenedict.com">The developer</a>
+
                <a class="developer-fb-logo" href="http://www.franciscobenedict.com" target="_blank" title="The Francisco Benedict website was designed and developed by Francisco Benedict">
                   <div class="fb-logo-footer">
                      <div class="fb-logo-img-holder">
@@ -24,7 +48,9 @@
                   </div>
                </a>
             </div>
+ -->
          </div>
+
       </div>
    </div>
 </footer>
