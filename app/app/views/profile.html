@@ -83,8 +83,10 @@
 			</div>
 			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
 				<ul class="responsibilities-list">
-					<li ng-repeat="responsibility in careerSummary.responsibilitiesAndInvolvement">{{responsibility}}</span>
-				</p>
+					<li ng-repeat="responsibility in careerSummary.responsibilitiesAndInvolvement">
+						<p ng-bind-html="responsibility"></p>
+					</li>
+				</u>
 			</div>
 			<div class="clearfix"></div>
 		</div>
