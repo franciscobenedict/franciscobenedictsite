@@ -49,6 +49,11 @@ nav {
 }
 
 section {
+    .external-link {
+        font-size: 12px; 
+        margin-right: 5px;
+    }
+
     &.home-page-other-sections, &.other-pages {
         padding-top: 60px;
     }

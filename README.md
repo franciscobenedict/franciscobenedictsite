@@ -98,6 +98,11 @@ Run tests using:
 `npm install del --save-dev`
 
 
+# GRID
+
+I'm using [Bootstrap 3.3.7](http://getbootstrap.com/) at the time of writing this.
+
+
 # SASS
 `npm install --save-dev gulp`
 
@@ -121,6 +126,11 @@ First get a Firebase account from (console.firebase.google.com)[https://console.
 # Font Awesome
 
 Add font awesome to header via CDN - think you have to register or you can just download it from `fontawesome.io`
+
+
+# Font
+
+The font used is Lato from Google `https://fonts.google.com/`
 
 
 # http-server
@@ -148,3 +158,8 @@ Add .htaccess file with the following tackle refresh of non existent URLs:
 `RewriteCond %{REQUEST_FILENAME} !-f`
 `RewriteCond %{REQUEST_FILENAME} !-d`
 `RewriteRule ^(.*)$ /#/$1 [L]`
+
+
+# UI Bootstrap
+
+Using Angular dependency UI Bootstrap `https://angular-ui.github.io/bootstrap/`
