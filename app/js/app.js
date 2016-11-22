@@ -1,4 +1,4 @@
-var fbApp = angular.module('FBApp', ['ngRoute', 'firebase', 'ngSanitize']);
+var fbApp = angular.module('FBApp', ['ngRoute', 'firebase', 'ngSanitize', 'ui.bootstrap']);
 
 fbApp.config(function($routeProvider, $locationProvider) {
 
@@ -43,6 +43,10 @@ fbApp.controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$locatio
         var AppRef = new Firebase('https://franciscobenedict-1aa7b.firebaseio.com/');
         $scope.fbArray = $firebaseArray(AppRef);
         console.log('$scope.fbArray', $scope.fbArray);
+
+        // QUOATE CAROUSEL
+        $scope.myInterval = 10000;
+        
     }
 ]);
 
