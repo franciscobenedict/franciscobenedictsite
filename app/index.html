@@ -19,7 +19,7 @@
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
       <!-- Fonts -->
-      <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700" rel="stylesheet">
       <script src="https://use.fontawesome.com/d582d03880.js"></script>
 
       <!-- Cusom styling -->
@@ -31,7 +31,7 @@
 
       <div ng-include="'./app/directives/nav.html'"></div>
       
-      <div ng-include="'./app/directives/secondary-nav.html'" ng-show="urlLocation === '/'"></div>
+      <div ng-include="'./app/directives/secondary-nav.html'" ng-show="showSecondaryNav('/')"></div>
 
       <span ng-view></span>
 
@@ -45,6 +45,9 @@
 
       <!-- AngularJS -->
       <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+      <!-- UI Bootstrap -->
+      <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
 
       <!-- AngularJS Route -->
       <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>

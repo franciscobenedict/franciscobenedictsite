@@ -86,6 +86,7 @@ section {
     transition: all .5s ease-in-out,top .5s ease-in-out;
     width: 100%;
     &#welcome {
+        color: $grey;
         padding-top: 0;
         text-align: center;
         p, h2 {
@@ -95,7 +96,11 @@ section {
             margin-top: 35px;
         }
     }
+    &#whatIDoSection {
+
+    }
     &#aboutSection {
+        padding-top: 0;
         /* The image used */
         background-image: url("/images/img_parallax.jpg");
         color: $white;
@@ -106,6 +111,45 @@ section {
         background-repeat: no-repeat;
         background-size: cover;
         padding-top: 0;
+    }
+    &#whatPeopleThinkSection {
+        padding-top: 0;
+        #quoteCarousel .carousel-control {
+            display: none;
+        }
+
+        #quoteCarousel ol.carousel-indicators {
+            bottom: -60px;
+            li {
+                border: 5px solid $white;
+                margin: 10px 5px;
+
+                -webkit-transition: all .5s ease-in-out;
+                -moz-transition: all .5s ease-in-out;
+                transition: all .5s ease-in-out;
+                &.active {
+                    border: 10px solid $white;
+                    border-radius: 20px;
+
+                    -webkit-transition: all .5s ease-in-out;
+                    -moz-transition: all .5s ease-in-out;
+                    transition: all .5s ease-in-out;
+                }
+            }
+        }
+
+        #quoteCarousel p.quote-text {
+            font-style: italic;
+            text-align: left;
+            margin-bottom: 10px;
+            quotes: "“" "”" "‘" "’";
+            &:before {
+                content: open-quote;
+            }
+            &:after {
+                content: close-quote;
+            }
+        }
     }
     &.grey-bg {
         background-color: $light-grey;
@@ -140,7 +184,7 @@ section {
 
 .fb-logo-big {
     margin: 0 auto;
-    width: 120px;
+    width: 280px;
     img {
         height: auto;
         width: 100%;

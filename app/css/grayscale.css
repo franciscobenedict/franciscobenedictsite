@@ -59,8 +59,22 @@ a:focus {
     transition: all .2s ease-in-out;
 }
 .logo {
+    cursor: pointer;
 	height: 50px;
-/* 	width: 100%!important; */	
+/* 	width: 100%!important; */
+
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.logo.grey-logo {
+    height: 40px;
+    margin: 5px 0;
+
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
 }
 
 /* Nav */
@@ -490,9 +504,8 @@ footer {
 	text-transform: uppercase;
 	padding-bottom: 50px;
 }
-.kitoko-copy {
+.footer-copy {
 	float: left;
-	margin-bottom: 20px;
 	width: 50%;
 }
 .footer-logo {
@@ -503,7 +516,7 @@ footer {
 }
 
 .copyright-notice {
-	padding: 0;
+	padding: 10px 0 0 0;
 }
 .strapline.welcome-section {
 	color: #50c516;
@@ -512,12 +525,21 @@ footer {
 	text-transform: uppercase;
 }
 .strapline {
-	padding: 23px 0 0 0;
+	padding: 0;
 }
 .the-developer {
     display: table;
 	float: right;
-	padding: 88px 0 0 0;
+	padding: 90px 0 0 0;
+}
+
+.the-developer.footer-links ul {
+    margin: 0;
+    padding: 0;
+}
+
+.the-developer.footer-links ul li {
+    list-style-type: none;
 }
 .the-developer .the-developer-text {
     display: table-cell;
@@ -558,8 +580,24 @@ footer a {
 }
 
 
+/*CAROUSEL*/
+/*#slides_control > div{
+  height: 200px;
+}
+#slides_control {
+  position:absolute;
+  width: 400px;
+  left:50%;
+  top:20px;
+ margin-left:-200px;
+}
+*/
 
-@media(max-width:599px) {	
+@media(max-width:599px) {
+    .footer-content-container {
+        display: flex;
+        flex-flow: column;
+    }	
 	#ladybsForm input {
 		margin: 0 0 20px;
 		width: 100%;
@@ -568,10 +606,17 @@ footer a {
 		float: left;
 		width: 50%;
 	}
-	.kitoko-copy {
+	.footer-copy {
 		text-align: center;
+        order: 2;
 		width: 100%;	
 	}
+    .the-developer.footer-links {
+        border-bottom: 1px solid #808080;
+        order: 1;
+        margin-bottom: 20px;
+        padding-bottom: 20px;
+    }
 	.the-developer {
         display: block;
 		float: left;
@@ -584,5 +629,12 @@ footer a {
     }
     .developer-fb-logo .fb-logo-footer {
         margin: 0 auto;
+    }
+    .the-developer.footer-links ul  li {
+        padding: 10px 0;
+    }
+
+    .the-developer.footer-links ul  li a {
+        padding: 10px 50px;
     }
 }

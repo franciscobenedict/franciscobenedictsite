@@ -1,4 +1,4 @@
-var fbApp = angular.module('FBApp', ['ngRoute', 'firebase', 'ngSanitize']);
+var fbApp = angular.module('FBApp', ['ngRoute', 'firebase', 'ngSanitize', 'ui.bootstrap']);
 
 fbApp.config(function($routeProvider, $locationProvider) {
 
@@ -25,25 +25,16 @@ fbApp.config(function($routeProvider, $locationProvider) {
 });
 
 
-fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location', '$element', 
-    function($scope, $firebaseArray, $location, $element) {
+fbApp.controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$location', '$element', 
+    function($rootScope, $scope, $firebaseArray, $location, $element) {
+
+        $scope.showSecondaryNav = function(viewLocation) {
+            return viewLocation === $location.path();
+        };
 
         $scope.location = $location;
-        $scope.urlLocation = $location.path();
+        $scope.currentPath = $location.path();
         $scope.absoluteUrl = $location.absUrl();
-        console.log('$scope.location: ', $scope.location);
-        console.log('$scope.urlLocation: ', $scope.urlLocation);
-        console.log('$scope.absoluteUrl: ', $scope.absoluteUrl);
-
-        // $scope.showSecondaryNav = $location.path() === '/';
-        $scope.checkLocation = function() {
-            // $scope.urlLocation = '';
-            $scope.urlLocation = $location.path();
-            // console.log('$scope.urlLocation: ', $scope.urlLocation);
-            // console.log('checkLocation function called');
-            // $scope.showSecondaryNav = $location.path() === '/';
-            // console.log('$location.path(): ', $location.path());
-        }
 
         // GET CURRENT YEAR
         $scope.today = new Date();
@@ -52,8 +43,13 @@ fbApp.controller('AppCtrl', ['$scope', '$firebaseArray', '$location', '$element'
         var AppRef = new Firebase('https://franciscobenedict-1aa7b.firebaseio.com/');
         $scope.fbArray = $firebaseArray(AppRef);
         console.log('$scope.fbArray', $scope.fbArray);
+
+        // QUOATE CAROUSEL
+        $scope.myInterval = 10000;
+        
     }
 ]);
+
 
 fbApp.directive('scrollTo', function () {
     return {

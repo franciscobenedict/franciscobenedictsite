@@ -6,43 +6,43 @@
             <i class="fa fa-bars" aria-hidden="true"></i>
          </button>
          <a class="navbar-brand" scroll-to="#pageTop">
-            <img class="logo black-logo" src="images/fb-logo-tiny-white.svg" alt="" />
-            <img class="logo green-logo hidden" src="images/fb-logo-tiny-grey.svg" alt="" />
+            <img class="logo white-logo" src="images/fb-logo-white-header.svg" alt="" />
+            <img class="logo grey-logo hidden" src="images/fb-logo-grey-header.svg" alt="" />
          </a>
       </div>
 
       <div id="mainMenu" class="collapse navbar-collapse navbar-right navbar-main-collapse">
          <ul class="nav navbar-nav">
             <li class="">
-               <a id="home" class="" ng-href="{{absoluteUrl}}" scroll-to="#pageTop" ng-click="checkLocation()">Home</a>
+               <a id="home" class="" ng-click="checkLocation()" ng-href="/" scroll-to="#pageTop">Home</a>
             </li>
             <li class="">
-               <a id="profile" class="" ng-href="{{absoluteUrl}}profile" scroll-to="#pageTop" ng-click="checkLocation()">Profile</a>
+               <a id="profile" class="" ng-click="checkLocation()" ng-href="/profile" scroll-to="#pageTop">Profile</a>
             </li>
             <li class="">
-               <a id="portfolio" class="" ng-href="{{absoluteUrl}}portfolio" scroll-to="#pageTop" ng-click="checkLocation()">Portfolio</a>
+               <a id="portfolio" class="" ng-click="checkLocation()" ng-href="/portfolio" scroll-to="#pageTop">Portfolio</a>
             </li>
             <li class="">
-               <a id="contactCisco" class="" ng-href="{{absoluteUrl}}contactme" scroll-to="#pageTop" ng-click="checkLocation()">Contact me</a>
+               <a id="contactCisco" class="" ng-click="checkLocation()" ng-href="/contactme" scroll-to="#pageTop">Contact me</a>
             </li>
          </ul>
 
          <div class="clearfix"></div>
 
          <!-- Secondary Nav - Mobile -->
-         <nav class="secondary-nav-mobile" ng-show="urlLocation === '/'" secondary-nav-spy>
+         <nav class="secondary-nav-mobile" ng-show="showSecondaryNav('/')" secondary-nav-spy>
             <ul id="mobileNav" class="list-inline nav">
                <li class="page-scroll">
-                  <a class="nav-link" scroll-to="#pageTop" ng-click="scrollToSection(); checkLocation()">Welcome</a>
+                  <a class="nav-link" scroll-to="#pageTop" ng-click="scrollToSection()">Welcome</a>
                </li>
                <li class="page-scroll">
-                  <a class="nav-link" scroll-to="#whatIdoSection" ng-click="scrollToSection(); checkLocation()">What I do</a>
+                  <a class="nav-link" scroll-to="#whatIdoSection" ng-click="scrollToSection()">What I do</a>
                </li>
                <li class="page-scroll">
-                  <a class="nav-link" scroll-to="#whatPeopleThinkSection" ng-click="scrollToSection(); checkLocation()">What people think</a>
+                  <a class="nav-link" scroll-to="#whatPeopleThinkSection" ng-click="scrollToSection()">What people think</a>
                </li>
                <li class="page-scroll">
-                  <a class="nav-link" scroll-to="#aboutSection" ng-click="scrollToSection(); checkLocation()">About me</a>
+                  <a class="nav-link" scroll-to="#aboutSection" ng-click="scrollToSection()">About me</a>
                </li>
             </ul>
          </nav>
