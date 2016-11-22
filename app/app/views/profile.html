@@ -1,5 +1,103 @@
-<section class="center-content-container ">
+<section id="profilePage" class="profile-page center-content-container">
 	<div class="container">
-		<h1>Profile page</h1>
+		<h1>Profile</h1>
+		<div ng-bind-html="fbArray[2].profileIntro"></div>
+	</div>
+</section>
+
+
+<section class="profile-page career-summary">
+	<div class="container">
+		<h2>Career Summary</h2>
+	</div>
+</section>
+
+<section class="profile-page" ng-repeat="careerSummary in fbArray[2].careerSummary">
+	<div class="container">
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<p class="date-worked bold" ng-bind-html="careerSummary.dateWorked"></p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<p class="client-name bold" ng-bind-html="careerSummary.clientName"></p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<p class="title-txt bold">Title</p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<p class="job-title" ng-bind-html="careerSummary.jobTitle"></p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<p class="project-txt bold">Project</p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<p class="project-title" ng-bind-html="careerSummary.projectTitle"></p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<p class="description-txt bold">Description</p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<p class="description-title" ng-bind-html="careerSummary.description"></p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<p class="website-txt bold">Website</p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<ul class="website-url">
+					<li ng-repeat="url in careerSummary.websiteUrl">
+						<p>
+							<span class="external-link"></span>
+							<a ng-href="{{url}}" target="_blank">{{url}} <span class="a11y">(this site opens in a new window)</span></a>
+						</p>
+					</li>
+				</ul>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<p class="technologies-used-txt bold">Technologies used</p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<p class="technologies-used-list">
+					<span ng-repeat="techUsed in careerSummary.technologiesUsed">{{techUsed}}</span>
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<p class="technologies-used-txt bold">Responsibilities</p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<ul class="responsibilities-list">
+					<li ng-repeat="responsibility in careerSummary.responsibilitiesAndInvolvement">{{responsibility}}</span>
+				</p>
+			</div>
+			<div class="clearfix"></div>
+		</div>
+	</div>
+</section>
+
+<section class="profile-page">
+	<div class="container">
+		<h2>Key professional skills</h2>
+		<ul>
+			<li></li>
+		</ul>
+
+		<h2>Qualification &amp; Education</h2>
 	</div>
 </section>

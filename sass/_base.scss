@@ -85,6 +85,41 @@ section {
     -moz-transition: all .5s ease-in-out,top .5s ease-in-out;
     transition: all .5s ease-in-out,top .5s ease-in-out;
     width: 100%;
+
+    .external-link {
+        color: $grey;
+        font-size: 15px; 
+        margin-right: 10px;
+        &:before {
+            font-family: 'FontAwesome';
+            content: " \f08e";
+        }
+    }
+    a {
+        border-bottom: 1px solid $super-light-grey;
+        padding-bottom: 2px;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+        &:hover {
+            border-bottom: 1px dashed #666666;
+            padding-bottom: 6px;
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+        }
+    }
+
+    &.grey-bg {
+        background-color: $light-grey;
+        color: $white;
+    }
+    &.light-grey-bg {
+        background-color: $super-light-grey;
+        color: $dark-grey;
+    }
+
+    // Home Page
     &#welcome {
         color: $grey;
         padding-top: 0;
@@ -96,9 +131,7 @@ section {
             margin-top: 35px;
         }
     }
-    &#whatIDoSection {
-
-    }
+    &#whatIDoSection {}
     &#aboutSection {
         padding-top: 0;
         /* The image used */
@@ -151,13 +184,55 @@ section {
             }
         }
     }
-    &.grey-bg {
-        background-color: $light-grey;
-        color: $white;
+    
+    // Profile Page
+    &#profilePage {
+        padding-top: 120px;
     }
-    &.light-grey-bg {
-        background-color: $super-light-grey;
-        color: $dark-grey;
+    &.profile-page {
+        height: auto;
+        margin-bottom: 20px;
+        min-height: auto;
+        padding-bottom: 20px;
+        padding-top: 20px;
+        &.career-summary {
+            margin: 0;
+            padding: 0;
+        }
+        ul {
+            list-style: none;
+            margin: 0 0 35px;
+            padding: 0;
+            &.responsibilities-list {
+                list-style-type: disc;
+                padding-left: 18px;
+            }
+            li {
+                p {
+                    margin-bottom: 0;
+                }
+            }
+        }
+        .technologies-used-list {
+            span {
+                background: $super-light-grey;
+                border-radius: 4px;
+                color: $grey;
+                margin-right: 10px;
+                padding: 5px 10px;
+                /*
+                    // &:after {
+                    //     content: ", ";
+                    //     // margin-right: 10px;
+                    // }
+                    // &:last-child {
+                    //     &:after {
+                    //         content: "";
+                    //     }
+                    // }
+                */
+            }
+        }
     }
 }
 

@@ -179,6 +179,10 @@ a.scroll-arrow {
     background: rgba(0,0,0,0.4);
 }
 
+.bold {
+  font-weight: 400;
+}
+
 /* Header Styles */
 h1, h2, h3, h4, h5, h6 {
     text-transform: uppercase;
@@ -269,4 +273,12 @@ input:focus, textarea:focus, select:focus {
 
 .padding0 {
   padding: 0;
+}
+
+.margin-bottom20 {
+  margin-bottom: 20px;
+}
+
+.margin-bottom50 {
+  margin-bottom: 50px;
 }
