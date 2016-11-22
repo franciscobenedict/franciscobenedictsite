@@ -119,16 +119,16 @@ section {
         }
 
         #quoteCarousel ol.carousel-indicators {
-            bottom: -100px;
+            bottom: -60px;
             li {
-                border: 10px solid $white;
-                margin: 10px;
+                border: 5px solid $white;
+                margin: 10px 5px;
 
                 -webkit-transition: all .5s ease-in-out;
                 -moz-transition: all .5s ease-in-out;
                 transition: all .5s ease-in-out;
                 &.active {
-                    border: 15px solid $white;
+                    border: 10px solid $white;
                     border-radius: 20px;
 
                     -webkit-transition: all .5s ease-in-out;

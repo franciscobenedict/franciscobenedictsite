@@ -630,4 +630,11 @@ footer a {
     .developer-fb-logo .fb-logo-footer {
         margin: 0 auto;
     }
+    .the-developer.footer-links ul  li {
+        padding: 10px 0;
+    }
+
+    .the-developer.footer-links ul  li a {
+        padding: 10px 50px;
+    }
 }
