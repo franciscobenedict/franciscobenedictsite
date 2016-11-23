@@ -139,7 +139,7 @@ A command-line http server. More info from [here](https://github.com/indexzero/h
 
 install using `npm install http-server -g`
 
-Use it in terminal like `http-server $ location\to\app`.
+Use it in terminal like `http-server location\to\app`.
 
 Get full path to path using `pwd` in Terminal on OSx.
 
