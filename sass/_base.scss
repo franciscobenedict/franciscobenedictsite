@@ -174,30 +174,36 @@ section {
         #quoteCarousel p.quote-text {
             font-style: italic;
             text-align: left;
-            margin-bottom: 10px;
-            quotes: "“" "”" "‘" "’";
-            &:before {
-                content: open-quote;
-            }
-            &:after {
-                content: close-quote;
-            }
+            margin-bottom: 0;
+            // quotes: "“" "”" "‘" "’";
+            // &:before {
+            //     content: open-quote;
+            // }
+            // &:after {
+            //     content: close-quote;
+            // }
         }
     }
     
     // Profile Page
     &#profilePage {
+        background-color: $near-white;
         padding-top: 120px;
     }
     &.profile-page {
         height: auto;
-        margin-bottom: 20px;
+        // margin-bottom: 20px;
         min-height: auto;
         padding-bottom: 20px;
         padding-top: 20px;
-        &.career-summary {
-            margin: 0;
+        &.career-summary-title {
+            margin: 40px 0 0 0;
             padding: 0;
+        }
+        &.career-summary {
+            &:nth-child(2n) {
+                background-color: $near-white;
+            }
         }
         ul {
             list-style: none;
@@ -205,7 +211,11 @@ section {
             padding: 0;
             &.responsibilities-list {
                 list-style-type: disc;
+                margin-bottom: 0;
                 padding-left: 18px;
+                li {
+                    padding-left: 12px;
+                }
             }
             li {
                 p {
@@ -214,10 +224,13 @@ section {
             }
         }
         .technologies-used-list {
+            margin-bottom: 0;
             span {
                 background: $super-light-grey;
                 border-radius: 4px;
                 color: $grey;
+                float: left;
+                margin-bottom: 10px;
                 margin-right: 10px;
                 padding: 5px 10px;
                 /*

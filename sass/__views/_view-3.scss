@@ -53,6 +53,16 @@ section {
         font-size: 12px; 
         margin-right: 5px;
     }
+    &.profile-page {
+        ul{
+            &.responsibilities-list {
+                li {
+                    padding-left: 0;
+                }
+            }
+        }
+    }
+    
 
     &.home-page-other-sections, &.other-pages {
         padding-top: 60px;
