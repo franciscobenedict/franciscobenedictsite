@@ -97,6 +97,9 @@ Run tests using:
 
 `npm install del --save-dev`
 
+To run gulp and gulp watch together run the following in Terminal: 
+
+`gulp && gulp watch`
 
 # GRID
 

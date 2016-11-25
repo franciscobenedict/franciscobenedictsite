@@ -1,9 +1,7 @@
 var fbApp = angular.module('FBApp', ['ngRoute', 'firebase', 'ngSanitize', 'ui.bootstrap']);
 
 fbApp.config(function($routeProvider, $locationProvider) {
-
     $locationProvider.html5Mode(true);
-
     $routeProvider
         .when("/home", { redirectTo: "/" })
         .when("/", {
@@ -24,14 +22,11 @@ fbApp.config(function($routeProvider, $locationProvider) {
         });
 });
 
-
-fbApp.controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$location', '$element', 
-    function($rootScope, $scope, $firebaseArray, $location, $element) {
-
+fbApp.controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$location', '$element', '$window',
+    function($rootScope, $scope, $firebaseArray, $location, $element, $window) {
         $scope.showSecondaryNav = function(viewLocation) {
             return viewLocation === $location.path();
         };
-
         $scope.location = $location;
         $scope.currentPath = $location.path();
         $scope.absoluteUrl = $location.absUrl();
@@ -46,10 +41,11 @@ fbApp.controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$locatio
 
         // QUOATE CAROUSEL
         $scope.myInterval = 10000;
-        
+
+        // PROFILE PAGE SHOW FULL CAREER DETAILS
+        $scope.showDetails = !$scope.showDetails;
     }
 ]);
-
 
 fbApp.directive('scrollTo', function () {
     return {
@@ -90,110 +86,28 @@ fbApp.directive('secondaryNavSpy', function () {
     }
 });
 
-// fbApp.directive('scrollSpy', function($timeout){
-//     return {
-//         restrict: 'A',
-//         link: function(scope, elem, attr) {
-//             var offset = parseInt(attr.scrollOffset, 10)
-//             if(!offset) offset = 10;
-//             console.log("offset:  " + offset);
-//             elem.scrollspy({ "offset" : offset});
-//             scope.$watch(attr.scrollSpy, function(value) {
-//                 $timeout(function() { 
-//                   elem.scrollspy('refresh', { "offset" : offset})
-//                 }, 1);
-//             }, true);
-//         }
-//     }
-// });
+fbApp.directive('parallaxScrolling', function ($window) {
+    return function(scope, element, attrs) {
+        // PARALLAX SCROLLING
+        var parallax = angular.element(document.querySelector('.parallax'));
+        var speed = 0.5;
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// // =============================
-// fbApp.directive('scrollSpy', function($timeout){
-//     return {
-//         restrict: 'A',
-//         link: function(scope, elem, attr) {
-//             var offset = parseInt(attr.scrollOffset, 10)
-//             if(!offset) offset = 10;
-//             console.log("offset:  " + offset);
-//             elem.scrollspy({ "offset" : offset});
-//             scope.$watch(attr.scrollSpy, function(value) {
-//                 $timeout(function() { 
-//                   elem.scrollspy('refresh', { "offset" : offset})
-//                 }, 1);
-//             }, true);
-//         }
-//     }
-// });
-
-// fbApp.directive('preventDefault', function() {
-//     return function(scope, element, attrs) {
-//         jQuery(element).click(function(event) {
-//             event.preventDefault();
-//         });
-//     }
-// });
-
-// fbApp.directive("scrollTo", ["$window", function($window){
-//     return {
-//         restrict : "AC",
-//         compile : function(){
-
-//             function scrollInto(elementId) {
-//                 if(!elementId) $window.scrollTo(0, 0);
-//                 //check if an element can be found with id attribute
-//                 var el = document.getElementById(elementId);
-//                 if(el) el.scrollIntoView();
-//             }
-
-//             return function(scope, element, attr) {
-//                 element.bind("click", function(event){
-//                     scrollInto(attr.scrollTo);
-//                 });
-//             };
-//         }
-//     };
-// }]);
-// // =============================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// fbApp.directive('preventDefault', function() {
-//     return function(scope, element, attrs) {
-//         jQuery(element).click(function(event) {
-//             event.preventDefault();
-//         });
-//     }
-// });
+        angular.element($window).bind('scroll', function() {
+            scope.visible = false;
+            scope.$apply();
+            [].slice.call(parallax).forEach(function(el,i){
+                var aboutSection = angular.element(document.querySelector('#aboutSection'));
+                if (aboutSection.length){
+                    var aboutSectionFromTop = aboutSection.offset().top,
+                        moveFromTop = aboutSectionFromTop - $window.pageYOffset,
+                        windowYOffset = moveFromTop,
+                        elBackgrounPos = "50% " + (windowYOffset * speed) + "px";
+                    el.style.backgroundPosition = elBackgrounPos;
+                }
+            });
+        });
+    };
+});
 
 // angular.module('App', [])
 // 	.filter('reverse',[function(){

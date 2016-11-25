@@ -1,0 +1,101 @@
+@import "_variables";
+.flip {
+  -webkit-perspective: 800;
+  height: 350px;
+  position: relative;
+  margin: 0 auto;
+  .card {
+    border: 1px solid $light-grey;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: 0.5s;
+    &.flipped {
+      -webkit-transform: rotatey(-180deg);
+    }
+    .face {
+      border-bottom-left-radius: 15px;
+      border-bottom-right-radius: 15px;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      -webkit-backface-visibility: hidden ;
+      z-index: 2;
+      text-align: center;
+      .content-main {
+        .ui-image {
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          overflow: hidden;
+          height: 281px;
+          img {
+            width: 100%;
+            height: auto;
+          }
+        }
+        .ui-details {
+          background: rgba(0,0,0,0.6);
+          bottom: 100px;
+          color: $white;
+          display: table;
+          height: 100px;
+          position: relative;
+          width: 100%;
+          z-index: 10;
+          .ui-details-holder {
+            display: table-cell;
+            vertical-align: middle;
+            .ui-client-text {
+              font-size: 18px;
+              font-weight: 400;
+              line-height: 1;
+            }
+            .ui-name-text {}
+          }
+        }
+      }
+      .content-footer {
+        border-top: 1px solid #cccccc;
+        bottom: 0;
+        cursor: pointer;
+        left: 0;
+        padding: 20px 0;
+        position: absolute;
+        width: 100%;
+        i {
+          color: $light-grey;
+        }
+      }
+    }
+    .front {
+      position: absolute;
+      z-index: 1;
+      color: $black;
+    }
+    .back {
+      -webkit-transform: rotatey(-180deg);
+      color: $black;
+      // display: table;
+      .content-main {
+        padding: 20px;
+        // display: table-cell;
+        // vertical-align: middle;
+        .ui-client-text {
+          font-size: 24px;
+          line-height: 1;
+          margin-bottom: 20px;
+        }
+        .ui-name-text {
+          font-size: 20px;
+          line-height: 1;
+          margin-bottom: 20px;
+        }
+        .ui-url {
+          line-height: 1;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
