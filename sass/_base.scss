@@ -1,4 +1,5 @@
 @import "_defaults";
+@import "_flip-card";
 
 .navbar {
     padding: 20px 0;
@@ -86,6 +87,8 @@ section {
     transition: all .5s ease-in-out,top .5s ease-in-out;
     width: 100%;
 
+    @import "_parallax";
+
     .external-link {
         color: $grey;
         font-size: 15px; 
@@ -118,6 +121,10 @@ section {
         background-color: $super-light-grey;
         color: $dark-grey;
     }
+    &.near-white-bg {
+        background-color: $near-white;
+        color: $dark-grey;
+    }
 
     // Home Page
     &#welcome {
@@ -134,16 +141,20 @@ section {
     &#whatIDoSection {}
     &#aboutSection {
         padding-top: 0;
-        /* The image used */
-        background-image: url("/images/img_parallax.jpg");
-        color: $white;
+        &.parallax {
+            background-image: url("/images/img_parallax.png");
+            color: $white;
 
-        /* Create the parallax scrolling effect */
-        background-attachment: fixed;
-        background-position: center;
-        background-repeat: no-repeat;
-        background-size: cover;
-        padding-top: 0;
+            background-size: cover;
+            -webkit-overflow-scrolling: touch;
+            -moz-overflow-scrolling: touch;
+            overflow-scrolling: touch;
+
+            -webkit-transition: none !important;
+            -moz-transition: none !important;
+            -o-transition: none !important;
+            transition: none !important;
+        }
     }
     &#whatPeopleThinkSection {
         padding-top: 0;
@@ -175,34 +186,119 @@ section {
             font-style: italic;
             text-align: left;
             margin-bottom: 0;
-            // quotes: "“" "”" "‘" "’";
-            // &:before {
-            //     content: open-quote;
-            // }
-            // &:after {
-            //     content: close-quote;
-            // }
         }
     }
     
     // Profile Page
     &#profilePage {
         background-color: $near-white;
-        padding-top: 120px;
     }
+
+    // Portfolio Section
+    &#portfolioSection {
+        padding-top: 50px;
+        .container {
+            .row-fluid {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
+        }
+    }
+
+    &.standard-section {
+        height: inherit;
+        min-height: inherit;
+        padding-bottom: 20px;
+        padding-top: 20px;
+
+        h2 {
+            margin: 0 0 30px 0;
+        }
+    }
+
     &.profile-page {
-        height: auto;
-        // margin-bottom: 20px;
-        min-height: auto;
+        height: inherit;
+        min-height: inherit;
         padding-bottom: 20px;
         padding-top: 20px;
         &.career-summary-title {
+            border-bottom: 1px solid #f1f1f1;
             margin: 40px 0 0 0;
             padding: 0;
         }
         &.career-summary {
             &:nth-child(2n) {
                 background-color: $near-white;
+            }
+
+            .career-details-above-the-fold {
+                position: relative;
+                .show-hide-details-container {
+                    border-radius: 50%;
+                    cursor: pointer;
+                    line-height: 2;
+                    padding-bottom: 0;
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    border: 1px solid #666666;
+                    .show-hide-symbol {
+                        width: 40px;
+                        height: 40px;
+                        color: $grey;
+                        text-align: center;
+                        &.plus {
+                            &:before {
+                                content: '+';
+                                font-size: 50px;
+                                display: inline-block;
+                                vertical-align:middle;
+                                line-height:0;
+                                padding-bottom: 10px;
+                                
+                                position: absolute;
+                                top: 17px;
+                                left: 5px;
+
+                                -moz-transition: 0.5s all;
+                                -webkit-transition: 0.5s all;
+                            }
+                        }
+                        &.minus {
+                            &:before {
+                                content: '–';
+                                font-size: 50px;
+                                display: inline-block;
+                                vertical-align:middle;
+                                line-height:0;
+                                padding-bottom: 10px;
+                                
+                                position: absolute;
+                                top: 16px;
+                                left: 7px;
+
+                                -moz-transition: 0.5s all;
+                                -webkit-transition: 0.5s all;
+                            }
+                        }
+                        &:hover {
+                            &:before {
+                                -moz-transform: rotate(360deg);
+                                -webkit-transform: rotate(360deg);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .scroll-arrow-container {
+            a {
+                &.scroll-arrow {
+                    &:hover {
+                        border-bottom: 1px solid #666666;
+                    }
+                }
             }
         }
         ul {
@@ -233,18 +329,18 @@ section {
                 margin-bottom: 10px;
                 margin-right: 10px;
                 padding: 5px 10px;
-                /*
-                    // &:after {
-                    //     content: ", ";
-                    //     // margin-right: 10px;
-                    // }
-                    // &:last-child {
-                    //     &:after {
-                    //         content: "";
-                    //     }
-                    // }
-                */
             }
+        }
+    }
+
+    &.back-to-top-section {
+        min-height: 130px;
+    }
+
+    &.first-section {
+        padding-top: 120px;
+        h1 {
+            margin: 0 0 10px;
         }
     }
 }
@@ -262,8 +358,6 @@ section {
         background-position-y: 5px;
         background-position-x: 10px;
         background-repeat: no-repeat;
-
-        // border: 1px solid $black;
         border-radius: 50%;
         height: 100%;
         width: 100%

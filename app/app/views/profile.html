@@ -1,111 +1,129 @@
-<section id="profilePage" class="profile-page center-content-container">
+<section id="profilePage" class="profile-page center-content-container first-section">
 	<div class="container">
-		<h1>Profile</h1>
-		<div ng-bind-html="fbArray[2].profileIntro"></div>
+		<h1 class="heading-margin">Profile</h1>
+		<div ng-bind-html="fbArray[3].profileIntro"></div>
 	</div>
 </section>
 
-
-<section class="profile-page career-summary-title">
+<section class="profile-page career-summary-title standard-section">
 	<div class="container">
 		<h2>Career Summary</h2>
 	</div>
 </section>
 
-<section class="profile-page career-summary" ng-repeat="careerSummary in fbArray[2].careerSummary">
+<section id="careerItem{{$index}}" class="profile-page career-summary" ng-repeat="careerSummary in fbArray[3].careerSummary track by $index">
 	<div class="container">
+		<div class="career-details-above-the-fold">
+			<!-- DATE / CLIENT -->
+			<div class="row-fluid" ng-if="careerSummary.dateWorked">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="date-worked bold" ng-bind-html="careerSummary.dateWorked"></p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<p class="client-name bold" ng-bind-html="careerSummary.clientName"></p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
 
-		<!-- DATE / CLIENT -->
-		<div class="row-fluid" ng-if="careerSummary.dateWorked">
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
-				<p class="date-worked bold" ng-bind-html="careerSummary.dateWorked"></p>
+			<!-- JOB TITLE -->
+			<div class="row-fluid" ng-if="careerSummary.jobTitle">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="position-txt bold">Position</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<p class="job-title" ng-bind-html="careerSummary.jobTitle"></p>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-				<p class="client-name bold" ng-bind-html="careerSummary.clientName"></p>
-			</div>
-			<div class="clearfix"></div>
+
+			<a class="show-hide-details-container" ng-click="showDetails = !showDetails">
+				<div class="show-hide-symbol plus" ng-show="showDetails"></div>
+				<div class="show-hide-symbol minus" ng-show="!showDetails"></div>
+				<div class="a11y">
+					<div class="plus" ng-show="showDetails">Show details</div>
+					<div class="minus" ng-show="!showDetails">Hide details</div>
+				</div>
+			</a>
 		</div>
 
-		<!-- JOB TITLE -->
-		<div class="row-fluid" ng-if="careerSummary.jobTitle">
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
-				<p class="title-txt bold">Title</p>
+		<div class="career-details-below-the-fold" ng-hide="showDetails">
+			<!-- PROJECT -->
+			<div class="row-fluid" ng-if="careerSummary.projectTitle">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="project-txt bold">Project</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<p class="project-title" ng-bind-html="careerSummary.projectTitle"></p>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-				<p class="job-title" ng-bind-html="careerSummary.jobTitle"></p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
 
-		<!-- PROJECT -->
-		<div class="row-fluid" ng-if="careerSummary.projectTitle">
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
-				<p class="project-txt bold">Project</p>
+			<!-- DESCRIPTION -->
+			<div class="row-fluid" ng-if="careerSummary.description">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="description-txt bold">Description</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<p class="description-title" ng-bind-html="careerSummary.description"></p>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-				<p class="project-title" ng-bind-html="careerSummary.projectTitle"></p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
 
-		<!-- DESCRIPTION -->
-		<div class="row-fluid" ng-if="careerSummary.description">
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
-				<p class="description-txt bold">Description</p>
+			<!-- WEBSITE -->
+			<div class="row-fluid" ng-if="careerSummary.websiteUrl.length > 0">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="website-txt bold">Website</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<ul class="website-url">
+						<li ng-repeat="url in careerSummary.websiteUrl">
+							<p>
+								<span class="external-link"></span>
+								<a ng-href="{{url}}" target="_blank">{{url}} <span class="a11y">(this site opens in a new window)</span></a>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-				<p class="description-title" ng-bind-html="careerSummary.description"></p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
 
-		<!-- WEBSITE -->
-		<div class="row-fluid" ng-if="careerSummary.websiteUrl.length > 0">
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
-				<p class="website-txt bold">Website</p>
+			<!-- TECHNOLOGIES -->
+			<div class="row-fluid" ng-if="careerSummary.technologiesUsed.length > 0">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="technologies-used-txt bold">Technologies used</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<p class="technologies-used-list">
+						<span ng-repeat="techUsed in careerSummary.technologiesUsed">{{techUsed}}</span>
+						<div class="clearfix"></div>
+					</p>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-				<ul class="website-url">
-					<li ng-repeat="url in careerSummary.websiteUrl">
-						<p>
-							<span class="external-link"></span>
-							<a ng-href="{{url}}" target="_blank">{{url}} <span class="a11y">(this site opens in a new window)</span></a>
-						</p>
-					</li>
-				</ul>
-			</div>
-			<div class="clearfix"></div>
-		</div>
 
-		<!-- TECHNOLOGIES -->
-		<div class="row-fluid" ng-if="careerSummary.technologiesUsed.length > 0">
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
-				<p class="technologies-used-txt bold">Technologies used</p>
+			<!-- RESPONSIBILITIES -->
+			<div class="row-fluid" ng-if="careerSummary.responsibilitiesAndInvolvement.length > 0">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="technologies-used-txt bold">Responsibilities</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<ul class="responsibilities-list">
+						<li ng-repeat="responsibility in careerSummary.responsibilitiesAndInvolvement">
+							<p ng-bind-html="responsibility"></p>
+						</li>
+					</u>
+				</div>
+				<div class="clearfix"></div>
 			</div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-				<p class="technologies-used-list">
-					<span ng-repeat="techUsed in careerSummary.technologiesUsed">{{techUsed}}</span>
-					<div class="clearfix"></div>
-				</p>
-			</div>
-			<div class="clearfix"></div>
-		</div>
-
-		<!-- RESPONSIBILITIES -->
-		<div class="row-fluid" ng-if="careerSummary.responsibilitiesAndInvolvement.length > 0">
-			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
-				<p class="technologies-used-txt bold">Responsibilities</p>
-			</div>
-			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-				<ul class="responsibilities-list">
-					<li ng-repeat="responsibility in careerSummary.responsibilitiesAndInvolvement">
-						<p ng-bind-html="responsibility"></p>
-					</li>
-				</u>
-			</div>
-			<div class="clearfix"></div>
 		</div>
 	</div>
+	<!--
+	<div class="scroll-arrow-container page-scroll">
+		<a class="nav-link nav-desktop scroll-arrow" scroll-to="#careerItem{{$index+1}}">
+			<i class="fa fa-angle-down"></i>
+		</a>
+	</div>
+	-->
 </section>
 
 <section class="profile-page">
@@ -116,5 +134,16 @@
 		</ul>
 
 		<h2>Qualification &amp; Education</h2>
+
+	</div>
+</section>
+
+<section class="profile-page back-to-top-section">
+	<div class="container">
+		<div class="scroll-arrow-container page-scroll">
+			<a class="nav-link nav-desktop scroll-arrow up" scroll-to="#profilePage">
+				<i class="fa fa-angle-double-up"></i>
+			</a>
+		</div>
 	</div>
 </section>

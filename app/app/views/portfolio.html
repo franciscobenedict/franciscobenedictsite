@@ -1,5 +1,18 @@
-<section class="center-content-container ">
+<section class="standard-section first-section">
 	<div class="container">
-		<h1>Portfolio page</h1>
+		<h1 class="heading-margin">Portfolio</h1>
+		<div ng-bind-html="fbArray[2].portfolioIntro"></div>
 	</div>
+</section>
+
+<section id="portfolioSection" class="near-white-bg standard-section">
+	<div class="container">
+		<h2>User Interfaces</h2>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom30" ng-repeat="flipCard in fbArray[2].flipCards track by $index">
+				<div ng-include="'./app/directives/flip-card.html'" flip-card-content="flipCard"></div>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
 </section>
