@@ -20,7 +20,13 @@
             <div class="content-main">
             	<div class="ui-client-text">{{flipCard.backPanel.client}}</div>
             	<div class="ui-name-text">{{flipCard.backPanel.name}}</div>
-            	<a class="dont-break-out" ng-href="flipCard.backPanel.webUrl" target="_blank">{{flipCard.backPanel.webFriendlyUrl}}</a>
+                <div class="dont-break-out ui-url">
+                    <span ng-if="flipCard.backPanel.webUrl" class="external-link"></span>
+                    <a ng-href="{{flipCard.backPanel.webUrl}}" target="_blank">
+                        <span>{{flipCard.backPanel.webFriendlyUrl}}</span> 
+                        <span class="a11y">(this site opens in a new window)</span>
+                    </a>
+                </div>
             </div>
             <div class="content-footer" ng-click="isFlipped=!isFlipped">
             	<i class="fa fa-reply"></i>&nbsp;<span>Back</span>
