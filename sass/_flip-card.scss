@@ -13,6 +13,10 @@
     -webkit-transition: 0.5s;
     &.flipped {
       -webkit-transform: rotatey(-180deg);
+      .back {
+        background-color: #f1f1f1;
+        border-radius: 15px;
+      }
     }
     .face {
       border-bottom-left-radius: 15px;
@@ -74,26 +78,23 @@
       color: $black;
     }
     .back {
-      -webkit-transform: rotatey(-180deg);
       color: $black;
-      // display: table;
+      -webkit-transform: rotatey(-180deg);
       .content-main {
         padding: 20px;
-        // display: table-cell;
-        // vertical-align: middle;
         .ui-client-text {
           font-size: 24px;
           line-height: 1;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
         }
         .ui-name-text {
           font-size: 20px;
           line-height: 1;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
         }
         .ui-url {
           line-height: 1;
-          margin-bottom: 20px;
+          margin-bottom: 30px;
         }
       }
     }
