@@ -7,8 +7,8 @@
 	            </div>
 	            <div class="ui-details">
 	            	<div class="ui-details-holder">
-		            	<div class="ui-client-text">{{flipCard.frontPanel.client}}</div>
-		            	<div class="ui-name-text">{{flipCard.frontPanel.name}}</div>
+		            	<div ng-if="flipCard.frontPanel.client" class="ui-client-text" ng-bind-html="flipCard.frontPanel.client"></div>
+		            	<div ng-if="flipCard.frontPanel.name" class="ui-name-text" ng-bind-html="flipCard.frontPanel.name"></div>
             		</div>
             	</div>
             </div>
@@ -18,15 +18,22 @@
         </div> 
         <div class="face back">
             <div class="content-main">
-            	<div class="ui-client-text">{{flipCard.backPanel.client}}</div>
-            	<div class="ui-name-text">{{flipCard.backPanel.name}}</div>
-                <div class="dont-break-out ui-url">
+            	<div ng-if="flipCard.backPanel.client" class="ui-client-text" ng-bind-html="flipCard.backPanel.client"></div>
+            	<div ng-if="flipCard.backPanel.name" class="ui-name-text" ng-bind-html="flipCard.backPanel.name"></div>
+                <div ng-if="flipCard.backPanel.webUrl" class="dont-break-out ui-url">
                     <span ng-if="flipCard.backPanel.webUrl" class="external-link"></span>
                     <a ng-href="{{flipCard.backPanel.webUrl}}" target="_blank">
-                        <span>{{flipCard.backPanel.webFriendlyUrl}}</span> 
+                        <span ng-bind-html="flipCard.backPanel.webFriendlyUrl"></span> 
                         <span class="a11y">(this site opens in a new window)</span>
                     </a>
                 </div>
+                <div ng-if="flipCard.backPanel.date" class="date" ng-bind-html="flipCard.backPanel.date"></div>
+                <span ng-if="flipCard.backPanel.lastUpdateMade" ng-bind-html="flipCard.backPanel.lastUpdateMade"></span>
+                <div ng-if="flipCard.backPanel.jobTitle" class="job-title" ng-bind-html="flipCard.backPanel.jobTitle"></div>
+                <div ng-if="flipCard.backPanel.technologiesUsed.length > 0" class="technologies-used">
+                    <span ng-repeat="techUsed in flipCard.backPanel.technologiesUsed">{{techUsed}}</span>
+                </div>
+                <div class="clearfix"></div>
             </div>
             <div class="content-footer" ng-click="isFlipped=!isFlipped">
             	<i class="fa fa-reply"></i>&nbsp;<span>Back</span>
