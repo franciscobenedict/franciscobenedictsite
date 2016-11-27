@@ -16,7 +16,7 @@
             	<i class="fa fa-mail-forward"></i>&nbsp;<span>Flip card</span>
             </div>
         </div> 
-        <div class="face back">
+        <div class="face back" ng-init="model = {}">
             <div class="content-main">
             	<div ng-if="flipCard.backPanel.client" class="ui-client-text" ng-bind-html="flipCard.backPanel.client"></div>
             	<div ng-if="flipCard.backPanel.name" class="ui-name-text" ng-bind-html="flipCard.backPanel.name"></div>
@@ -30,7 +30,18 @@
                 <div ng-if="flipCard.backPanel.date" class="date" ng-bind-html="flipCard.backPanel.date"></div>
                 <span ng-if="flipCard.backPanel.lastUpdateMade" ng-bind-html="flipCard.backPanel.lastUpdateMade"></span>
                 <div ng-if="flipCard.backPanel.jobTitle" class="job-title" ng-bind-html="flipCard.backPanel.jobTitle"></div>
-                <div ng-if="flipCard.backPanel.technologiesUsed.length > 0" class="technologies-used">
+                
+                <!-- Technologoies used section -->
+                <div class="btn-tech-used" ng-click="model.showTechUsed = !model.showTechUsed">
+                    <span>Technologies used</span>
+                </div>
+                <div ng-if="flipCard.backPanel.technologiesUsed.length > 0" class="technologies-used-container" ng-show="model.showTechUsed">
+                    <div class="close-tech-container text-right">
+                        <div class="flip-title">
+                            Technologies used
+                            <i class="fa fa-times" aria-hidden="true" ng-click="model.showTechUsed = !model.showTechUsed"></i>
+                        </div>
+                    </div>
                     <span ng-repeat="techUsed in flipCard.backPanel.technologiesUsed">{{techUsed}}</span>
                 </div>
                 <div class="clearfix"></div>

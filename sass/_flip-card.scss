@@ -86,18 +86,18 @@
         .ui-client-text {
           font-size: 24px;
           line-height: 1;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
         }
         .ui-name-text {
           font-size: 20px;
           line-height: 1;
-          margin-bottom: 20px;
+          margin-bottom: 15px;
         }
         .ui-url {
           display: block;
           display: -webkit-box;
           height: 26px;
-          margin: 0 auto 20px;
+          margin: 0 auto 15px;
           font-size: 15px;
           line-height: 1.4;
           -webkit-line-clamp: 1;
@@ -105,15 +105,70 @@
           overflow: hidden;
           text-overflow: ellipsis;
         }
-        .technologies-used {
+
+        .btn-tech-used {
+          margin-top: 10px;
+          span {
+            background: rgba(0,0,0,0.1);
+            border-radius: 4px;
+            color: $black;
+            cursor: pointer;
+            padding: 5px 10px;
+            position: relative;
+            -webkit-transition: all .2s ease-in-out;
+            -moz-transition: all .2s ease-in-out;
+            transition: all .2s ease-in-out;
+          }
+          &:hover {
+            span {
+              background: rgba(0,0,0,0.2);
+              color: $white;
+              -webkit-transition: all .2s ease-in-out;
+              -moz-transition: all .2s ease-in-out;
+              transition: all .2s ease-in-out;
+            }
+          }
+        }
+
+        .technologies-used-container {
+          background: $white;          
+          border-top-left-radius: 15px;
+          border-top-right-radius: 15px;
+          height: 280px;
+          left: 0;
+          padding: 10px;
+          position: absolute;
+          top: 0;
           text-align: center;
+          width: 100%;
+          .close-tech-container {
+            border-bottom: 1px solid #e1e1e1;
+            left: -10px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            position: relative;
+            width: calc(100% + 20px);
+            .flip-title {
+              color: $grey;
+              font-weight: 300;
+              font-size: 18px;
+              text-align: center;
+              text-transform: uppercase;
+              i {
+                cursor: pointer;
+                position: absolute;
+                right: 20px;
+                font-size: 2em;
+              }
+            }
+          }
           span {
             background: #dddddd;
             border-radius: 4px;
             color: #666666;
             display: inline-flex;
             display: -webkit-inline-flex;
-            font-size: 12px;
+            font-size: 15px;
             margin-bottom: 5px;
             margin-right: 5px;
             padding: 0px 5px;

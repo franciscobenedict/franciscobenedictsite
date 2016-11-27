@@ -166,3 +166,10 @@ Add .htaccess file with the following tackle refresh of non existent URLs:
 # UI Bootstrap
 
 Using Angular dependency UI Bootstrap `https://angular-ui.github.io/bootstrap/`
+
+
+# Github API
+
+I made use of the Github API. The isolated working example is [here, (Github API)](https://github.com/franciscobenedict/github-api).
+
+This can be seen on my [website](http://www.franciscobenedict.com/portfolio) on the [Portfolio page](http://www.franciscobenedict.com/portfolio) under the [Github section](http://www.franciscobenedict.com/portfolio)

@@ -1,7 +1,7 @@
-<section class="standard-section first-section">
+<section id="portfolioTopPage" class="standard-section first-section">
 	<div class="container">
 		<h1 class="heading-margin">Portfolio</h1>
-		<div ng-bind-html="fbArray[2].portfolioIntro"></div>
+		<p ng-bind-html="fbArray[2].portfolioIntro"></p>
 	</div>
 </section>
 
@@ -15,4 +15,61 @@
 		</div>
 	</div>
 	<div class="clearfix"></div>
+</section>
+
+<section id="githubSection" class="light-grey-bg standard-section">
+	<div class="container">
+		<h2>Github</h2>
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<p ng-bind-html="fbArray[2].githubSection.githubIntro"></p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-bottom30">
+				<div class="github-icon">
+					<a ng-href="{{fbArray[2].githubSection.githubUrl}}" target="_blank">
+						<i class="fa fa-github" aria-hidden="true"></i>
+					</a>
+					<div class="clearfix"></div>
+					<a ng-href="{{fbArray[2].githubSection.githubUrl}}" target="_blank" class="url-link">
+						<span ng-if="fbArray[2].githubSection.githubUrl" class="external-link"></span>
+						<p ng-bind-html="fbArray[2].githubSection.githubFriendlyUrl"></p>
+						<span class="a11y">(this site opens in a new window)</span>
+					</a>
+				</div>
+				<div class="clearfix"></div>
+				<p ng-bind-html="fbArray[2].githubSection.githubParagraph"></p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+				<h2>Github repositories</p>
+			</div>
+			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 margin-bottom30">
+				<ul class="github-repos">
+					<li ng-repeat="repo in githubResult">
+						<h3 class="" ng-if="repo.name" ng-bind-html="repo.name"></h3>
+						<span class="external-link pull-left"></span>
+						<div ng-if="repo.html_url" class="url-holder">
+							<!-- dont-break-out -->
+							<a class="" ng-href="{{repo.html_url}}" target="_blank">
+								<p class="dont-break-out">
+									<span class="" ng-bind-html="repo.html_url"></span>
+								</p>
+								<span class="a11y">(this site opens in a new window)</span>
+							</a>
+						</div>
+					</li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+		</div>
+	</div>
+</section>
+
+<section class="profile-page back-to-top-section light-grey-bg">
+	<div class="container">
+		<div class="scroll-arrow-container page-scroll">
+			<a class="nav-link nav-desktop scroll-arrow up" scroll-to="#portfolioTopPage">
+				<i class="fa fa-angle-double-up"></i>
+			</a>
+		</div>
+	</div>
 </section>
