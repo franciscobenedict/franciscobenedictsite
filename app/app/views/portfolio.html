@@ -46,7 +46,7 @@
 				<ul class="github-repos">
 					<li ng-repeat="repo in githubResult">
 						<h3 class="" ng-if="repo.name" ng-bind-html="repo.name"></h3>
-						<span class="external-link pull-left"></span>
+						<span class="external-link github-repos pull-left"></span>
 						<div ng-if="repo.html_url" class="url-holder">
 							<!-- dont-break-out -->
 							<a class="" ng-href="{{repo.html_url}}" target="_blank">

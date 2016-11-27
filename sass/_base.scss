@@ -278,13 +278,18 @@ section {
                                 overflow: hidden;
                                 text-overflow: ellipsis;
                             }
+                            span.external-link {
+                                &.github-repos { 
+                                    margin-top: 3px;
+                                }
+                            }
                             .url-holder {
                                 a {
                                     p {
                                         margin: 0;
                                         display: block;
                                         display: -webkit-box;
-                                        height: 26px;
+                                        height: 33px;
                                         margin: 0 auto;
                                         line-height: 1.4;
                                         -webkit-line-clamp: 1;
