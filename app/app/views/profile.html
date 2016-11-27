@@ -1,7 +1,7 @@
 <section id="profilePage" class="profile-page center-content-container first-section">
 	<div class="container">
 		<h1 class="heading-margin">Profile</h1>
-		<div ng-bind-html="fbArray[3].profileIntro"></div>
+		<p ng-bind-html="fbArray[3].profileIntro"></p>
 	</div>
 </section>
 
@@ -21,6 +21,17 @@
 				</div>
 				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
 					<p class="client-name bold" ng-bind-html="careerSummary.clientName"></p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
+			<!-- End client -->
+			<div class="row-fluid" ng-if="careerSummary.endClientName">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="position-txt bold">End client</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<p class="job-title" ng-bind-html="careerSummary.endClientName"></p>
 				</div>
 				<div class="clearfix"></div>
 			</div>

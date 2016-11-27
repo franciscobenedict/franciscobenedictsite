@@ -194,13 +194,128 @@ section {
         background-color: $near-white;
     }
 
-    // Portfolio Section
-    &#portfolioSection {
+    // Portfolio / GitHub Section
+    &#portfolioSection, &#githubSection {
         padding-top: 30px;
         .container {
             .row-fluid {
                 margin-left: -15px;
                 margin-right: -15px;
+            }
+        }
+    }
+
+    &#githubSection {
+        .container {
+            .row-fluid {
+                .github-icon {
+                    height: 100px;
+                    margin-bottom: 20px;
+                    position: relative;
+                    a {
+                        border: 0;
+                        font-size: 15px;
+                        i {
+                            font-size: 4em;
+                            -webkit-transition: all .2s ease-in-out;
+                            -moz-transition: all .2s ease-in-out;
+                            transition: all .2s ease-in-out;
+                        }
+                        &.url-link  {
+                            left: 25px;
+                            position: absolute;
+                            top: 70px;
+                        }
+                        .external-link {
+                            left: -25px;
+                            position: absolute;
+                            top: 6px;
+                        }
+                        p {
+                            border-bottom: 1px solid $light-grey;
+                            padding-bottom: -2px;
+                            -webkit-transition: all .2s ease-in-out;
+                            -moz-transition: all .2s ease-in-out;
+                            transition: all .2s ease-in-out;
+                        }
+                    }
+
+                    &:hover {
+                        a {
+                            border: 0;
+                            i {
+                                -webkit-transition: all .2s ease-in-out;
+                                -moz-transition: all .2s ease-in-out;
+                                transition: all .2s ease-in-out;
+                            }
+                            p {
+                                border-bottom: 1px dashed $light-grey;
+                                padding-bottom: 2px;
+                                -webkit-transition: all .2s ease-in-out;
+                                -moz-transition: all .2s ease-in-out;
+                                transition: all .2s ease-in-out;
+                            }
+                        }
+                    }
+                }
+                ul {
+                    &.github-repos {
+                        list-style: none;
+                        margin: 0;
+                        padding: 0;
+
+                        li {
+                            margin-bottom: 40px;
+                            h3 {
+                                margin: 0;
+
+                                display: block;
+                                height: 33px;
+                                margin: 0 auto;
+                                line-height: 1.4;
+                                -webkit-line-clamp: 1;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                text-overflow: ellipsis;
+                            }
+                            .url-holder {
+                                a {
+                                    p {
+                                        margin: 0;
+                                        display: block;
+                                        display: -webkit-box;
+                                        height: 26px;
+                                        margin: 0 auto;
+                                        line-height: 1.4;
+                                        -webkit-line-clamp: 1;
+                                        -webkit-box-orient: vertical;
+                                        overflow: hidden;
+                                        text-overflow: ellipsis;
+
+                                        span {
+                                            border-bottom: 1px solid $light-grey;
+                                            padding-bottom: 2px;
+                                            -webkit-transition: all .2s ease-in-out;
+                                            -moz-transition: all .2s ease-in-out;
+                                            transition: all .2s ease-in-out;
+                                        }
+                                    }
+                                    &:hover {
+                                        p {
+                                            span {
+                                                border-bottom: 1px dashed $light-grey;
+                                                padding-bottom: 6px;
+                                                -webkit-transition: all .2s ease-in-out;
+                                                -moz-transition: all .2s ease-in-out;
+                                                transition: all .2s ease-in-out;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
             }
         }
     }
@@ -341,6 +456,9 @@ section {
         padding-top: 120px;
         h1 {
             margin: 0 0 10px;
+        }
+        p {
+            margin-bottom: 10px;
         }
     }
 }
