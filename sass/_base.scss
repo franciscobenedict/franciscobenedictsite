@@ -164,6 +164,7 @@ section {
 
         #quoteCarousel ol.carousel-indicators {
             bottom: -60px;
+            z-index: 1;
             li {
                 border: 5px solid $white;
                 margin: 10px 5px;
@@ -195,7 +196,7 @@ section {
     }
 
     // Portfolio / GitHub Section
-    &#portfolioSection, &#githubSection {
+    &#portfolioSection, &#githubSection, &#keyProfessionalSkillsSection, &#qualificationAndEducationSection {
         padding-top: 30px;
         .container {
             .row-fluid {
@@ -205,7 +206,20 @@ section {
         }
     }
 
+    &#keyProfessionalSkillsSection, &#qualificationAndEducationSection {
+        padding-top: 80px;
+        .container {
+            ul {
+                &.key-skills-list {
+                    list-style: disc;
+                    padding-left: 20px;
+                }
+            }
+        }
+    }
+
     &#githubSection {
+        padding-top: 80px;
         .container {
             .row-fluid {
                 .github-icon {

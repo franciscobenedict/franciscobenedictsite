@@ -128,22 +128,21 @@
 			</div>
 		</div>
 	</div>
-	<!--
-	<div class="scroll-arrow-container page-scroll">
-		<a class="nav-link nav-desktop scroll-arrow" scroll-to="#careerItem{{$index+1}}">
-			<i class="fa fa-angle-down"></i>
-		</a>
-	</div>
-	-->
 </section>
 
-<section class="profile-page">
+<section id="keyProfessionalSkillsSection" class="profile-page">
 	<div class="container">
 		<h2>Key professional skills</h2>
-		<ul>
-			<li></li>
+		<ul class="key-skills-list page-scroll">
+			<li ng-repeat="keySkill in fbArray[3].keyProfessionalSkills track by $index">
+				<p  ng-bind-html="keySkill"></p>
+			</li>
 		</ul>
+	</div>
+</section>
 
+<section id="qualificationAndEducationSection" class="profile-page light-grey-bg">
+	<div class="container">
 		<h2>Qualification &amp; Education</h2>
 
 	</div>
