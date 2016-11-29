@@ -5,22 +5,34 @@ fbApp.config(function($routeProvider, $locationProvider) {
     $routeProvider
         .when("/home", { redirectTo: "/" })
         .when("/", {
-            templateUrl: "../app/views/home.html"
+            templateUrl: "../app/views/home.html",
+            title: "Francisco Benedict: the developer"
         })
         .when("/profile", {
-            templateUrl: "../app/views/profile.html"
+            templateUrl: "../app/views/profile.html",
+            title: "The profile of Francisco Benedict: career summary, key professional skills, qualification and Education"
         })
         .when("/portfolio", {
-            templateUrl: "../app/views/portfolio.html"
+            templateUrl: "../app/views/portfolio.html",
+            title: "View the portfolio of Francisco Benedict: see web User Interfaces I've created and links to my Github repos"
         })
-        .when("/contactme", {
-            templateUrl: "../app/views/contactme.html"
+        .when("/contact-me", {
+            templateUrl: "../app/views/contactme.html",
+            title: "Get in touch with Francisco Benedict"
         })
         .otherwise({
             redirectTo: "/page-not-found",
-            templateUrl: "../app/views/404.html"
+            templateUrl: "../app/views/404.html",
+            title: "This page is not found on the www.franciscobenedict.com website"
         });
 });
+
+fbApp.run(['$rootScope', function($rootScope) {
+    $rootScope.$on('$routeChangeSuccess', function (event, current, previous) {
+        $rootScope.title = current.$$route.title;
+    });
+}]);
+
 
 fbApp.controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$location', '$element', '$window',
     function($rootScope, $scope, $firebaseArray, $location, $element, $window) {
