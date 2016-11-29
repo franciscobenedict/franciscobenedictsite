@@ -1,5 +1,5 @@
 <!doctype html>
-<html data-ng-app="FBApp" lang="en">
+<html lang="en" data-ng-app="FBApp" ng-strict-di="ng-strict-di" xmlns:xlink="http//www.w3.org/1999/xlink" ng-controller="AppCtrl">
    <head>
       <meta charset="utf-8">
       
@@ -31,13 +31,13 @@
    
    <body id="pageTop" ng-cloak data-spy="scroll" data-target=".secondary-nav" ng-controller="AppCtrl">
 
-      <div ng-include="'./app/directives/nav.html'"></div>
+      <div ng-include="'./app/views/partials/nav.html'"></div>
       
-      <div ng-include="'./app/directives/secondary-nav.html'" ng-show="showSecondaryNav('/')"></div>
+      <div ng-include="'./app/views/partials/secondary-nav.html'" ng-show="showSecondaryNav('/')"></div>
 
       <span ng-view></span>
       
-      <div ng-include="'./app/directives/footer.html'"></div>
+      <div ng-include="'./app/views/partials/footer.html'"></div>
 
       <!-- BASE URL -->
       <script>document.write("<base href=\"" + document.location + "\" />");</script>
@@ -85,6 +85,17 @@
       <script src="js/grayscale.js"></script>
 
       <!-- App JS File -->
-      <script src="js/app.js"></script>
+      <script src="app/app.js"></script>
+      <script src="app/routes.js"></script>
+
+      <!-- Load modules -->
+      <script src="app/modules/secondarynavModule.js"></script>
+      <script src="app/modules/parallaxscrollingModule.js"></script>
+      <script src="app/modules/scrolltoModule.js"></script>
+      <script src="app/modules/appModule.js"></script>
+
+      <!-- Load controllers -->
+      <script src="app/controllers/appController.js"></script>
+
    </body>
 </html>
