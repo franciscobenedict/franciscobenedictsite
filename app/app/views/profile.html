@@ -145,6 +145,53 @@
 	<div class="container">
 		<h2>Qualification &amp; Education</h2>
 
+		<div class="row-fluid" ng-repeat="qualification in fbArray[3].qualificationAndEducation track by $index">
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" ng-if="qualification.attendanceDate">
+				<p class="bold" ng-bind-html="qualification.attendanceDate"></p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" ng-if="qualification.schoolName">
+				<p class="bold" ng-bind-html="qualification.schoolName"></p>
+			</div>
+
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" ng-if="qualification.courseOverview">
+				<p class="bold">Course</p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" ng-if="qualification.courseOverview">
+				<p class="" ng-bind-html="qualification.courseOverview"></p>
+			</div>
+
+			<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4" ng-if="qualification.courseDetail">
+				<p class="bold">Course</p>
+			</div>
+			<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8" ng-if="qualification.courseDetail">
+				<p class="" ng-bind-html="qualification.courseDetail"></p>
+			</div>
+
+			<div class="clearfix"></div>
+		</div>
+
+		<div class="clearfix"></div>
+		
+		<div class="row-fluid">
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<div class="download-cv">
+					<a href="cv/Francisco_Benedict's_CV.doc" download="Francisco Benedict's CV in Word Format.doc" target="_blank" type="application/octet-stream" title="Download a Word version of my C.V.">
+						<i class="fa fa-download" aria-hidden="true"></i>
+						<i class="fa fa-file-word-o" aria-hidden="true"></i>
+						<p>Download my CV</p>
+					</a>
+				</div>
+			</div>
+			<div class="col-xs-12 col-sm-6 col-md-6 col-lg-6">
+				<div class="download-cv">
+					<a href="cv/Francisco_Benedict's_CV.pdf" download="Francisco Benedict's CV in PDF Format.pdf" target="_blank" type="application/octet-stream" title="Download a PDF version of my C.V.">
+						<i class="fa fa-download" aria-hidden="true"></i>
+						<i class="fa fa-file-pdf-o" aria-hidden="true"></i>
+						<p>Download my CV</p>
+					</a>
+				</div>
+			</div>
+		</div>
 	</div>
 </section>
 

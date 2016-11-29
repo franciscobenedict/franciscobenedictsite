@@ -218,6 +218,44 @@ section {
         }
     }
 
+    &#qualificationAndEducationSection {
+        .container {
+            .row-fluid {
+                margin-bottom: 50px;
+                >div {
+                    p {
+                        margin-bottom: 0;
+                    }
+                    .download-cv {
+                        background: rgba(190,190,190,1);
+                        border-radius: 4px;
+                        cursor: pointer;
+                        margin-bottom: 40px;
+                        padding: 20px 0;
+                        text-align: center;
+                        -webkit-transition: all .2s ease-in-out;
+                        -moz-transition: all .2s ease-in-out;
+                        transition: all .2s ease-in-out;
+                        a {
+                            border: 0;
+                            color: $white;
+                            i {
+                                font-size: 1.4em;
+                                margin: 0 10px;
+                            }   
+                        }
+                        &:hover {
+                            background-color: rgba(0, 189, 255, 1);
+                            -webkit-transition: all .2s ease-in-out;
+                            -moz-transition: all .2s ease-in-out;
+                            transition: all .2s ease-in-out;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
     &#githubSection {
         padding-top: 80px;
         .container {
