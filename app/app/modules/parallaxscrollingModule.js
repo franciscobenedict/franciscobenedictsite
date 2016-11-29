@@ -1,5 +1,5 @@
 (function () {
     'use strict';
 
-    angular.module('modules.parallaxscrolling', []);
+    angular.module('franciscobenedict.modules.parallaxscrolling', []);
 }());

@@ -1,5 +1,5 @@
 (function () {
     'use strict';
 
-    angular.module('modules.secondarynav', []);
+    angular.module('franciscobenedict.modules.secondarynav', []);
 }());

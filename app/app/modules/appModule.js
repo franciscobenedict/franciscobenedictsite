@@ -1,5 +1,5 @@
 (function () {
     'use strict';
 
-    angular.module('modules.app', []);
+    angular.module('franciscobenedict.modules.app', []);
 }());

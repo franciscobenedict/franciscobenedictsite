@@ -1,5 +1,5 @@
 (function () {
     'use strict';
 
-    angular.module('modules.scrollto', []);
+    angular.module('franciscobenedict.modules.scrollto', []);
 }());
