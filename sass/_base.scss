@@ -227,7 +227,7 @@ section {
                         margin-bottom: 0;
                     }
                     .download-cv {
-                        background: rgba(190,190,190,1);
+                        background-color: rgba(0, 189, 255, 1);
                         border-radius: 4px;
                         cursor: pointer;
                         margin-bottom: 40px;
@@ -245,7 +245,7 @@ section {
                             }   
                         }
                         &:hover {
-                            background-color: rgba(0, 189, 255, 1);
+                            background: rgba(190,190,190,1);
                             -webkit-transition: all .2s ease-in-out;
                             -moz-transition: all .2s ease-in-out;
                             transition: all .2s ease-in-out;
@@ -371,6 +371,11 @@ section {
                                 }
                             }
                         }
+                    }
+                }
+                p {
+                    a {
+                        border-color: $light-grey;
                     }
                 }
             }
