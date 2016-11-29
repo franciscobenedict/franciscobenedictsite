@@ -67,4 +67,24 @@ section {
     &.home-page-other-sections, &.other-pages {
         padding-top: 60px;
     }
+
+    &#githubSection {
+        .container {
+            .row-fluid {
+                ul {
+                    &.github-repos {
+                        li {
+                            .url-holder {
+                                a {
+                                    p {
+                                        height: 26px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
