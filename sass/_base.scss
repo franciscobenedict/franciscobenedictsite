@@ -141,19 +141,43 @@ section {
     &#whatIDoSection {}
     &#aboutSection {
         padding-top: 0;
+        position: relative;
         &.parallax {
-            background-image: url("/images/img_parallax.png");
+            // background-image: url("/images/img_parallax.png");
             color: $white;
 
             background-size: cover;
-            -webkit-overflow-scrolling: touch;
-            -moz-overflow-scrolling: touch;
-            overflow-scrolling: touch;
+            // -webkit-overflow-scrolling: touch;
+            // -moz-overflow-scrolling: touch;
+            // overflow-scrolling: touch;
 
             -webkit-transition: none !important;
             -moz-transition: none !important;
             -o-transition: none !important;
             transition: none !important;
+        }
+
+        .about-me-image, .about-me-shade {
+            height: 100vh;
+            position: absolute !important;
+            width: 100%;
+            .parallax-box {
+                border-left: 1px solid white;
+                border-right: 1px solid white;
+                float: left;
+                height: 100vh;
+                width: 20%;
+                &:first-child {
+                    border-left: 0;
+                }
+                &:last-child {
+                    border-right: 0;
+                }
+            }
+        }
+        .about-me-content {
+            color: $white;
+            position: relative;
         }
     }
     &#whatPeopleThinkSection {
@@ -227,7 +251,7 @@ section {
                         margin-bottom: 0;
                     }
                     .download-cv {
-                        background: rgba(190,190,190,1);
+                        background-color: rgba(0, 189, 255, 1);
                         border-radius: 4px;
                         cursor: pointer;
                         margin-bottom: 40px;
@@ -245,7 +269,7 @@ section {
                             }   
                         }
                         &:hover {
-                            background-color: rgba(0, 189, 255, 1);
+                            background: rgba(190,190,190,1);
                             -webkit-transition: all .2s ease-in-out;
                             -moz-transition: all .2s ease-in-out;
                             transition: all .2s ease-in-out;
@@ -371,6 +395,11 @@ section {
                                 }
                             }
                         }
+                    }
+                }
+                p {
+                    a {
+                        border-color: $light-grey;
                     }
                 }
             }

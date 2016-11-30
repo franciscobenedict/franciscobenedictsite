@@ -10,7 +10,7 @@
 		<h2>User Interfaces</h2>
 		<div class="row-fluid">
 			<div class="col-xs-12 col-sm-6 col-md-4 col-lg-4 margin-bottom30" ng-repeat="flipCard in fbArray[2].flipCards track by $index">
-				<div ng-include="'./app/directives/flip-card.html'" flip-card-content="flipCard"></div>
+				<div ng-include="'./app/views/directives/flip-card.html'" flip-card-content="flipCard"></div>
 			</div>
 		</div>
 	</div>
@@ -48,7 +48,6 @@
 						<h3 class="" ng-if="repo.name" ng-bind-html="repo.name"></h3>
 						<span class="external-link github-repos pull-left"></span>
 						<div ng-if="repo.html_url" class="url-holder">
-							<!-- dont-break-out -->
 							<a class="" ng-href="{{repo.html_url}}" target="_blank">
 								<p class="dont-break-out">
 									<span class="" ng-bind-html="repo.html_url"></span>
