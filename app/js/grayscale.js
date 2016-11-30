@@ -1,5 +1,7 @@
 //jQuery to collapse the navbar on scroll
 $(window).scroll(function() {
+
+    // console.log('greyscale.js loaded');
     $('body').scrollspy({ target: '.secondary-nav' });
     
     if ($(".navbar").length) {
@@ -13,6 +15,7 @@ $(window).scroll(function() {
 
             // Shift secondary nav up
             $('.secondary-nav').addClass('shift-up');
+            $('.secondary-nav-mobile').addClass('shift-up');
 
         } else {
             // Top of screen
@@ -24,6 +27,7 @@ $(window).scroll(function() {
 
             // Shift secondary nav down
             $('.secondary-nav').removeClass('shift-up');
+            $('.secondary-nav-mobile').removeClass('shift-up');
         }
     }
 });

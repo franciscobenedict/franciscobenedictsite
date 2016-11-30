@@ -1,15 +1,14 @@
 <!doctype html>
-<html lang="en" data-ng-app="FBApp" ng-strict-di="ng-strict-di" xmlns:xlink="http//www.w3.org/1999/xlink" ng-controller="AppCtrl">
+<html lang="en" data-ng-app="FBApp" ng-strict-di="ng-strict-di" xmlns:xlink="http//www.w3.org/1999/xlink" ng-cloak>
    <head>
       <meta charset="utf-8">
       
       <base href="/">
 
-      <!-- <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
-
-      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,target-densitydpi=device-dpi, user-scalable=no" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+      <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,target-densitydpi=device-dpi, user-scalable=no" /> -->
       
-      <title ng-bind-html="title">Francisco Benedict: the developer</title>
+      <title ng-bind-html="title"></title>
 
       <!-- Normalize style -->
       <link rel="stylesheet" href="css/vendor/normalize/normalize.css">
@@ -29,15 +28,16 @@
       <link rel="stylesheet" href="css/style.css">
    </head>
    
-   <body id="pageTop" ng-cloak data-spy="scroll" data-target=".secondary-nav" ng-controller="AppCtrl">
+   <body id="pageTop" data-target=".secondary-nav" ng-controller="AppCtrl" > 
+   <!--  data-spy="scroll" -->
 
-      <div ng-include="'./app/views/partials/nav.html'"></div>
+      <div ng-include="'./app/views/directives/nav.html'"></div>
       
-      <div ng-include="'./app/views/partials/secondary-nav.html'" ng-show="showSecondaryNav('/')"></div>
+      <div ng-include="'./app/views/directives/secondary-nav.html'" ng-show="showSecondaryNav('/')"></div>
 
       <span ng-view></span>
       
-      <div ng-include="'./app/views/partials/footer.html'"></div>
+      <div ng-include="'./app/views/directives/footer.html'"></div>
 
       <!-- BASE URL -->
       <script>document.write("<base href=\"" + document.location + "\" />");</script>
@@ -81,6 +81,8 @@
       <!-- Latest compiled and minified JavaScript -->
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
+      <script src="js/vendor/ngparallax/ngParallax.min.js"> </script> 
+
       <!-- Custom Theme JavaScript -->
       <script src="js/grayscale.js"></script>
 
@@ -89,13 +91,12 @@
       <script src="app/routes.js"></script>
 
       <!-- Load modules -->
-      <script src="app/modules/secondarynavModule.js"></script>
-      <script src="app/modules/parallaxscrollingModule.js"></script>
-      <script src="app/modules/scrolltoModule.js"></script>
-      <script src="app/modules/appModule.js"></script>
-
+      <script src="app/modules/main/appModule.js"></script>
+      <script src="app/modules/scrollto/scrolltoModule.js"></script>
+      <script src="app/modules/scrollspy/scrollspyModule.js"></script>
+     
       <!-- Load controllers -->
-      <script src="app/controllers/appController.js"></script>
-
+      <script src="app/controllers/main/appController.js"></script>
+      
    </body>
 </html>

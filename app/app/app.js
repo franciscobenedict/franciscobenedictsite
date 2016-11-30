@@ -4,9 +4,9 @@ var fbApp = angular.module("FBApp", [
 	"firebase",
 	"ngSanitize",
 	"ui.bootstrap",
+	"ngParallax",
 
-	"franciscobenedict.modules.app",
-	"franciscobenedict.modules.parallaxscrolling",
+	"franciscobenedict.modules.main",
 	"franciscobenedict.modules.scrollto",
-	"franciscobenedict.modules.secondarynav"
+	"franciscobenedict.modules.scrollspy"
 ]);
