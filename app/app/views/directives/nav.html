@@ -11,38 +11,38 @@
          </a>
       </div>
 
-      <div id="mainMenu" class="collapse navbar-collapse navbar-right navbar-main-collapse">
+      <div id="mainMenu" class="collapse navbar-collapse navbar-right navbar-main-collapse" close-nav>
          <ul class="nav navbar-nav">
             <li class="">
-               <a id="home" class="" ng-click="checkLocation()" ng-href="/" scroll-to="#pageTop">Home</a>
+               <a id="home" class="" ng-href="/" scroll-to="#pageTop">Home</a>
             </li>
             <li class="">
-               <a id="profile" class="" ng-click="checkLocation()" ng-href="/profile" scroll-to="#pageTop">Profile</a>
+               <a id="profile" class="" ng-href="/profile" scroll-to="#pageTop">Profile</a>
             </li>
             <li class="">
-               <a id="portfolio" class="" ng-click="checkLocation()" ng-href="/portfolio" scroll-to="#pageTop">Portfolio</a>
+               <a id="portfolio" class="" ng-href="/portfolio" scroll-to="#pageTop">Portfolio</a>
             </li>
             <li class="">
-               <a id="contactCisco" class="" ng-click="checkLocation()" ng-href="/contact-me" scroll-to="#pageTop">Contact me</a>
+               <a id="contactCisco" class="" ng-href="/contact-me" scroll-to="#pageTop">Contact me</a>
             </li>
          </ul>
 
          <div class="clearfix"></div>
 
          <!-- Secondary Nav - Mobile -->
-         <nav class="secondary-nav-mobile" ng-show="showSecondaryNav('/')" secondary-nav-spy>
+         <nav class="secondary-nav-mobile" ng-show="showSecondaryNav('/')" close-nav>
             <ul id="mobileNav" class="list-inline nav">
-               <li class="page-scroll">
-                  <a class="nav-link" scroll-to="#pageTop" ng-click="scrollToSection()">Welcome</a>
+               <li class="page-scroll" data-scrollspy-listen="welcome">
+                  <a class="nav-link nav-desktop" scroll-to="#welcome">Welcome</a>
                </li>
-               <li class="page-scroll">
-                  <a class="nav-link" scroll-to="#whatIdoSection" ng-click="scrollToSection()">What I do</a>
+               <li class="page-scroll" data-scrollspy-listen="whatIdoSection">
+                  <a class="nav-link nav-desktop" scroll-to="#whatIdoSection">What I do</a>
                </li>
-               <li class="page-scroll">
-                  <a class="nav-link" scroll-to="#whatPeopleThinkSection" ng-click="scrollToSection()">What people think</a>
+               <li class="page-scroll" data-scrollspy-listen="whatPeopleThinkSection">
+                  <a class="nav-link nav-desktop" scroll-to="#whatPeopleThinkSection">What people think</a>
                </li>
-               <li class="page-scroll">
-                  <a class="nav-link" scroll-to="#aboutSection" ng-click="scrollToSection()">About me</a>
+               <li class="page-scroll" data-scrollspy-listen="aboutSection">
+                  <a class="nav-link nav-desktop" scroll-to="#aboutSection">About me</a>
                </li>
             </ul>
          </nav>

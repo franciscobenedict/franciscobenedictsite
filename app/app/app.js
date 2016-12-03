@@ -5,8 +5,11 @@ var fbApp = angular.module("FBApp", [
 	"ngSanitize",
 	"ui.bootstrap",
 	"ngParallax",
+	"ngScrollSpy",
 
 	"franciscobenedict.modules.main",
 	"franciscobenedict.modules.scrollto",
-	"franciscobenedict.modules.scrollspy"
+	"franciscobenedict.modules.closenav",
+	"franciscobenedict.modules.parallaxscrolling",
+	"franciscobenedict.modules.navcollapse"
 ]);
