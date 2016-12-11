@@ -1,5 +1,6 @@
 @import "_defaults";
 @import "_flip-card";
+// @import "../app/css/form-input-styles.css";
 
 .navbar {
     padding: 20px 0;
@@ -87,7 +88,7 @@ section {
     transition: all .5s ease-in-out,top .5s ease-in-out;
     width: 100%;
 
-    @import "_parallax";
+    // @import "_parallax";
 
     .external-link {
         color: $grey;
@@ -439,6 +440,165 @@ section {
                 p {
                     a {
                         border-color: $light-grey;
+                    }
+                }
+            }
+        }
+    }
+
+    &#contactMeSection {
+        .container {
+            form {
+                &#fbContactForm {
+                    margin-bottom: 100px;
+                    input[type='submit']#js_send {
+                        &.disabled {
+                            opacity: 0.65; 
+                            cursor: not-allowed;
+                        }
+                    }
+                    .alert {
+                        webkit-box-shadow: none;
+                        box-shadow: none;
+                        color: red;
+                        height: 30px;
+                        padding: 5px 0;
+                    }
+
+                    .form-control-group {
+                        .controls {
+                            margin-bottom: 40px;
+                            min-height: 60px;
+                            position: relative;
+                            label.new-label-style {
+                                background: rgba(0,0,0,0);
+                                display: table-header-group;
+                                color: #999;
+                                font-size: 20px;
+                                font-weight: 300;
+                                height: 48px;
+                                margin: 0;
+                                position: absolute;
+                                top: 12px;
+                                padding: 0;
+                                width: 100%;
+                                z-index: -1;
+                                transition: 0.2s all;
+                                -moz-transition: 0.2s all;
+                                -webkit-transition: 0.2s all;
+                            }
+
+                            input.new-input-style:focus + label.new-label-style,
+                            input.new-input-style:focus + label.new-label-style.input-is-filled,
+                            input.input-is-empty:focus + label.input-is-empty,
+                            // input.new-input-style.ng-dirty:focus + label.new-label-style,
+                            // input.new-input-style.ng-valid-parse + label.new-label-style,
+                            // input.new-input-style.valid + label.new-label-style,,
+                            // input.new-input-style.not-empty + label.new-label-style,
+                            //ng-not-empty
+                            // input.new-input-style.ng-touched + label.new-label-style,
+                            // input.new-input-style.ng-empty + label.new-label-style,
+                            // input.new-input-style.ng-invalid + label.new-label-style,
+                            
+                            //input.new-input-style.ng-invalid-required:focus + label.new-label-style,
+                            
+                            // input.new-input-style:focus, 
+                            label.new-label-style.input-is-filled {
+                                color: #ccc;
+                                font-size: 15px;
+                                top: 60px;
+                                transition: 0.2s all;
+                                -moz-transition: 0.2s all;
+                                -webkit-transition: 0.2s all;
+                            }
+
+                            input.new-input-style, 
+                            textarea.new-input-style {
+                                background: rgba(0,0,0,0);
+                                color: #999;
+                                border: 0;
+                                border-bottom: 1px solid #999;
+                                display: table-row-group;
+                                height: 60px;
+                                font-size: 20px;
+                                position: relative;
+                                width: 100%;
+                                z-index: 1;
+                                transition: 0.2s all;
+                                -moz-transition: 0.2s all;
+                                -webkit-transition: 0.2s all;
+                            }
+
+                            textarea.new-input-style {
+                                height: 200px;
+                            }
+                            
+
+                            input.new-input-style:focus, 
+                            input.input-is-filled,
+                            textarea.new-input-style:focus,
+                            textarea.textarea-is-filled {
+                                background: rgba(140,140,140,0.1);
+                                border-bottom: 4px solid #999;
+                                color: #666;
+                                outline: rgba(0,0,0,0) none 0;
+                                padding: 10px;
+                                transition: 0.2s all;
+                                -moz-transition: 0.2s all;
+                                -webkit-transition: 0.2s all;
+
+                                -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
+                                -moz-box-shadow: 0 0 0 rgba(0,0,0,0);
+                                box-shadow: 0 0 0 rgba(0,0,0,0);
+                            }
+
+                            textarea.new-input-style:focus + label.new-label-style,
+                            textarea.new-input-style:focus + label.new-label-style.textarea-is-filled,
+                            textarea.new-label-style.textarea-is-filled
+                            /*
+                            input.new-input-style:focus + label.new-label-style,
+                            input.new-input-style:focus + label.new-label-style.input-is-filled,
+                            input.new-input-style.ng-dirty:focus + label.new-label-style,
+                            */ 
+                            {
+                                font-size: 15px;
+                                top: 200px;
+                            }
+
+                            label {
+                                &.error {
+                                    color: red;
+                                    font-weight: 300;
+                                    height: 30px;
+                                    position: absolute;
+                                    top: 20px;
+                                    right: 10px;
+                                    i {
+                                        position: absolute;
+                                        right: 10px;
+                                        top: 30px;
+                                        font-size: 30px;
+                                        margin-top: -15px;
+                                        color: green;
+                                    }
+                                }
+                                &.valid {
+                                    top: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .form-actions {
+                        margin-top: 40px;
+                    }
+                    .message {
+                        #success {
+                            color: green;
+                        }
+                        #error {
+                            color: red;
+                        }
                     }
                 }
             }

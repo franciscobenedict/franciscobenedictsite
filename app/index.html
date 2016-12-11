@@ -23,9 +23,10 @@
     <!-- Cusom styling -->
     <link rel="stylesheet" href="css/grayscale.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/form-input-styles.css">
   </head>
 
-  <body id="pageTop" data-target=".secondary-nav" ng-controller="AppCtrl" collapse-nav> <!--  data-spy="scroll" -->
+  <body id="pageTop" data-target=".secondary-nav" ng-controller="AppCtrl" collapse-nav>
     <div ng-include="'./app/views/directives/nav.html'"></div>
     <div ng-include="'./app/views/directives/secondary-nav.html'" ng-show="showSecondaryNav('/')"></div>
     <span ng-view></span>
@@ -39,6 +40,9 @@
 
     <!-- AngularJS -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+
+    <!-- Formio -->
+    <script type="text/javascript" src="https://npmcdn.com/ng-formio@latest/dist/formio-complete.min.js"></script>
 
     <!-- UI Bootstrap -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
@@ -70,6 +74,12 @@
 
     <!-- ngParallax -->
     <script src="js/vendor/ngscrollspy/ng-ScrollSpy.js"> </script>
+    
+    <!-- Validate JS -->
+    <!-- <script src="js/vendor/validatejs/jquery.validate.js"> </script> -->
+
+    <!-- Classie JS -->
+    <!-- <script src="js/classie.js"></script> -->
 
     <!-- App JS File -->
     <script src="app/app.js"></script>
@@ -81,8 +91,10 @@
     <script src="app/modules/closenav/closenavModule.js"></script>
     <script src="app/modules/parallaxscrolling/parallaxscrollingModule.js"></script>
     <script src="app/modules/navcollapse/navcollapseModule.js"></script>
+    <script src="app/modules/contactform/contactformModule.js"></script>
 
     <!-- Load controllers -->
     <script src="app/controllers/main/appController.js"></script>
+
   </body>
 </html>
