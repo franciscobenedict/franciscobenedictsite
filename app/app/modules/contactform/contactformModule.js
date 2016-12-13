@@ -10,8 +10,11 @@
         scrollClass: "@"
       },
       link: function (scope, element, attrs, http) {
-        console.log('contact form directive loaded');
+        //Debug switch
+        var debug = false;
+        if (debug) console.log('debug = ' + debug);
 
+        if (debug) console.log('contact form directive loaded');
         $timeout(function(){
           $(document).ready(function(){
             var inputElement = $('input, textarea');
@@ -30,9 +33,6 @@
                   thisInput.toggleClass('has-focus', thisInput.is(':focus'));
                   thisLabel.toggleClass('has-focus', thisInput.is(':focus'));
 
-                  // console.log('thisInput.val().length', thisInput.val().length);
-                  // console.log('thisInput.val()', thisInput.val());
-
                   // IF INPUT FIELD IS FILLED
                   if(thisInput.val().length === 0) {
                     inputElement.removeClass('is-filled');
@@ -44,20 +44,6 @@
 
                 }, 0 );
               });
-
-              // IF IS FILLED
-              // inputElement.blur(function(){
-              //   var thisInput = $(this);
-              //   var thisLabel = $(this).parent().parent().find('.control-label');
-              //   if($(this).val().length === 0) {
-              //     inputElement.removeClass('is-filled');
-              //     labelElement.removeClass('is-filled');
-              //   } else {
-              //     thisInput.addClass('is-filled');
-              //     thisLabel.addClass('is-filled');
-              //   }
-              // });
-
             }
           });
         }, 500);

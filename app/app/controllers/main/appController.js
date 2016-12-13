@@ -44,7 +44,7 @@
 
             // On successful Submit
             $scope.$on('formSubmission', function(err, submission) {
-                console.log("CONTROLLER: form sucessfully submitted so let's redirect");
+                if (debug) console.log("CONTROLLER: form sucessfully submitted so let's redirect");
                 $location.path('thank-you-for-making-contact');
             })
 
