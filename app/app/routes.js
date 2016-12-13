@@ -21,6 +21,10 @@
                 templateUrl: "../app/views/contactme.html",
                 title: "Get in touch with Francisco Benedict"
             })
+            .when("/thank-you-for-making-contact/", {
+                templateUrl: "../app/views/thankyou.html",
+                title: "Thank you for gettoing in touch with Francisco Benedict"
+            })
             .otherwise({
                 redirectTo: "/page-not-found/",
                 templateUrl: "../app/views/404.html",
