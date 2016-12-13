@@ -13,6 +13,9 @@
     -moz-transition: background .5s ease-in-out,padding .5s ease-in-out;
     transition: background .5s ease-in-out,padding .5s ease-in-out;
 }
+#hamburgerButon {
+    font-size: 24px;
+}
 
 .top-nav-collapse {
     padding: 0;
@@ -450,6 +453,7 @@ section {
         .container {
             #fbContactForm {
                 margin-bottom: 100px;
+                margin-top: 40px;
                 form {
                     .alert {
                         margin-bottom: 50px;
@@ -471,10 +475,10 @@ section {
                                 -moz-transition: 0.2s all;
                                 -webkit-transition: 0.2s all;
                                 &.has-focus, &.is-filled {
-                                    border-bottom: 1px solid #00bdff;
+                                    // border-bottom: 1px solid #00bdff;
                                     color: #00bdff;
                                     position: absolute;
-                                    top: -25px;
+                                    top: -27px;
                                 }
                             }
                             .input-group {
@@ -502,6 +506,11 @@ section {
                                     -webkit-transition: 0.2s all;
                                     &:focus, &.has-focus, &.is-filled {
                                         border-bottom: 4px solid #00bdff;
+                                        // 
+                                        border-top: 1px solid #00bdff;
+                                        border-left: 1px solid #00bdff;
+                                        border-right: 1px solid #00bdff;
+                                        padding: 10px;
                                     }
                                 }
                                 textarea {
@@ -519,10 +528,10 @@ section {
                         &.textarea-style {
                             >div {
                                 label {
-                                    top: -3px;
+                                    top: -9px;
                                     &.has-focus, &.is-filled {
-                                        border-bottom: 1px solid #00bdff;
-                                        top: -38px;
+                                        // border-bottom: 1px solid #00bdff;
+                                        top: -27px;
                                     }
                                 }
                             }
@@ -537,6 +546,26 @@ section {
                                         border-color: #a94442;
                                     }
                                 }
+                            }
+                        }
+                        button#submit {
+                            background-color: rgba(0, 189, 255, 1);
+                            border: 0;
+                            border-radius: 4px;
+                            cursor: pointer;
+                            margin-bottom: 40px;
+                            padding: 20px 0;
+                            text-align: center;
+                            -webkit-transition: all .2s ease-in-out;
+                            -moz-transition: all .2s ease-in-out;
+                            transition: all .2s ease-in-out;
+                            width: 50%;
+
+                            &:hover {
+                                background: rgba(190,190,190,1);
+                                -webkit-transition: all .2s ease-in-out;
+                                -moz-transition: all .2s ease-in-out;
+                                transition: all .2s ease-in-out;
                             }
                         }
                     }

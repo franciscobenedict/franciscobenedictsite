@@ -102,6 +102,20 @@ section {
             }
         }
     }
+
+    &#contactMeSection {
+        .container {
+            #fbContactForm {
+                form {
+                    .form-group {
+                        button#submit {
+                            width: 100%;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer-links {

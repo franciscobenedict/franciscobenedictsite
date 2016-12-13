@@ -17,16 +17,16 @@
 
         $timeout(function() {
           // CLOSE MENU WHEN SELECTING ITEM IN MOBILE VIEW
-          element.on('click', function(e) {
-            if (debug) console.log('CLOSE MENU WHEN SELECTING ITEM IN MOBILE VIEW');
-            $(document).mouseup(function (e) {
+          $(document).mousedown(function (e) {
+            element.on('click', function(e) {
+              if (debug) console.log('CLOSE MENU WHEN SELECTING ITEM IS IN MOBILE VIEW');
               if (angular.element('#mainMenu').hasClass('in')) {
                 if (debug) console.log('MENU IS OPEN!! ');
                 angular.element('#hamburgerButon').trigger('click');
               }
             });
           });
-        }, 0);
+        }, 50);
 
         // ------------------------
       }
