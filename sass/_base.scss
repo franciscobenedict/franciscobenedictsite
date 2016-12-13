@@ -294,15 +294,15 @@ section {
                         margin-bottom: 0;
                     }
                     .download-cv {
-                        background-color: rgba(0, 189, 255, 1);
-                        border-radius: 4px;
-                        cursor: pointer;
-                        margin-bottom: 40px;
-                        padding: 20px 0;
-                        text-align: center;
-                        -webkit-transition: all .2s ease-in-out;
-                        -moz-transition: all .2s ease-in-out;
-                        transition: all .2s ease-in-out;
+                        // background-color: rgba(0, 189, 255, 1);
+                        // border-radius: 4px;
+                        // cursor: pointer;
+                        // margin-bottom: 40px;
+                        // padding: 20px 0;
+                        // text-align: center;
+                        // -webkit-transition: all .2s ease-in-out;
+                        // -moz-transition: all .2s ease-in-out;
+                        // transition: all .2s ease-in-out;
                         a {
                             border: 0;
                             color: $white;
@@ -311,12 +311,12 @@ section {
                                 margin: 0 10px;
                             }   
                         }
-                        &:hover {
-                            background: rgba(190,190,190,1);
-                            -webkit-transition: all .2s ease-in-out;
-                            -moz-transition: all .2s ease-in-out;
-                            transition: all .2s ease-in-out;
-                        }
+                        // &:hover {
+                        //     background: rgba(190,190,190,1);
+                        //     -webkit-transition: all .2s ease-in-out;
+                        //     -moz-transition: all .2s ease-in-out;
+                        //     transition: all .2s ease-in-out;
+                        // }
                     }
                 }
             }
@@ -475,7 +475,6 @@ section {
                                 -moz-transition: 0.2s all;
                                 -webkit-transition: 0.2s all;
                                 &.has-focus, &.is-filled {
-                                    // border-bottom: 1px solid #00bdff;
                                     color: #00bdff;
                                     position: absolute;
                                     top: -27px;
@@ -510,7 +509,7 @@ section {
                                         border-top: 1px solid #00bdff;
                                         border-left: 1px solid #00bdff;
                                         border-right: 1px solid #00bdff;
-                                        padding: 10px;
+                                        padding: 10px 10px 10px 40px;
                                     }
                                 }
                                 textarea {
@@ -519,18 +518,12 @@ section {
                                     top: 0;
                                 }
                             }
-                            input:focus + label,
-                            textarea:focus + label {
-                                position: absolute;
-                                top: 0;
-                            }
                         }
                         &.textarea-style {
                             >div {
                                 label {
-                                    top: -9px;
+                                    top: 9px;
                                     &.has-focus, &.is-filled {
-                                        // border-bottom: 1px solid #00bdff;
                                         top: -27px;
                                     }
                                 }
@@ -545,14 +538,23 @@ section {
                                     input, textarea {
                                         border-color: #a94442;
                                     }
+                                    formio-errors {
+                                        >div {
+                                            p {
+                                                &.help-block {
+                                                    font-size: 15px;
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }
                         button#submit {
                             background-color: rgba(0, 189, 255, 1);
+                            background-image: none;
                             border: 0;
                             border-radius: 4px;
-                            cursor: pointer;
                             margin-bottom: 40px;
                             padding: 20px 0;
                             text-align: center;
@@ -560,171 +562,30 @@ section {
                             -moz-transition: all .2s ease-in-out;
                             transition: all .2s ease-in-out;
                             width: 50%;
+                            &:disabled {
+                                background-color: rgba(0, 189, 255, 0.4);
+                                &:hover {
+                                    background-color: rgba(0, 189, 255, 0.4);
+                                }
+                            }
 
                             &:hover {
                                 background: rgba(190,190,190,1);
-                                -webkit-transition: all .2s ease-in-out;
-                                -moz-transition: all .2s ease-in-out;
-                                transition: all .2s ease-in-out;
                             }
                         }
                     }
                 }
             }
-            // form {
-            //     &#fbContactForm {
-            //         margin-bottom: 100px;
-            //         input[type='submit']#js_send {
-            //             &.disabled {
-            //                 opacity: 0.65; 
-            //                 cursor: not-allowed;
-            //             }
-            //         }
-            //         .alert {
-            //             webkit-box-shadow: none;
-            //             box-shadow: none;
-            //             color: red;
-            //             height: 30px;
-            //             padding: 5px 0;
-            //         }
+        }
+    }
 
-            //         .form-control-group {
-            //             .controls {
-            //                 margin-bottom: 40px;
-            //                 min-height: 60px;
-            //                 position: relative;
-            //                 label.new-label-style {
-            //                     background: rgba(0,0,0,0);
-            //                     display: table-header-group;
-            //                     color: #999;
-            //                     font-size: 20px;
-            //                     font-weight: 300;
-            //                     height: 48px;
-            //                     margin: 0;
-            //                     position: absolute;
-            //                     top: 12px;
-            //                     padding: 0;
-            //                     width: 100%;
-            //                     z-index: -1;
-            //                     transition: 0.2s all;
-            //                     -moz-transition: 0.2s all;
-            //                     -webkit-transition: 0.2s all;
-            //                 }
-
-            //                 input.new-input-style:focus + label.new-label-style,
-            //                 input.new-input-style:focus + label.new-label-style.input-is-filled,
-            //                 input.input-is-empty:focus + label.input-is-empty,
-            //                 // input.new-input-style.ng-dirty:focus + label.new-label-style,
-            //                 // input.new-input-style.ng-valid-parse + label.new-label-style,
-            //                 // input.new-input-style.valid + label.new-label-style,,
-            //                 // input.new-input-style.not-empty + label.new-label-style,
-            //                 //ng-not-empty
-            //                 // input.new-input-style.ng-touched + label.new-label-style,
-            //                 // input.new-input-style.ng-empty + label.new-label-style,
-            //                 // input.new-input-style.ng-invalid + label.new-label-style,
-                            
-            //                 //input.new-input-style.ng-invalid-required:focus + label.new-label-style,
-                            
-            //                 // input.new-input-style:focus, 
-            //                 label.new-label-style.input-is-filled {
-            //                     color: #ccc;
-            //                     font-size: 15px;
-            //                     top: 60px;
-            //                     transition: 0.2s all;
-            //                     -moz-transition: 0.2s all;
-            //                     -webkit-transition: 0.2s all;
-            //                 }
-
-            //                 input.new-input-style, 
-            //                 textarea.new-input-style {
-            //                     background: rgba(0,0,0,0);
-            //                     color: #999;
-            //                     border: 0;
-            //                     border-bottom: 1px solid #999;
-            //                     display: table-row-group;
-            //                     height: 60px;
-            //                     font-size: 20px;
-            //                     position: relative;
-            //                     width: 100%;
-            //                     z-index: 1;
-            //                     transition: 0.2s all;
-            //                     -moz-transition: 0.2s all;
-            //                     -webkit-transition: 0.2s all;
-            //                 }
-
-            //                 textarea.new-input-style {
-            //                     height: 200px;
-            //                 }
-                            
-
-            //                 input.new-input-style:focus, 
-            //                 input.input-is-filled,
-            //                 textarea.new-input-style:focus,
-            //                 textarea.textarea-is-filled {
-            //                     background: rgba(140,140,140,0.1);
-            //                     border-bottom: 4px solid #999;
-            //                     color: #666;
-            //                     outline: rgba(0,0,0,0) none 0;
-            //                     padding: 10px;
-            //                     transition: 0.2s all;
-            //                     -moz-transition: 0.2s all;
-            //                     -webkit-transition: 0.2s all;
-
-            //                     -webkit-box-shadow: 0 0 0 rgba(0,0,0,0);
-            //                     -moz-box-shadow: 0 0 0 rgba(0,0,0,0);
-            //                     box-shadow: 0 0 0 rgba(0,0,0,0);
-            //                 }
-
-            //                 textarea.new-input-style:focus + label.new-label-style,
-            //                 textarea.new-input-style:focus + label.new-label-style.textarea-is-filled,
-            //                 textarea.new-label-style.textarea-is-filled
-            //                 /*
-            //                 input.new-input-style:focus + label.new-label-style,
-            //                 input.new-input-style:focus + label.new-label-style.input-is-filled,
-            //                 input.new-input-style.ng-dirty:focus + label.new-label-style,
-            //                 */ 
-            //                 {
-            //                     font-size: 15px;
-            //                     top: 200px;
-            //                 }
-
-            //                 label {
-            //                     &.error {
-            //                         color: red;
-            //                         font-weight: 300;
-            //                         height: 30px;
-            //                         position: absolute;
-            //                         top: 20px;
-            //                         right: 10px;
-            //                         i {
-            //                             position: absolute;
-            //                             right: 10px;
-            //                             top: 30px;
-            //                             font-size: 30px;
-            //                             margin-top: -15px;
-            //                             color: green;
-            //                         }
-            //                     }
-            //                     &.valid {
-            //                         top: 0;
-            //                     }
-            //                 }
-            //             }
-            //         }
-
-            //         .form-actions {
-            //             margin-top: 40px;
-            //         }
-            //         .message {
-            //             #success {
-            //                 color: green;
-            //             }
-            //             #error {
-            //                 color: red;
-            //             }
-            //         }
-            //     }
-            // }
+    &#thankYouSection {
+        padding-top: 120px;
+        .container {
+            .row-fluid {
+                margin-left: -15px;
+                margin-right: -15px;
+            }
         }
     }
 

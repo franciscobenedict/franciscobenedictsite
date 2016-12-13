@@ -12,44 +12,55 @@
       link: function (scope, element, attrs, http) {
         console.log('contact form directive loaded');
 
-        $(document).ready(function(){
-          $timeout(function(){
+        $timeout(function(){
+          $(document).ready(function(){
             var inputElement = $('input, textarea');
             var labelElement = inputElement.parent().parent().find('.control-label');
-            // var emailElement = $('#email');
             
             if (inputElement) {
               // ADD AUTOCOMPLETE="OFF" ATTRIBUTE TO EACH FORM INPUT ELEMENT
-              // emailElement.attr('autocomplete', 'off');
               inputElement.attr('autocomplete', 'off');
 
-              // IF IS FOCUSED
-              inputElement.focus(function() {
+              $('#fbContactForm').delegate( '*', 'focus blur', function() {
+                inputElement.attr('autocomplete', 'off');
                 var thisInput = $(this);
-                var thisLabel = $(this).parent().parent().find('.control-label');
-                
-                inputElement.removeClass('has-focus');
-                thisInput.addClass('has-focus');
+                var thisLabel = $(this).parent().prev('label');
+                setTimeout(function() {
+                  // IF IS FOCUSED
+                  thisInput.toggleClass('has-focus', thisInput.is(':focus'));
+                  thisLabel.toggleClass('has-focus', thisInput.is(':focus'));
 
-                labelElement.removeClass('has-focus');
-                thisLabel.addClass('has-focus');
+                  // console.log('thisInput.val().length', thisInput.val().length);
+                  // console.log('thisInput.val()', thisInput.val());
+
+                  // IF INPUT FIELD IS FILLED
+                  if(thisInput.val().length === 0) {
+                    inputElement.removeClass('is-filled');
+                    labelElement.removeClass('is-filled');
+                  } else {
+                    thisInput.addClass('is-filled');
+                    thisLabel.addClass('is-filled');
+                  }
+
+                }, 0 );
               });
 
               // IF IS FILLED
-              inputElement.blur(function(){
-                var thisInput = $(this);
-                var thisLabel = $(this).parent().parent().find('.control-label');
-                if($(this).val().length === 0) {
-                  inputElement.removeClass('is-filled');
-                  labelElement.removeClass('is-filled');
-                } else {
-                  thisInput.addClass('is-filled');
-                  thisLabel.addClass('is-filled');
-                }
-              });
+              // inputElement.blur(function(){
+              //   var thisInput = $(this);
+              //   var thisLabel = $(this).parent().parent().find('.control-label');
+              //   if($(this).val().length === 0) {
+              //     inputElement.removeClass('is-filled');
+              //     labelElement.removeClass('is-filled');
+              //   } else {
+              //     thisInput.addClass('is-filled');
+              //     thisLabel.addClass('is-filled');
+              //   }
+              // });
+
             }
-          }, 500);
-        });
+          });
+        }, 500);
 
 
         // ------------------------
