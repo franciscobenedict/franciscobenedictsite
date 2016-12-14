@@ -17,13 +17,16 @@
         if (debug) console.log('contact form directive loaded');
         $timeout(function(){
           $(document).ready(function(){
+            var fbContactFormElements = $('#fbContactForm form');
             var inputElement = $('input, textarea');
             var labelElement = inputElement.parent().parent().find('.control-label');
             
-            if (inputElement) {
-              // ADD AUTOCOMPLETE="OFF" ATTRIBUTE TO EACH FORM INPUT ELEMENT
-              inputElement.attr('autocomplete', 'off');
+            // ADD AUTOCOMPLETE="OFF" ATTRIBUTE TO EACH FORM INPUT ELEMENT
+            if (fbContactFormElements) {
+              fbContactFormElements.attr('autocomplete', 'off');
+            }
 
+            if (inputElement) {
               $('#fbContactForm').delegate( '*', 'focus blur', function() {
                 inputElement.attr('autocomplete', 'off');
                 var thisInput = $(this);
