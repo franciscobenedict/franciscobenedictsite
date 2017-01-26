@@ -67,10 +67,15 @@
 						<carousel interval="myInterval">
 							<slide ng-repeat="slide in fbArray[1].whatPeopleThink" active="slide.active">
 								<div class="text-left"><i class="fa fa-quote-left fa-2x"></i></div>
-								<p class="quote-text">{{slide.quote}}</p>
+								<!-- <p class="quote-text">{{slide.quote}}</p> -->
+
+								<p class="quote-text">
+									<span ng-bind-html="slide.quote"></span>
+								</p>
+
 								<div class="text-right"><i class="fa fa-quote-right fa-2x"></i></div>
-								<div class="text-right">{{slide.quoteBy}}</div>
-								<div class="text-right">{{slide.position}}</div>
+								<div class="text-right" ng-bind-html="slide.quoteBy"></div>
+								<div class="text-right" ng-bind-html="slide.position"></div>
 							</slide>
 						</carousel>
 					</div>

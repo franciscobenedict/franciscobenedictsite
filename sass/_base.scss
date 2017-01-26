@@ -503,13 +503,24 @@ section {
                                     transition: 0.2s all;
                                     -moz-transition: 0.2s all;
                                     -webkit-transition: 0.2s all;
-                                    &:focus, &.has-focus, &.is-filled {
-                                        border-bottom: 4px solid #00bdff;
-                                        // 
+                                    &:focus, &.has-focus, &.is-filled, &:focus {
                                         border-top: 1px solid #00bdff;
-                                        border-left: 1px solid #00bdff;
                                         border-right: 1px solid #00bdff;
+                                        border-bottom: 4px solid #00bdff;
+                                        border-left: 1px solid #00bdff;
                                         padding: 10px 10px 10px 40px;
+                                    }
+                                    &.is-filled:not(.has-focus) {
+                                        border-top: 0;
+                                        border-right: 0;
+                                        border-bottom: 1px solid #00bdff;
+                                        border-left: 0;
+                                        padding: 0;
+                                    }
+                                    &:-webkit-autofill {
+                                        background-color: rgba(255,255,255,0) !important;
+                                        background-image: none;
+                                        color: #555;
                                     }
                                 }
                                 textarea {
