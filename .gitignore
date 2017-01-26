@@ -50,3 +50,7 @@ app/portfolio/
 
 # .htaccess file
 app/.htaccess
+
+# Folders #
+###########
+images/_misc/
