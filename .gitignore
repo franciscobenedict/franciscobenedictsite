@@ -51,5 +51,6 @@ app/portfolio/
 # .htaccess file
 app/.htaccess
 
-# Folders
-app/images/_misc
+# Folders #
+###########
+app/images/_misc/
