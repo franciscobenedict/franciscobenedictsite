@@ -254,22 +254,58 @@ section {
             font-style: italic;
             text-align: left;
             margin-bottom: 0;
+            a {
+                color: $white;
+            }
+        }
 
-            span {
-                $font-size: 18px;
-                $line-height: 1.2;
-                $lines-to-show: 10;
-                /* 10 line truncation */
-                display: block; /* Fallback for non-webkit */
-                display: -webkit-box;
-                max-height: $font-size*$line-height*$lines-to-show; /* Fallback for non-webkit */
-                margin: 0 auto;
-                font-size: $font-size;
-                line-height: $line-height;
-                -webkit-line-clamp: $lines-to-show;
-                -webkit-box-orient: vertical;
-                overflow: hidden;
-                text-overflow: ellipsis;
+        .recommendation-modal {
+            background: rgba(0,0,0,0.5);
+            .modal-dialog {
+                .modal-content {
+                    .modal-header,
+                    .modal-body,
+                    .modal-footer {
+                        color: #888;
+                    }
+                    .modal-header {
+                        .modal-title {
+                            text-align: left;
+                        }
+                        .close {
+                            i {
+                                cursor: pointer;
+                                font-size: 2em;
+                                top: 8px;
+                                position: absolute;
+                                right: 15px;
+                            }
+                        }
+                    }
+                    .modal-body {
+                        text-align: left;
+                        .quote-recommendation-comment {
+                            max-height: 300px;
+                            overflow-y: scroll;
+                            padding-bottom: 20px;
+                            &:after {
+                                // gradient BG
+                                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100&0+0,1+100 */
+                                background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(255,255,255,1) 80%); /* FF3.6-15 */
+                                background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(255,255,255,1) 80%); /* Chrome10-25,Safari5.1-6 */
+                                background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(255,255,255,1) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+
+                                bottom: 49px;
+                                content: '';
+                                height: 40px;
+                                left: 0;
+                                position: absolute;
+                                width: 100%;
+                            }
+                        }
+                    }
+                }
             }
         }
     }
