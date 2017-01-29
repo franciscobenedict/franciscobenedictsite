@@ -13,5 +13,6 @@ var fbApp = angular.module("FBApp", [
 	"franciscobenedict.modules.closenav",
 	"franciscobenedict.modules.parallaxscrolling",
 	"franciscobenedict.modules.navcollapse",
-	"franciscobenedict.modules.contactform"
+	"franciscobenedict.modules.contactform",
+	"franciscobenedict.modules.limitchar"
 ]);

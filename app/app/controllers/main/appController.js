@@ -48,6 +48,12 @@
                 $location.path('thank-you-for-making-contact');
             })
 
+            // COUNT WORDS IN RECOMMENDATIONS
+            $scope.countOf = function(text) {
+                var s = text ? text.split(/\s+/) : 0; // it splits the text on space/tab/enter
+                return s ? s.length : '';
+            };
+
 
             // ----------------------------
         }

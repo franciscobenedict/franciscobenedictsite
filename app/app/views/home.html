@@ -1,133 +1,151 @@
 <span>
-	<!-- Welcome -->
-	<section id="welcome" class="center-content-container" data-scrollspy-broadcast>
-		<div class="content-centered text-center">
-			<div class="container">
-				<h1>
-					<div class="fb-logo-big">
-						<img src="images/fb-logo-grey.svg" alt="Francisco Benedict" />
-					</div>
-				</h1>
-				<p ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></p>
-				<p ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></p>
+  <!-- Welcome -->
+  <section id="welcome" class="center-content-container" data-scrollspy-broadcast>
+    <div class="content-centered text-center">
+      <div class="container">
+        <h1>
+          <div class="fb-logo-big">
+            <img src="images/fb-logo-grey.svg" alt="Francisco Benedict" />
+          </div>
+        </h1>
+        <p ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></p>
+        <p ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></p>
 
-				<h2>Welcome</h2>
+        <h2>Welcome</h2>
 
-				<div class="scroll-arrow-container page-scroll">
-					<a class="nav-link nav-desktop grey-scroll scroll-arrow" scroll-to="#whatIdoSection">
-						<i class="fa fa-angle-down"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+        <div class="scroll-arrow-container page-scroll">
+          <a class="nav-link nav-desktop grey-scroll scroll-arrow home-page-arrow" scroll-to="#whatIdoSection">
+            <i class="fa fa-angle-down"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-	<!-- Parallax Section -->
-	<div ng-include="'./app/views/directives/parallax-section.html'"></div>
+  <!-- Parallax Section -->
+  <div ng-include="'./app/views/directives/parallax-section.html'"></div>
 
-	<!-- What I Do -->
-	<section id="whatIdoSection" class="light-grey-bg home-page-other-sections" data-scrollspy-broadcast>
-		<div class="container">
-			<h2>What I do</h2>
-			
-			<div class="row-fluid">
-				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding0">
-					<p ng-bind-html="fbArray[1].whatIDo.whatIDoIntro"></p>
+  <!-- What I Do -->
+  <section id="whatIdoSection" class="light-grey-bg home-page-other-sections" data-scrollspy-broadcast>
+    <div class="container">
+      <h2>What I do</h2>
+      
+      <div class="row-fluid">
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding0">
+          <p ng-bind-html="fbArray[1].whatIDo.whatIDoIntro"></p>
 
-					<h3>Web Development</h3>
-					<p ng-bind-html="fbArray[1].whatIDo.webDevelopment.intro"></p>
-					
-					<h3>Graphic Design</h3>
-					<p ng-bind-html="fbArray[1].whatIDo.graphicDesign.intro"></p>
-				</div>
-			</div>
+          <h3>Web Development</h3>
+          <p ng-bind-html="fbArray[1].whatIDo.webDevelopment.intro"></p>
+          
+          <h3>Graphic Design</h3>
+          <p ng-bind-html="fbArray[1].whatIDo.graphicDesign.intro"></p>
+        </div>
+      </div>
 
-			<div class="scroll-arrow-container page-scroll">
-				<a class="nav-link nav-desktop scroll-arrow" scroll-to="#whatPeopleThinkSection">
-					<i class="fa fa-angle-down"></i>
-				</a>
-			</div>
-		</div>
-	</section>
+      <div class="scroll-arrow-container page-scroll">
+        <a class="nav-link nav-desktop scroll-arrow home-page-arrow" scroll-to="#whatPeopleThinkSection">
+          <i class="fa fa-angle-down"></i>
+        </a>
+      </div>
+    </div>
+  </section>
 
-	<!-- Parallax Section -->
-	<div ng-include="'./app/views/directives/parallax-section.html'"></div>
+  <!-- Parallax Section -->
+  <div ng-include="'./app/views/directives/parallax-section.html'"></div>
 
-	<!-- Wat People Think -->
-	<section id="whatPeopleThinkSection" class="center-content-container grey-bg" data-scrollspy-broadcast>
-		<div class="content-centered text-center">
-			<div class="container">
-				<div class="row-fluid">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-						<h2 class="text-left">What people think</h2>
-					</div>
-				</div>
-				<div class="row-fluid">
-					<div id="quoteCarousel" class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-						<carousel interval="myInterval">
-							<slide ng-repeat="slide in fbArray[1].whatPeopleThink" active="slide.active">
-								<div class="text-left"><i class="fa fa-quote-left fa-2x"></i></div>
-								<!-- <p class="quote-text">{{slide.quote}}</p> -->
+  <!-- Wat People Think -->
+  <section id="whatPeopleThinkSection" class="center-content-container grey-bg" data-scrollspy-broadcast>
+    <div class="content-centered text-center">
+      <div class="container">
+        <div class="row-fluid">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+            <h2 class="text-left">What people think</h2>
+          </div>
+        </div>
+        <div class="row-fluid">
+          <div id="quoteCarousel" class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+            <carousel interval="myInterval">
+              <slide ng-repeat="slide in fbArray[1].whatPeopleThink track by $index" active="slide.active">
+                <div class="text-left"><i class="fa fa-quote-left fa-2x"></i></div>
 
-								<p class="quote-text">
-									<span ng-bind-html="slide.quote"></span>
-								</p>
+                <p class="quote-text">
+                  <span ng-bind-html="slide.quote | limitChar:50"></span>
+                  <span ng-show="countOf(slide.quote) > 50">
+                    <a href="#" class="" data-toggle="modal" data-target="#recommendationModal{{$index}}">READ MORE</a>
+                  </span>
+                </p>
 
-								<div class="text-right"><i class="fa fa-quote-right fa-2x"></i></div>
-								<div class="text-right" ng-bind-html="slide.quoteBy"></div>
-								<div class="text-right" ng-bind-html="slide.position"></div>
-							</slide>
-						</carousel>
-					</div>
-				</div>
+                <div class="text-right"><i class="fa fa-quote-right fa-2x"></i></div>
+                <div class="text-right">
+                  <span ng-bind-html="slide.quoteBy.firstName"></span>&nbsp;
+                  <span ng-bind-html="slide.quoteBy.lastName"></span>
+                </div>
+                <div class="text-right" ng-bind-html="slide.position"></div>
 
-				<div class="scroll-arrow-container page-scroll">
-					<a class="nav-link nav-desktop scroll-arrow white-scroll" scroll-to="#aboutSection">
-						<i class="fa fa-angle-down"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
+              </slide>
+            </carousel>
+          </div>
+        </div>
 
-	<!-- Parallax Section -->
-	<div ng-include="'./app/views/directives/parallax-section.html'"></div>
+        <!-- Modal -->
+        <div class="modal fade recommendation-modal" id="recommendationModal{{$index}}" role="dialog" aria-labelledby="myModalLabel" ng-repeat="slide in fbArray[1].whatPeopleThink track by $index">
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i class="fa fa-times" aria-hidden="true"></i>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">{{slide.quoteBy.firstName}} says...</h4>
+              </div>
+              <div class="modal-body">
+                <div class="text-left"><i class="fa fa-quote-left fa-2x"></i></div>
+                <div class="quote-recommendation-comment" ng-bind-html="slide.quote"></div>
+                <div class="text-right"><i class="fa fa-quote-right fa-2x"></i></div>
+              </div>
+              <div class="modal-footer">
+                <div class="text-right">
+                  <span ng-bind-html="slide.quoteBy.firstName"></span>&nbsp;
+                  <span ng-bind-html="slide.quoteBy.lastName"></span>
+                </div>
+                <div class="text-right" ng-bind-html="slide.position"></div>
+              </div>
+            </div>
+          </div>
+        </div>
 
-	<!-- About Cisco -->
-	<section id="aboutSection" class="center-content-container" data-scrollspy-broadcast>
-		<!-- <div class="parallax-image"> -->
-			<!-- <div class="parallax-box desktop-view" ng-parallax ng-parallax pattern="'images/img_parallax_inversed_desktop-compressor.png'" speed="15" reverse="true"></div> -->
-			<!-- <div class="parallax-box tablet-view" ng-parallax ng-parallax pattern="'images/img_parallax_inversed-compressor.png'" speed="2" reverse="true"></div> -->
-			<!-- <div class="parallax-box mobile-view" ng-parallax ng-parallax pattern="'images/img_parallax_inversed-compressor.png'" speed="-2" reverse="true"></div> -->
+        <div class="scroll-arrow-container page-scroll">
+          <a class="nav-link nav-desktop scroll-arrow home-page-arrow white-scroll" scroll-to="#aboutSection">
+            <i class="fa fa-angle-down"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <!-- Parallax Section -->
+  <div ng-include="'./app/views/directives/parallax-section.html'"></div>
 
+  <!-- About Cisco -->
+  <section id="aboutSection" class="center-content-container" data-scrollspy-broadcast>
+    <div class="parallax-shade background-40-percent"></div>
+    <div class="content-centered text-center about-me-content">
+      <div class="container">
+        <h2>About me</h2>
 
-			
-			<!-- <div class="parallax-box desktop-view" ng-parallax ng-parallax pattern="'images/img_parallax_box.png'" speed="2" reverse="true"></div> -->
-			<!-- <div class="parallax-box tablet-view" ng-parallax ng-parallax pattern="'images/img_parallax_box.png'" speed="15" reverse="true"></div> -->
-			<!-- <div class="parallax-box mobile-view" ng-parallax ng-parallax pattern="'images/img_parallax_medium.png'" speed="-15" reverse="true"></div>  -->
-			<!-- <div class="parallax-box mobile-view" ng-parallax ng-parallax pattern="'images/img_parallax_medium_inversed.png'" speed="-15" reverse="true"></div>  -->
-			<!-- <div class="parallax-box" ng-parallax ng-parallax pattern="'images/cloud-pattern.jpg'" speed="-2" reverse="true"></div> -->
-		<!-- </div> -->
-		<div class="parallax-shade background-40-percent"></div>
-		<div class="content-centered text-center about-me-content">
-			<div class="container">
-				<h2>About me</h2>
+        <div class="row-fluid">
+          <div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
+            <p ng-bind-html="fbArray[1].aboutCisco.paragraphText1"></p>
+          </div>
+        </div>
+        <div class="scroll-arrow-container page-scroll">
+          <a class="nav-link nav-desktop scroll-arrow home-page-arrow white-scroll up" scroll-to="#pageTop">
+            <i class="fa fa-angle-double-up"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 
-				<div class="row-fluid">
-					<div class="col-xs-12 col-sm-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-3">
-						<p ng-bind-html="fbArray[1].aboutCisco.paragraphText1"></p>
-					</div>
-				</div>
-				<div class="scroll-arrow-container page-scroll">
-					<a class="nav-link nav-desktop scroll-arrow white-scroll up" scroll-to="#pageTop">
-						<i class="fa fa-angle-double-up"></i>
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<!-- Parallax Section -->
-	<div ng-include="'./app/views/directives/parallax-section.html'"></div>
+  <!-- Parallax Section -->
+  <div ng-include="'./app/views/directives/parallax-section.html'"></div>
 </span>
