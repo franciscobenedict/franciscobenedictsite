@@ -233,8 +233,12 @@ section {
             bottom: -60px;
             z-index: 1;
             li {
-                border: 5px solid $white;
-                margin: 10px 5px;
+                border: 2px solid $white;
+                border-radius: 2px;
+                margin: 10px;
+
+                height: 20px;
+                width: 20px;
 
                 -webkit-transition: all .5s ease-in-out;
                 -moz-transition: all .5s ease-in-out;
