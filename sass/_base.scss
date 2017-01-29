@@ -288,21 +288,21 @@ section {
                             max-height: 300px;
                             overflow-y: scroll;
                             padding-bottom: 20px;
-                            &:after {
-                                // gradient BG
-                                /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100&0+0,1+100 */
-                                background: -moz-linear-gradient(top,  rgba(0,0,0,0) 0%, rgba(255,255,255,1) 80%); /* FF3.6-15 */
-                                background: -webkit-linear-gradient(top,  rgba(0,0,0,0) 0%,rgba(255,255,255,1) 80%); /* Chrome10-25,Safari5.1-6 */
-                                background: linear-gradient(to bottom,  rgba(0,0,0,0) 0%,rgba(255,255,255,1) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-                                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
+                        }
+                        &:after {
+                            // gradient BG
+                            /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#000000+0,ffffff+100&0+0,1+100 */
+                            background: -moz-linear-gradient(top,  rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%); /* FF3.6-15 */
+                            background: -webkit-linear-gradient(top,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%); /* Chrome10-25,Safari5.1-6 */
+                            background: linear-gradient(to bottom,  rgba(255,255,255,0) 0%,rgba(255,255,255,1) 80%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+                            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffffff', endColorstr='#ffffff',GradientType=0 ); /* IE6-9 */
 
-                                bottom: 49px;
-                                content: '';
-                                height: 40px;
-                                left: 0;
-                                position: absolute;
-                                width: 100%;
-                            }
+                            bottom: 49px;
+                            content: '';
+                            height: 40px;
+                            left: 0;
+                            position: absolute;
+                            width: 100%;
                         }
                     }
                 }
