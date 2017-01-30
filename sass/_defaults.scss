@@ -89,9 +89,6 @@ a.scroll-arrow {
     -moz-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 
-    &.home-page-arrow {
-      bottom: 20px;
-    }
     i {
         cursor: pointer;
         width: 100%;
@@ -133,6 +130,14 @@ a.scroll-arrow {
             -moz-transition: all .2s ease-in-out;
             transition: all .2s ease-in-out;
         }
+    }
+
+    &.home-page-arrow {
+      bottom: 20px;
+      &:hover {
+        border-bottom-style: solid;
+        bottom: 20px;
+      }
     }
 
     &.white-scroll {
