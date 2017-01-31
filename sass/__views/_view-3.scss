@@ -116,6 +116,22 @@ section {
             }
         }
     }
+    &#whatPeopleThinkSection {
+        #quoteCarousel {
+            .quote-details {
+                font-size: 12px;
+            }
+        }
+        .recommendation-modal {
+            .modal-dialog {
+                .modal-content {
+                    .modal-footer {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
 }
 
 .footer-links {

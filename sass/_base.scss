@@ -256,12 +256,14 @@ section {
             }
         }
 
-        #quoteCarousel p.quote-text {
-            font-style: italic;
-            text-align: left;
-            margin-bottom: 0;
-            a {
-                color: $white;
+        #quoteCarousel {
+            p.quote-text {
+                font-style: italic;
+                text-align: left;
+                margin-bottom: 0;
+                a {
+                    color: $white;
+                }
             }
         }
 
