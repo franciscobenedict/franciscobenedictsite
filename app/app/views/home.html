@@ -26,26 +26,28 @@
   <div ng-include="'./app/views/directives/parallax-section.html'"></div>
 
   <!-- What I Do -->
-  <section id="whatIdoSection" class="light-grey-bg home-page-other-sections" data-scrollspy-broadcast>
-    <div class="container">
-      <h2>What I do</h2>
-      
-      <div class="row-fluid">
-        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding0">
-          <p ng-bind-html="fbArray[1].whatIDo.whatIDoIntro"></p>
+  <section id="whatIdoSection" class="center-content-container light-grey-bg home-page-other-sections" data-scrollspy-broadcast>
+    <div class="content-centered">
+      <div class="container">
+        <h2>What I do</h2>
+        
+        <div class="row-fluid">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding0">
+            <p ng-bind-html="fbArray[1].whatIDo.whatIDoIntro"></p>
 
-          <h3>Web Development</h3>
-          <p ng-bind-html="fbArray[1].whatIDo.webDevelopment.intro"></p>
-          
-          <h3>Graphic Design</h3>
-          <p ng-bind-html="fbArray[1].whatIDo.graphicDesign.intro"></p>
+            <h3>Web Development</h3>
+            <p ng-bind-html="fbArray[1].whatIDo.webDevelopment.intro"></p>
+            
+            <h3>Graphic Design</h3>
+            <p ng-bind-html="fbArray[1].whatIDo.graphicDesign.intro"></p>
+          </div>
         </div>
-      </div>
 
-      <div class="scroll-arrow-container page-scroll">
-        <a class="nav-link nav-desktop scroll-arrow home-page-arrow" scroll-to="#whatPeopleThinkSection">
-          <i class="fa fa-angle-down"></i>
-        </a>
+        <div class="scroll-arrow-container page-scroll">
+          <a class="nav-link nav-desktop scroll-arrow home-page-arrow" scroll-to="#whatPeopleThinkSection">
+            <i class="fa fa-angle-down"></i>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -67,15 +69,13 @@
             <carousel interval="myInterval">
               <slide ng-repeat="slide in fbArray[1].whatPeopleThink track by $index" active="slide.active">
                 <div class="text-left"><i class="fa fa-quote-left fa-2x"></i></div>
-
                 <p class="quote-text">
                   <span ng-bind-html="slide.quote | limitChar:30"></span>
                   <br />
                   <span ng-show="countOf(slide.quote) > 30">
-                    <a href="#" class="" data-toggle="modal" data-target="#recommendationModal{{$index}}">READ MORE</a>
+                    <a href="#" data-toggle="modal" data-target="#recommendationModal{{$index}}">READ MORE</a>
                   </span>
                 </p>
-
                 <div class="text-right"><i class="fa fa-quote-right fa-2x"></i></div>
                 <div class="text-right quote-details">
                   <span ng-bind-html="slide.quoteBy.firstName"></span>&nbsp;

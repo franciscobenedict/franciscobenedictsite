@@ -16,6 +16,25 @@
             <li class="">
                <a id="home" class="" ng-href="/" scroll-to="#pageTop">Home</a>
             </li>
+            <li ng-show="showSecondaryNav('/')">
+               <!-- Secondary Nav - Mobile -->
+               <nav class="secondary-nav-mobile" ng-show="showSecondaryNav('/')" close-nav>
+                  <ul id="mobileNav" class="list-inline nav">
+                     <li class="page-scroll" data-scrollspy-listen="welcome">
+                        <a class="nav-link nav-desktop" scroll-to="#welcome">Welcome</a>
+                     </li>
+                     <li class="page-scroll" data-scrollspy-listen="whatIdoSection">
+                        <a class="nav-link nav-desktop" scroll-to="#whatIdoSection">What I do</a>
+                     </li>
+                     <li class="page-scroll" data-scrollspy-listen="whatPeopleThinkSection">
+                        <a class="nav-link nav-desktop" scroll-to="#whatPeopleThinkSection">What people think</a>
+                     </li>
+                     <li class="page-scroll" data-scrollspy-listen="aboutSection">
+                        <a class="nav-link nav-desktop" scroll-to="#aboutSection">About me</a>
+                     </li>
+                  </ul>
+               </nav>
+            </li>
             <li class="">
                <a id="profile" class="" ng-href="/profile" scroll-to="#pageTop">Profile</a>
             </li>
@@ -30,7 +49,7 @@
          <div class="clearfix"></div>
 
          <!-- Secondary Nav - Mobile -->
-         <nav class="secondary-nav-mobile" ng-show="showSecondaryNav('/')" close-nav>
+         <!-- <nav class="secondary-nav-mobile" ng-show="showSecondaryNav('/')" close-nav>
             <ul id="mobileNav" class="list-inline nav">
                <li class="page-scroll" data-scrollspy-listen="welcome">
                   <a class="nav-link nav-desktop" scroll-to="#welcome">Welcome</a>
@@ -45,7 +64,7 @@
                   <a class="nav-link nav-desktop" scroll-to="#aboutSection">About me</a>
                </li>
             </ul>
-         </nav>
+         </nav> -->
       </div>
    </div>
 </nav>
