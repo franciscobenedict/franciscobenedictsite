@@ -17,7 +17,8 @@
             $scope.today = new Date();
             
             // CREATE A FIREBASE REFERENCE
-            var AppRef = new Firebase('https://franciscobenedict-1aa7b.firebaseio.com/');
+            var firebareURL = atob("aHR0cHM6Ly9mcmFuY2lzY29iZW5lZGljdC0xYWE3Yi5maXJlYmFzZWlvLmNvbS8=");
+            var AppRef = new Firebase(firebareURL);
             $scope.fbArray = $firebaseArray(AppRef);
             if (debug) console.log('$scope.fbArray', $scope.fbArray);
 
@@ -31,7 +32,7 @@
             $scope.showTechUsed = !$scope.showTechUsed;
 
             // GITHUB API
-            var githubUsername = "franciscobenedict"; // my github username
+            var githubUsername = atob("ZnJhbmNpc2NvYmVuZWRpY3Q=");
             // This makes an AJAX call to github, injects my username and then gets all public facing repos available from my GitHub account
             $.ajax({
                 type: "GET",
