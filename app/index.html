@@ -1,113 +1,123 @@
 <!doctype html>
-  <html lang="en" data-ng-app="FBApp" ng-strict-di="ng-strict-di" xmlns:xlink="http//www.w3.org/1999/xlink" ng-cloak>
-  <head>
-    <meta charset="utf-8">
-    <base href="/">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
+    <html lang="en" data-ng-app="FBApp" ng-strict-di="ng-strict-di" xmlns:xlink="http//www.w3.org/1999/xlink" ng-cloak>
+    
+    <head>
+        <meta charset="utf-8">
+        <base href="/">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no" />
 
-    <title ng-bind-html="title"></title>
+        <title ng-bind-html="title"></title>
 
-    <!-- Favicon -->
-    <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
-    <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
-    <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
-    <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
-    <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
-    <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
-    <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
-    <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
-    <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
-    <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
-    <link rel="manifest" href="images/favicon/manifest.json">
-    <meta name="msapplication-TileColor" content="#ffffff">
-    <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
-    <meta name="theme-color" content="#ffffff">
+        <!-- Favicon -->
+        <link rel="apple-touch-icon" sizes="57x57" href="images/favicon/apple-icon-57x57.png">
+        <link rel="apple-touch-icon" sizes="60x60" href="images/favicon/apple-icon-60x60.png">
+        <link rel="apple-touch-icon" sizes="72x72" href="images/favicon/apple-icon-72x72.png">
+        <link rel="apple-touch-icon" sizes="76x76" href="images/favicon/apple-icon-76x76.png">
+        <link rel="apple-touch-icon" sizes="114x114" href="images/favicon/apple-icon-114x114.png">
+        <link rel="apple-touch-icon" sizes="120x120" href="images/favicon/apple-icon-120x120.png">
+        <link rel="apple-touch-icon" sizes="144x144" href="images/favicon/apple-icon-144x144.png">
+        <link rel="apple-touch-icon" sizes="152x152" href="images/favicon/apple-icon-152x152.png">
+        <link rel="apple-touch-icon" sizes="180x180" href="images/favicon/apple-icon-180x180.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="images/favicon/android-icon-192x192.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="96x96" href="images/favicon/favicon-96x96.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon/favicon-16x16.png">
+        <link rel="manifest" href="images/favicon/manifest.json">
+        <meta name="msapplication-TileColor" content="#ffffff">
+        <meta name="msapplication-TileImage" content="images/favicon/ms-icon-144x144.png">
+        <meta name="theme-color" content="#ffffff">
 
-    <!-- Normalize style -->
-    <link rel="stylesheet" href="css/vendor/normalize/normalize.css">
+        <!-- Normalize style -->
+        <link rel="stylesheet" href="css/vendor/normalize/normalize.css">
 
-    <!-- Latest compiled and minified Bootstrap CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <!-- Latest compiled and minified Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700" rel="stylesheet">
-    <script src="https://use.fontawesome.com/d582d03880.js"></script>
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700" rel="stylesheet">
+        <script src="https://use.fontawesome.com/d582d03880.js"></script>
 
-    <!-- Cusom styling -->
-    <link rel="stylesheet" href="css/grayscale.css">
-    <link rel="stylesheet" href="css/style.css">
-  </head>
+        <!-- Cusom styling -->
+        <link rel="stylesheet" href="css/grayscale.css">
+        <link rel="stylesheet" href="css/style.css">
+    </head>
 
-  <body id="pageTop" data-target=".secondary-nav" ng-controller="AppCtrl" collapse-nav>
-    <div ng-include="'./app/views/directives/nav.html'"></div>
-    <div ng-include="'./app/views/directives/secondary-nav.html'" ng-show="showSecondaryNav('/')"></div>
-    <span ng-view></span>
-    <div ng-include="'./app/views/directives/footer.html'"></div>
+    <body id="pageTop" data-target=".secondary-nav" ng-controller="AppCtrl" collapse-nav>
+        <div ng-include="'./app/views/directives/nav.html'"></div>
+        <div ng-include="'./app/views/directives/secondary-nav.html'" ng-show="showSecondaryNav('/')"></div>
+        <span ng-view></span>
+        <div ng-include="'./app/views/directives/footer.html'"></div>
 
-    <!-- BASE URL -->
-    <script>document.write("<base href=\"" + document.location + "\" />");</script>
+        <!-- BASE URL -->
+        <script>document.write("<base href=\"" + document.location + "\" />");</script>
 
-    <!-- jQuery -->
-    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+        <!-- jQuery -->
+        <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 
-    <!-- AngularJS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
+        <!-- AngularJS -->
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
 
-    <!-- Formio -->
-    <script src="https://npmcdn.com/ng-formio@latest/dist/formio-complete.min.js" type="text/javascript"></script>
+        <!-- Formio -->
+        <script src="https://npmcdn.com/ng-formio@latest/dist/formio-complete.min.js" type="text/javascript"></script>
 
-    <!-- UI Bootstrap -->
-    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+        <!-- UI Bootstrap -->
+        <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
 
-    <!-- AngularJS Route -->
-    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+        <!-- AngularJS Route -->
+        <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
 
-    <!-- Firebase -->
-    <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+        <!-- Firebase -->
+        <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
 
-    <!-- AngularFire -->
-    <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
-    <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/1.1.2/angularfire.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.6.0/firebase.js"></script>
+        
+        <!-- Angular Sanitize -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
 
-    <!-- Initialize Firebase -->
-    <script src="app/firebase-config.js"></script>
+        <!-- jQuery Easing -->
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 
-    <!-- Angular Sanitize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-sanitize/1.5.8/angular-sanitize.min.js"></script>
+        <!-- ngParallax -->
+        <script src="js/vendor/ngparallax/ngParallax.min.js"></script>
 
-    <!-- jQuery Easing -->
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <!-- ngScrollSpy -->
+        <script src="js/vendor/ngscrollspy/ng-ScrollSpy.js"></script>
 
-    <!-- Latest compiled and minified JavaScript -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> -->
+        <!-- App JS File -->
+        <!--
+        <script src="app/app.js"></script>
+        <script src="app/routes.js"></script>
+        -->
 
-    <!-- ngParallax -->
-    <script src="js/vendor/ngparallax/ngParallax.min.js"> </script>
+        <!-- Load modules -->
+        <!--
+        <script src="app/modules/main/appModule.js"></script>
+        <script src="app/modules/scrollto/scrolltoModule.js"></script>
+        <script src="app/modules/closenav/closenavModule.js"></script>
+        <script src="app/modules/parallaxscrolling/parallaxscrollingModule.js"></script>
+        <script src="app/modules/navcollapse/navcollapseModule.js"></script>
+        <script src="app/modules/contactform/contactformModule.js"></script>
+        <script src="app/modules/limitchar/limitcharModule.js"></script>
+        -->
 
-    <!-- ngParallax -->
-    <script src="js/vendor/ngscrollspy/ng-ScrollSpy.js"> </script>
+        <!-- Load controllers -->
+        <!-- NO LONGER REQUIRED AS THE CODE IS SITTING IN APP_MODULE_JS FILE -->
+        <!-- <script src="app/controllers/main/appController.js"></script> -->
 
-    <!-- App JS File -->
-    <script src="app/app.js"></script>
-    <script src="app/routes.js"></script>
+        <!-- Initialize Firebase -->
+        <!-- <script src="app/firebase-config.js"></script> -->
 
-    <!-- Load modules -->
-    <script src="app/modules/main/appModule.js"></script>
-    <script src="app/modules/scrollto/scrolltoModule.js"></script>
-    <script src="app/modules/closenav/closenavModule.js"></script>
-    <script src="app/modules/parallaxscrolling/parallaxscrollingModule.js"></script>
-    <script src="app/modules/navcollapse/navcollapseModule.js"></script>
-    <script src="app/modules/contactform/contactformModule.js"></script>
-    <script src="app/modules/limitchar/limitcharModule.js"></script>
+        <!-- All.JS -->
+        <!-- <script src="js/all.js"></script> -->
+        <!-- HOW DO I ADD THE FOLLOWING AND GET INDEX TO PICK THE NEWEST VERSION OF ALL.JS -->
+        <script src="js/all1486139706645.js"></script>
+        
+        
 
-    <!-- Load controllers -->
-    <script src="app/controllers/main/appController.js"></script>
-
-  </body>
+    </body>
 </html>
