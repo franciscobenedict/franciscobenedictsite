@@ -32,9 +32,9 @@ gulp.task('scripts', function() {
             './app/app/modules/limitchar/limitcharModule.js',
             './app/app/firebase-config.js'
         ])
-        .pipe(concat('all' + Date.now() + '.js'))
-        // .pipe(concat('all.js'))
-        // .pipe(uglify())
+        // .pipe(concat('all' + Date.now() + '.js'))
+        .pipe(concat('all.js'))
+        .pipe(uglify())
         .pipe(gulp.dest('./app/js/'));
 });
 
