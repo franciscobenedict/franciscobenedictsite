@@ -101,9 +101,29 @@ To run gulp and gulp watch together run the following in Terminal:
 
 `gulp && gulp watch`
 
-# GRID
 
-I'm using [Bootstrap 3.3.7](http://getbootstrap.com/) at the time of writing this.
+# Gulp - JS Files concatenation, rename, minification
+I'm bundling all my custom (not vendor) JS files into one js file, I rename this new JS file but I am also adding a hash to the filename so it is unique to the previous saved version when the file changes.
+
+`gulp-concat`
+
+`gulp-uglify`
+
+`gulp-rev`
+
+`gulp-rev-all`
+
+`gulp-rev-replace`
+
+`gulp-filter`
+
+Check the gulp file for how all these tasks are being achieved
+
+
+# Gulp - Live Reload
+I am using `browser-sync` for live reloads to the browser - any changes in my SASS or JS files tells the browser to automatically reload - cool eh?
+
+Check the gulp file for how this task is being achieved
 
 
 # SASS
@@ -124,6 +144,11 @@ Use: `npm-check`
 # Firebase
 
 First get a Firebase account from (console.firebase.google.com)[https://console.firebase.google.com/]
+
+
+# GRID
+
+I'm using [Bootstrap 3.3.7](http://getbootstrap.com/) at the time of writing this.
 
 
 # Font Awesome
