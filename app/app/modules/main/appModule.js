@@ -5,7 +5,7 @@
     .controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$location', '$element', '$window',
         function($rootScope, $scope, $firebaseArray, $location, $element, $window) {
             //Debug switch
-            var debug = false;
+            var debug = true;
             if (debug) console.log('debug = ' + debug);
 
             $scope.showSecondaryNav = function(viewLocation) {
@@ -17,6 +17,10 @@
 
             // GET CURRENT YEAR
             $scope.today = new Date();
+            if (debug) console.log('$scope.today', $scope.today);
+            
+            $scope.dateCurrent = Date.now();
+            if (debug) console.log('$scope.dateCurrent', $scope.dateCurrent);
             
             // CREATE A FIREBASE REFERENCE
             var firebareURL = atob("aHR0cHM6Ly9mcmFuY2lzY29iZW5lZGljdC0xYWE3Yi5maXJlYmFzZWlvLmNvbS8=");
