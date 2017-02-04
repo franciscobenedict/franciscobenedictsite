@@ -5,7 +5,7 @@
     .controller('AppCtrl', ['$rootScope', '$scope', '$firebaseArray', '$location', '$element', '$window',
         function($rootScope, $scope, $firebaseArray, $location, $element, $window) {
             //Debug switch
-            var debug = true;
+            var debug = false;
             if (debug) console.log('debug = ' + debug);
 
             $scope.showSecondaryNav = function(viewLocation) {
