@@ -9,9 +9,13 @@
           </div>
         </h1>
         <p ng-bind-html="fbArray[1].welcomeSection.paragraphText1"></p>
-        <p ng-bind-html="fbArray[1].welcomeSection.paragraphText2"></p>
+        <p>
+          <span ng-repeat="coreSkill in fbArray[1].welcomeSection.coreSkills" ng-bind-html="coreSkill"></span>
+        </p>
 
-        <h2>Welcome</h2>
+        <h2>
+          <span>Welcome</span>
+        </h2>
 
         <div class="scroll-arrow-container page-scroll">
           <a class="nav-link nav-desktop grey-scroll scroll-arrow home-page-arrow" scroll-to="#whatIdoSection">
