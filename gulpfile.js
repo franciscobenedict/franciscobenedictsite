@@ -70,13 +70,23 @@ gulp.task("revreplace", ["gulp-rev"], function() {
 // ===================
 
 
-// SASS
+// SASS BUILD
 gulp.task('sass', function() {
     gulp.src('./sass/**/*.scss')
         .pipe(sass().on('error', sass.logError))
         .pipe(sass({outputStyle: 'compressed'}))
         .pipe(gulp.dest('./app/css/'))
         .pipe(browserSync.reload({stream: true}));
+});
+// ===================
+
+// HTML
+gulp.task('html', function() {
+    gulp.src([
+        './app/index.html',
+        './app/app/views/*'
+    ])
+    .pipe(browserSync.reload({stream: true}));
 });
 // ===================
 
@@ -103,4 +113,8 @@ gulp.task('default', ['browserSync', 'sass', 'revreplace', 'gulp-rev'], function
         './app/app/**/**/*.js'
     ], 
     ['gulp-rev']);
+    gulp.watch([
+        './app/index.html',
+        './app/app/views/*',
+    ], ['html']);
 });
