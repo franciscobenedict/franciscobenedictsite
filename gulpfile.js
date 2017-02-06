@@ -21,7 +21,7 @@ gulp.task('clean', function () {
 
 // GULP CONCAT - minify JS files into one
 // GULP CACHE-BUSTING
-var manifestFolder = './app/js/manifest/';
+var manifestFolder = './app/manifest-js/';
 
 gulp.task("gulp-rev", function(){
     var fileToInject = [
@@ -80,13 +80,14 @@ gulp.task('sass', function() {
 });
 // ===================
 
+
 // HTML
 gulp.task('html', function() {
     gulp.src([
         './app/index.html',
         './app/app/views/*'
-    ])
-    .pipe(browserSync.reload({stream: true}));
+        ])
+        .pipe(browserSync.reload({stream: true}));
 });
 // ===================
 
@@ -102,19 +103,50 @@ gulp.task('browserSync', function() {
 // ===================
 
 
+// BUILD PORTFOLIO/CTMEASUREMENTTOOL
+gulp.task('build-portfolio-ctmeasurementtool', function() {
+
+});
+
+
+// BUILD FILES
+gulp.task('build', function() {
+    gulp.src([
+        '*app/app/views/**/*',
+        '*app/css/**/**/*',
+        '*app/cv/*',
+        '*app/fonts/*',
+        '*app/images/**/*',
+        '*app/js/**/*',
+        '*app/portfolio/**/**/*',
+        '*app/index.html'
+        ])
+        .pipe(gulp.dest('./build/'));
+});
+// ===================
+
+
+// DEPLOY FILES
+gulp.task('deploy', function() {
+    gulp.src('./build/app/**/**/**/*')
+        .pipe(gulp.dest('./deploy/'));
+});
+// ===================
+
+
 // WATCH TASK
-gulp.task('default', ['browserSync', 'sass', 'revreplace', 'gulp-rev'], function() {
-    gulp.watch('./sass/**/*.scss', ['sass']);
-    gulp.watch('./node_modules/font-awesome/fonts/*', ['fonts']);
+gulp.task('default', ['browserSync', 'sass', 'revreplace', 'gulp-rev', 'build', 'deploy'], function() {
+    gulp.watch('./sass/**/*.scss', ['sass', 'build', 'deploy']);
+    gulp.watch('./app/fonts/*', ['fonts', 'build', 'deploy']);
     gulp.watch([
         './app/app/routes.js', 
         './app/app/firebase-config.js', 
         './app/app/app.js', 
         './app/app/**/**/*.js'
     ], 
-    ['gulp-rev']);
+    ['gulp-rev', 'build', 'deploy']);
     gulp.watch([
         './app/index.html',
         './app/app/views/*',
-    ], ['html']);
+    ], ['html', 'build', 'deploy']);
 });
