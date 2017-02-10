@@ -1,13 +1,22 @@
-var gulp =          require('gulp');
-var clean =         require('gulp-clean');
-var sass =          require('gulp-sass');
-var concat =        require('gulp-concat');
-var uglify =        require('gulp-uglify');
-var browserSync =   require('browser-sync').create();
-var rev =           require('gulp-rev');
-var RevAll =        require('gulp-rev-all');
-var revReplace =    require('gulp-rev-replace');
-var filter =        require('gulp-filter');
+var gulp =              require('gulp');
+var clean =             require('gulp-clean');
+var sass =              require('gulp-sass');
+var concat =            require('gulp-concat');
+var uglify =            require('gulp-uglify');
+var browserSync =       require('browser-sync').create();
+var rev =               require('gulp-rev');
+var RevAll =            require('gulp-rev-all');
+var revReplace =        require('gulp-rev-replace');
+var filter =            require('gulp-filter');
+
+var gutil  =            require('gulp-util');
+var argv   =            require('minimist')(process.argv);
+var gulpif =            require('gulp-if');
+var prompt =            require('gulp-prompt');
+var rsync =             require('gulp-rsync');
+
+var GulpSSHDeploy =     require('gulp-ssh-deploy');
+// import { GulpSSHDeploy } from 'gulp-ssh-deploy';
 // ===================
 
 
@@ -22,7 +31,6 @@ gulp.task('clean', function () {
 // GULP CONCAT - minify JS files into one
 // GULP CACHE-BUSTING
 var manifestFolder = './app/manifest-js/';
-
 gulp.task("gulp-rev", function(){
     var fileToInject = [
         './app/app/app.js',
@@ -37,20 +45,15 @@ gulp.task("gulp-rev", function(){
         './app/app/firebase-config.js'
     ];
     var outputFolderJs = './app/js';
-
     return gulp.src(fileToInject)
         .pipe(concat('all.js'))
         .pipe(uglify())
-        
         .pipe(RevAll.revision())
         .pipe(gulp.dest('./app/js/'))
-
         .pipe(RevAll.manifestFile())
         .pipe(gulp.dest(manifestFolder))
-
         .pipe(rev.manifest())
         .pipe(gulp.dest(manifestFolder))
-
         .pipe(browserSync.reload({stream: true}));
 });
 // ===================
@@ -61,7 +64,6 @@ gulp.task("revreplace", ["gulp-rev"], function() {
     var manifest = gulp.src(manifestFolder + "rev-manifest.json");
     var source = "./app/index.html";
     var outputFolderHtml = './app';
-
     return gulp.src(source)
         .pipe(revReplace({manifest: manifest}))
         .pipe(gulp.dest(outputFolderHtml))
@@ -103,14 +105,8 @@ gulp.task('browserSync', function() {
 // ===================
 
 
-// BUILD PORTFOLIO/CTMEASUREMENTTOOL
-gulp.task('build-portfolio-ctmeasurementtool', function() {
-
-});
-
-
-// BUILD FILES
-gulp.task('build', function() {
+// CREATE BUILD FILES
+gulp.task('buildFolder', function() {
     gulp.src([
         '*app/app/views/**/*',
         '*app/css/**/**/*',
@@ -119,34 +115,37 @@ gulp.task('build', function() {
         '*app/images/**/*',
         '*app/js/**/*',
         '*app/portfolio/**/**/*',
-        '*app/index.html'
+        '*app/index.html',
+        '*app/.htaccess'
         ])
         .pipe(gulp.dest('./build/'));
 });
 // ===================
 
 
-// DEPLOY FILES
-gulp.task('deploy', function() {
-    gulp.src('./build/app/**/**/**/*')
+// CREATE DEPLOY FILES
+gulp.task('deployFolder', function() {
+    gulp.src(['./build/app/**/**/**/*', './build/app/.htaccess'])
         .pipe(gulp.dest('./deploy/'));
 });
 // ===================
 
 
 // WATCH TASK
-gulp.task('default', ['browserSync', 'sass', 'revreplace', 'gulp-rev', 'build', 'deploy'], function() {
-    gulp.watch('./sass/**/*.scss', ['sass', 'build', 'deploy']);
-    gulp.watch('./app/fonts/*', ['fonts', 'build', 'deploy']);
+// gulp.task('default', ['browserSync', 'sass', 'revreplace', 'gulp-rev', 'build', 'deploy', 'sshdeploy'], function() {
+gulp.task('default', ['browserSync', 'sass', 'revreplace', 'gulp-rev', 'buildFolder', 'deployFolder'], function() {
+    gulp.watch('./sass/**/*.scss', ['sass', 'buildFolder', 'deployFolder']);
+    gulp.watch('./app/fonts/*', ['fonts', 'buildFolder', 'deployFolder']);
     gulp.watch([
         './app/app/routes.js', 
         './app/app/firebase-config.js', 
         './app/app/app.js', 
         './app/app/**/**/*.js'
     ], 
-    ['gulp-rev', 'build', 'deploy']);
+    ['gulp-rev', 'buildFolder', 'deployFolder']);
     gulp.watch([
         './app/index.html',
         './app/app/views/*',
-    ], ['html', 'build', 'deploy']);
+    ], ['html', 'buildFolder', 'deployFolder']);
 });
+// ===================
