@@ -53,4 +53,6 @@ app/.htaccess
 
 # Folders #
 ###########
-app/images/_misc/
+_misc/
+build/
+deploy/
