@@ -121,6 +121,10 @@ section {
         background-color: $light-grey;
         color: $white;
     }
+    &.very-light-grey-bg {
+        background-color: $very-light-grey;
+        color: $black;
+    }
     &.light-grey-bg {
         background-color: $super-light-grey;
         color: $dark-grey;
