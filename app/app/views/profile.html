@@ -19,7 +19,10 @@
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
 					<p class="date-worked bold" ng-bind-html="careerSummary.dateWorked"></p>
 				</div>
-				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<div class="visible-xs col-xs-4 hidden-sm hidden-md hidden-lg padding0">
+					<p class="position-txt bold">Organisation</p>
+				</div>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding0">
 					<p class="client-name bold" ng-bind-html="careerSummary.clientName"></p>
 				</div>
 				<div class="clearfix"></div>
@@ -27,10 +30,10 @@
 
 			<!-- Former name -->
 			<div class="row-fluid" ng-if="careerSummary.formerName">
-				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
-					<p class="position-txt bold">Former name</p>
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="position-txt bold">Formerly</p>
 				</div>
-				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding0">
 					<p class="job-title" ng-bind-html="careerSummary.formerName"></p>
 				</div>
 				<div class="clearfix"></div>
@@ -38,21 +41,25 @@
 
 			<!-- End client -->
 			<div class="row-fluid" ng-if="careerSummary.endClientName">
-				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 padding0">
 					<p class="position-txt bold">End client</p>
 				</div>
-				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-					<p class="job-title" ng-bind-html="careerSummary.endClientName"></p>
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding0">
+					<ul>
+						<li class="job-title" ng-repeat="endClient in careerSummary.endClientName">
+							<p ng-bind-html="endClient"></p>
+						</li>
+					</ul>
 				</div>
 				<div class="clearfix"></div>
 			</div>
 
 			<!-- JOB TITLE -->
 			<div class="row-fluid" ng-if="careerSummary.jobTitle">
-				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+				<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4 padding0">
 					<p class="position-txt bold">Position</p>
 				</div>
-				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+				<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8 padding0">
 					<p class="job-title" ng-bind-html="careerSummary.jobTitle"></p>
 				</div>
 				<div class="clearfix"></div>
@@ -75,7 +82,11 @@
 					<p class="project-txt bold">Project</p>
 				</div>
 				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
-					<p class="project-title" ng-bind-html="careerSummary.projectTitle"></p>
+					<ul>
+						<li ng-repeat="projectTitle in careerSummary.projectTitle">
+							<p class="project-title" ng-bind-html="projectTitle"></p>
+						</li>
+					</ul>
 				</div>
 				<div class="clearfix"></div>
 			</div>
