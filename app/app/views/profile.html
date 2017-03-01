@@ -25,6 +25,17 @@
 				<div class="clearfix"></div>
 			</div>
 
+			<!-- Former name -->
+			<div class="row-fluid" ng-if="careerSummary.formerName">
+				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
+					<p class="position-txt bold">Former name</p>
+				</div>
+				<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8 padding0">
+					<p class="job-title" ng-bind-html="careerSummary.formerName"></p>
+				</div>
+				<div class="clearfix"></div>
+			</div>
+
 			<!-- End client -->
 			<div class="row-fluid" ng-if="careerSummary.endClientName">
 				<div class="col-xs-12 col-sm-4 col-md-4 col-lg-4 padding0">
@@ -130,7 +141,7 @@
 	</div>
 </section>
 
-<section id="keyProfessionalSkillsSection" class="profile-page">
+<section id="keyProfessionalSkillsSection" class="profile-page very-light-grey-bg">
 	<div class="container">
 		<h2>Key professional skills</h2>
 		<ul class="key-skills-list page-scroll">
