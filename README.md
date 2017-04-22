@@ -1,6 +1,6 @@
 # franciscobenedictsite
 
-# Under development
+# Development
 development start date: 14-11-2016
 
 
