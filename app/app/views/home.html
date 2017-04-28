@@ -87,7 +87,6 @@
                 </div>
                 <div class="text-right quote-details" ng-bind-html="slide.position"></div>
                 <div class="text-right quote-details" ng-bind-html="slide.client"></div>
-                <div class="text-right quote-details" ng-bind-html="slide.project"></div>
               </slide>
             </carousel>
           </div>
@@ -145,6 +144,35 @@
             <p ng-bind-html="fbArray[1].aboutCisco.paragraphText1"></p>
           </div>
         </div>
+        <div class="scroll-arrow-container page-scroll">
+          <a class="nav-link nav-desktop scroll-arrow home-page-arrow white-scroll" scroll-to="#aboutSite">
+            <i class="fa fa-angle-down"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Parallax Section -->
+  <div ng-include="'./app/views/directives/parallax-section.html'"></div>
+
+  <!-- About site -->
+  <section id="aboutSite" class="center-content-container light-grey-bg" data-scrollspy-broadcast>
+    <div class="content-centered">
+      <div class="container">
+        <h2>About site</h2>
+        
+        <div class="row-fluid">
+          <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 padding0">
+            <p ng-bind-html="fbArray[1].aboutSite.paragraphText1"></p>
+
+            <h3>Tech stack</h3>
+            <p>
+              <span ng-repeat="sitetechStack in fbArray[1].aboutSite.techOverview" ng-bind-html="sitetechStack"></li>
+            </p>
+          </div>
+        </div>
+
         <div class="scroll-arrow-container page-scroll">
           <a class="nav-link nav-desktop scroll-arrow home-page-arrow white-scroll up" scroll-to="#pageTop">
             <i class="fa fa-angle-double-up"></i>
