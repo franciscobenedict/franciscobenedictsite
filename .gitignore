@@ -45,6 +45,7 @@ Thumbs.db
 node_modules/
 _firebase-data.json
 _franciscobenedict-1aa7b-export.json
+shipitfile.js
 
 # My example portfolio - source code not to be released
 app/portfolio/
