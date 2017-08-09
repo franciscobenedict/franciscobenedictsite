@@ -15,8 +15,6 @@ var gulpif =            require('gulp-if');
 var prompt =            require('gulp-prompt');
 var rsync =             require('gulp-rsync');
 
-var GulpSSHDeploy =     require('gulp-ssh-deploy');
-// import { GulpSSHDeploy } from 'gulp-ssh-deploy';
 // ===================
 
 
